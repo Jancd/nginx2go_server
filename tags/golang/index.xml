@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Sergey Jay</title>
+    <link>https://SergeyJay.github.io/tags/golang/</link>
+    <description>Recent content in Golang on Sergey Jay</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Built by [Sergey Jay](http://github.com/SergeyJay).</copyright>
+    <lastBuildDate>Fri, 02 Oct 2015 21:49:20 +0200</lastBuildDate>
+    
+	<atom:link href="https://SergeyJay.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to add pages to the menu</title>
+      <link>https://SergeyJay.github.io/2015/10/02/how-to-add-pages-to-the-menu/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>https://SergeyJay.github.io/2015/10/02/how-to-add-pages-to-the-menu/</guid>
+      <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
+menu = &amp;quot;&amp;quot;  </description>
+    </item>
+    
+  </channel>
+</rss>

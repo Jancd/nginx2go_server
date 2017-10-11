@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>404 Page not found &middot; Sergey Jay</title>
+    <title>About &middot; Sergey Jay</title>
     <meta name="generator" content="Hugo 0.29" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,10 +10,10 @@
       <meta name="description" content="">
     
     
-      <link href="https://SergeyJay.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Sergey Jay" />
-      <link href="https://SergeyJay.github.io/index.xml" rel="feed" type="application/rss+xml" title="Sergey Jay" />
+      <link href="https://SergeyJay.github.io/about/index.xml" rel="alternate" type="application/rss+xml" title="Sergey Jay" />
+      <link href="https://SergeyJay.github.io/about/index.xml" rel="feed" type="application/rss+xml" title="Sergey Jay" />
     
-    <link rel="canonical" href=""/>
+    <link rel="canonical" href="https://SergeyJay.github.io/about/"/>
     <link rel="icon" href="https://SergeyJay.github.io/favicon.ico">
     <link rel="apple-touch-icon" href="https://SergeyJay.github.io/apple-touch-icon.png"/>
     <link rel="stylesheet" href="https://SergeyJay.github.io/css/style.css">
@@ -23,14 +23,14 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="404 Page not found" />
+    <meta property="og:title" content="About" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:url" content="https://SergeyJay.github.io/about/" />
 
 
 
-
+<meta property="og:updated_time" content="2017-05-19T21:49:20&#43;02:00"/>
 
 
 
@@ -43,11 +43,11 @@
 
     
     
-<meta itemprop="name" content="404 Page not found">
+<meta itemprop="name" content="About">
 <meta itemprop="description" content="">
 
 
-    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="404 Page not found"/>
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="About"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@SergeyJay"/>
 
@@ -259,22 +259,124 @@
 
     <section id="main">
     
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+    
+    
+        <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
     <div class="article-inner">
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <center>
-                <h1>
-                    404 - page not found
-                </h1>
-                <h3>
-                    The content you&#39;re looking for doesn&#39;t seem to exist.
-                </h3>
-                </center>
-            </p>
+        
+
+        <header class="article-header">
+    <a href="https://SergeyJay.github.io/about/">
+    <h1 class="article-title" itemprop="name">
+        About
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-05-19 21:49:20 &#43;0200 &#43;0200" itemprop="datePublished">2017-05-19</time>
+            &middot;
+            5
+            words
+            &middot;
+            1
+            minute read
         </div>
+        
+        
+
+        
     </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>Add some information about yourself.</p>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://SergeyJay.github.io/about/" data-id="a69934980f795699f7cc4d8a50a604b2" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+
 </article>
+
+
+    
 
     </section>
 
@@ -349,7 +451,7 @@
                 <div class="item-thumbnail">
                     <a href="https://SergeyJay.github.io/2015/10/02/how-to-add-pages-to-the-menu/" class="thumbnail">
                     
-                        <span style="background-image:url(https://SergeyJay.github.io/banners/placeholder.png)" alt="404 Page not found" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://SergeyJay.github.io/banners/placeholder.png)" alt="About" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
