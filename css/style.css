@@ -1880,6 +1880,9 @@ ol.toc {
 #recent-post li .item-thumbnail .thumbnail .thumbnail-image {
   position: absolute;
   -webkit-background-size: cover;
+
+
+  
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
