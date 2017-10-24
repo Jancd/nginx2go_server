@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</loc>
+    <lastmod>2017-08-04T12:00:23+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sergeyjay.github.io/2017/08/03/socket-server-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2017-08-03T12:00:23+08:00</lastmod>
   </url>
@@ -60,6 +65,21 @@
   <url>
     <loc>https://sergeyjay.github.io/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</loc>
     <lastmod>2017-01-22T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bchannel/</loc>
+    <lastmod>2016-09-04T12:00:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2016/08/30/golang%E4%B9%8Bchannel/</loc>
+    <lastmod>2016-08-30T12:00:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2016/08/28/golang%E4%B9%8Bchannel/</loc>
+    <lastmod>2016-08-28T12:00:23+08:00</lastmod>
   </url>
   
   <url>
@@ -136,7 +156,7 @@
   
   <url>
     <loc>https://sergeyjay.github.io/tags/database/</loc>
-    <lastmod>2017-03-27T12:00:23+02:00</lastmod>
+    <lastmod>2017-08-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -149,6 +169,12 @@
   <url>
     <loc>https://sergeyjay.github.io/tags/golang/</loc>
     <lastmod>2017-09-27T12:00:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/tags/linux/</loc>
+    <lastmod>2017-08-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -196,7 +222,7 @@
   
   <url>
     <loc>https://sergeyjay.github.io/tags/</loc>
-    <lastmod>2017-03-27T12:00:23+02:00</lastmod>
+    <lastmod>2017-08-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -208,7 +234,7 @@
   
   <url>
     <loc>https://sergeyjay.github.io/categories/tools/</loc>
-    <lastmod>2017-03-27T12:00:23+02:00</lastmod>
+    <lastmod>2017-08-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   

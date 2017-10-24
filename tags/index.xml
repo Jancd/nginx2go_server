@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
-    <lastBuildDate>Mon, 27 Mar 2017 12:00:23 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 04 Aug 2017 12:00:23 +0800</lastBuildDate>
     
 	<atom:link href="https://sergeyjay.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Database</title>
       <link>https://sergeyjay.github.io/tags/database/</link>
-      <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
+      <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
       
       <guid>https://sergeyjay.github.io/tags/database/</guid>
       <description></description>
@@ -36,6 +36,15 @@
       <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://sergeyjay.github.io/tags/linux/</link>
+      <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/tags/linux/</guid>
       <description></description>
     </item>
     

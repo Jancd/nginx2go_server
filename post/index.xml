@@ -24,6 +24,17 @@
     </item>
     
     <item>
+      <title>centOS 7 简单安装配置Redis</title>
+      <link>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
+      <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
+      <description>&lt;p&gt;&amp;emsp;centOS7上Redis的安装与简单配置.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Socket Server 自定义协议</title>
       <link>https://sergeyjay.github.io/2017/08/03/socket-server-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Thu, 03 Aug 2017 12:00:23 +0800</pubDate>
@@ -130,6 +141,39 @@
       
       <guid>https://sergeyjay.github.io/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</guid>
       <description>&lt;p&gt;&amp;emsp;go只提供了一种循环方式，即&lt;code&gt;for&lt;/code&gt;循环，在使用时可以像c那样使用，也可以通过&lt;code&gt;for range&lt;/code&gt;方式遍历容器类型如数组、切片和映射。但是在使用&lt;code&gt;for range&lt;/code&gt;时，如果使用不当，就会出现一些问题，导致程序运行行为不如预期。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之channel</title>
+      <link>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bchannel/</link>
+      <pubDate>Sun, 04 Sep 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bchannel/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang通过反射获取Struct的Tag,可以实现JSON字符串和Struct类型相互转换.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之channel</title>
+      <link>https://sergeyjay.github.io/2016/08/30/golang%E4%B9%8Bchannel/</link>
+      <pubDate>Tue, 30 Aug 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/08/30/golang%E4%B9%8Bchannel/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang也实现运行时反射，这为我们提供一种可以在运行时操作任意类型对象的能力。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之channel</title>
+      <link>https://sergeyjay.github.io/2016/08/28/golang%E4%B9%8Bchannel/</link>
+      <pubDate>Sun, 28 Aug 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/08/28/golang%E4%B9%8Bchannel/</guid>
+      <description>&lt;p&gt;&amp;emsp;Context是go控制并发的一种经典方式.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

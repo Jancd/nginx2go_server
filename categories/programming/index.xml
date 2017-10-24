@@ -113,6 +113,39 @@
     </item>
     
     <item>
+      <title>golang之channel</title>
+      <link>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bchannel/</link>
+      <pubDate>Sun, 04 Sep 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bchannel/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang通过反射获取Struct的Tag,可以实现JSON字符串和Struct类型相互转换.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之channel</title>
+      <link>https://sergeyjay.github.io/2016/08/30/golang%E4%B9%8Bchannel/</link>
+      <pubDate>Tue, 30 Aug 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/08/30/golang%E4%B9%8Bchannel/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang也实现运行时反射，这为我们提供一种可以在运行时操作任意类型对象的能力。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之channel</title>
+      <link>https://sergeyjay.github.io/2016/08/28/golang%E4%B9%8Bchannel/</link>
+      <pubDate>Sun, 28 Aug 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/08/28/golang%E4%B9%8Bchannel/</guid>
+      <description>&lt;p&gt;&amp;emsp;Context是go控制并发的一种经典方式.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>golang之连接池</title>
       <link>https://sergeyjay.github.io/2016/08/18/golang%E4%B9%8B%E8%BF%9E%E6%8E%A5%E6%B1%A0/</link>
       <pubDate>Thu, 18 Aug 2016 12:00:23 +0800</pubDate>
