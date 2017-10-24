@@ -6,19 +6,13 @@
     <description>Recent content in Programming on SergeyJay&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
     <lastBuildDate>Thu, 03 Aug 2017 12:00:23 +0800</lastBuildDate>
-=======
-    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay.All Rights Reserved. </copyright>
-    <lastBuildDate>Sat, 20 May 2017 12:00:23 +0200</lastBuildDate>
->>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
     
 	<atom:link href="https://sergeyjay.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-<<<<<<< HEAD
       <title>Socket Server 自定义协议</title>
       <link>https://sergeyjay.github.io/2017/08/03/socket-server-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Thu, 03 Aug 2017 12:00:23 +0800</pubDate>
@@ -236,29 +230,6 @@
       
       <guid>https://sergeyjay.github.io/2016/06/18/golang%E4%B9%8B%E6%95%B0%E7%BB%84/</guid>
       <description>&lt;p&gt;&amp;emsp;golang切片、Map映射等数据结构是以数组为基础的.初次接触数组,马上想到的是Objective-C的数组,两者相比较挺有意思的.&lt;/p&gt;
-=======
-      <title>存储进程结果 Queue</title>
-      <link>https://sergeyjay.github.io/2017/05/20/%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</link>
-      <pubDate>Sat, 20 May 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/05/20/%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</guid>
-      <description>简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在Queue中，线程执行完后，从Queue中获取存储的结果
-导入线程,队列的标准模块 import threading import time from queue import Queue  定义一个被多线程调用的函数 函数的参数是一个列表l和一个队列q，函数的功能是，对列表的每个元素进行平方计算，将结果保存在队列中
-def job(l,q): for i in range (len(l)): l[i] = l[i]**2 q.put(l) #多线程调用的函数不能用return返回值  定义一个多线程函数 在多线程函数中定义一个Queue，用来保存返回值，代替return，定义一个多线程列表，初始化一个多维数据列表，用来处理：
-def multithreading(): q =Queue() #q中存放返回值，代替return的返回值 threads = [] data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]  在多线程函数中定义四个线程，启动线程，将每个线程添加到多线程的列表中
-for i in range(4): #定义四个线程 t = threading.Thread(target=job,args=(data[i],q)) #Thread首字母要大写，被调用的job函数没有括号，只是一个索引，参数在后面 t.start()#开始线程 threads.append(t) #把每个线程append到线程列表中  分别join四个线程到主线程
-for thread in threads: thread.join()  定义一个空的列表results，将四个线运行后保存在队列中的结果返回给空列表results
-results = [] for _ in range(4): results.</description>
-    </item>
-    
-    <item>
-      <title>This is a test</title>
-      <link>https://sergeyjay.github.io/2017/02/20/this-is-a-test/</link>
-      <pubDate>Mon, 20 Feb 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/02/20/this-is-a-test/</guid>
-      <description>&lt;p&gt;This way you can easily include a gallery into your page. Copy the code below into your content file and enter the relative paths to your images.&lt;/p&gt;
->>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
