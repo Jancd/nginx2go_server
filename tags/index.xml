@@ -6,13 +6,19 @@
     <description>Recent content in Tags on SergeyJay&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
     <lastBuildDate>Mon, 27 Mar 2017 12:00:23 +0200</lastBuildDate>
+=======
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay.All Rights Reserved. </copyright>
+    <lastBuildDate>Fri, 02 Oct 2015 21:49:20 +0200</lastBuildDate>
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
     
 	<atom:link href="https://sergeyjay.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+<<<<<<< HEAD
       <title>Database</title>
       <link>https://sergeyjay.github.io/tags/database/</link>
       <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
@@ -22,6 +28,8 @@
     </item>
     
     <item>
+=======
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
       <title>Docker</title>
       <link>https://sergeyjay.github.io/tags/docker/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
@@ -33,9 +41,40 @@
     <item>
       <title>Golang</title>
       <link>https://sergeyjay.github.io/tags/golang/</link>
+<<<<<<< HEAD
       <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mxnet</title>
+      <link>https://sergeyjay.github.io/tags/mxnet/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/tags/mxnet/</guid>
+=======
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/tags/golang/</guid>
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
+      <description></description>
+    </item>
+    
+    <item>
+<<<<<<< HEAD
+      <title>Python</title>
+      <link>https://sergeyjay.github.io/tags/python/</link>
+      <pubDate>Mon, 20 Feb 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/tags/python/</guid>
+=======
+      <title>Markdown</title>
+      <link>https://sergeyjay.github.io/tags/markdown/</link>
+      <pubDate>Mon, 20 Feb 2017 12:10:51 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/tags/markdown/</guid>
       <description></description>
     </item>
     
@@ -51,7 +90,7 @@
     <item>
       <title>Python</title>
       <link>https://sergeyjay.github.io/tags/python/</link>
-      <pubDate>Mon, 20 Feb 2017 12:00:23 +0200</pubDate>
+      <pubDate>Sat, 20 May 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/tags/python/</guid>
       <description></description>
@@ -63,10 +102,29 @@
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/tags/pythorh/</guid>
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
       <description></description>
     </item>
     
     <item>
+<<<<<<< HEAD
+      <title>Pythorh</title>
+      <link>https://sergeyjay.github.io/tags/pythorh/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/tags/pythorh/</guid>
+=======
+      <title>Rpc</title>
+      <link>https://sergeyjay.github.io/tags/rpc/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/tags/rpc/</guid>
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
+      <description></description>
+    </item>
+    
+    <item>
+<<<<<<< HEAD
       <title>Rpc</title>
       <link>https://sergeyjay.github.io/tags/rpc/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
@@ -80,6 +138,12 @@
       <link>https://sergeyjay.github.io/tags/tensorflow/</link>
       <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
       
+=======
+      <title>Tensorflow</title>
+      <link>https://sergeyjay.github.io/tags/tensorflow/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
       <guid>https://sergeyjay.github.io/tags/tensorflow/</guid>
       <description></description>
     </item>

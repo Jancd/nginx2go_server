@@ -6,8 +6,13 @@
     <description>Recent content in Categories on SergeyJay&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
     <lastBuildDate>Wed, 27 Sep 2017 12:00:23 +0200</lastBuildDate>
+=======
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay.All Rights Reserved. </copyright>
+    <lastBuildDate>Fri, 02 Oct 2015 21:49:20 +0200</lastBuildDate>
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
     
 	<atom:link href="https://sergeyjay.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +20,11 @@
     <item>
       <title>Ai</title>
       <link>https://sergeyjay.github.io/categories/ai/</link>
+<<<<<<< HEAD
       <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
+=======
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
       
       <guid>https://sergeyjay.github.io/categories/ai/</guid>
       <description></description>
@@ -24,7 +33,11 @@
     <item>
       <title>Programming</title>
       <link>https://sergeyjay.github.io/categories/programming/</link>
+<<<<<<< HEAD
       <pubDate>Thu, 03 Aug 2017 12:00:23 +0800</pubDate>
+=======
+      <pubDate>Sat, 20 May 2017 12:00:23 +0200</pubDate>
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
       
       <guid>https://sergeyjay.github.io/categories/programming/</guid>
       <description></description>
@@ -33,7 +46,11 @@
     <item>
       <title>Tools</title>
       <link>https://sergeyjay.github.io/categories/tools/</link>
+<<<<<<< HEAD
       <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
+=======
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+>>>>>>> 177294ea2b32ecaa37e8546231bca11e8b13cef7
       
       <guid>https://sergeyjay.github.io/categories/tools/</guid>
       <description></description>
