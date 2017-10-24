@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>golang实现心跳响应 &middot; SergeyJay&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.29" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sergey Jay">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://sergeyjay.github.io/2017/09/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/"/>
+    <link rel="icon" href="https://sergeyjay.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://sergeyjay.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/style.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="golang实现心跳响应" />
+<meta property="og:description" content="&emsp;本文实现模拟实现一个简单的心跳响应.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sergeyjay.github.io/2017/09/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/" />
+
+
+
+<meta property="article:published_time" content="2017-09-27T12:00:23&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-27T12:00:23&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="golang实现心跳响应">
+<meta itemprop="description" content="&emsp;本文实现模拟实现一个简单的心跳响应.
+
+">
+
+
+<meta itemprop="dateModified" content="2017-09-27T12:00:23&#43;08:00" />
+<meta itemprop="wordCount" content="426">
+
+
+
+<meta itemprop="keywords" content="golang," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="golang实现心跳响应"/>
+<meta name="twitter:description" content="&emsp;本文实现模拟实现一个简单的心跳响应.
+
+"/>
+<meta name="twitter:site" content="@SergeyJay"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://sergeyjay.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://sergeyjay.github.io/css/images/brain.jpg')"></i>
+          
+          <span class="site-title">SergeyJay&#39;s blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a>
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About Me</a>
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a></td>
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About Me</a></td>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg">
+      
+      <h2 id="name">Sergey Jay</h2>
+      <h3 id="title"> Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Shanghai</span>
+      
+          <a id="follow" href="https://github.com/SergeyJay">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        28
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          9
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/SergeyJay" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/zshangan@iCloud.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/SergeyJay" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="https://sergeyjay.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://sergeyjay.github.io/2017/09/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/">
+    <h1 class="article-title" itemprop="name">
+        golang实现心跳响应
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-09-27 12:00:23 &#43;0800 CST" itemprop="datePublished">2017-09-27</time>
+            &middot;
+            426
+            words
+            &middot;
+            2
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/categories/programming">programming</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/golang">golang</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;本文实现模拟实现一个简单的心跳响应.</p>
+
+<p></p>
+
+<p><em>Note:This blog without all the resources that are outside the original,reproduced please indicate the source.</em></p>
+
+<p>&emsp;在长连接下，有可能很长一段时间都没有数据往来。理论上说，这个连接是一直保持连接的，但是实际情况中，如果中间节点出现什么故障是难以知道的。更要命的是，有的节点（防火墙）会自动把一定时间之内没有数据交互的连接给断掉。在这个时候，就需要我们的心跳包了，用于维持长连接.</p>
+
+<h2 id="心跳机制">心跳机制</h2>
+
+<p>&emsp;client每隔几分钟发送一个固定信息给服务端，服务端收到后回复一个固定信息如果服务端几分钟内没有收到客户端信息则视客户端断开。发包方可以是客户也可以是服务端..</p>
+
+<p>&emsp;心跳包之所以叫心跳包是因为：它像心跳一样每隔固定时间发一次，以此来告诉服务器，这个客户端还活着。事实上这是为了保持长连接，至于这个包的内容，是没有什么特别规定的，不过一般都是很小的包，或者只包含包头的一个空包。心跳包主要也就是用于长连接的保活和断线处理。一般的应用下，判定时间在30-40秒比较不错。如果实在要求高，那就在6-9秒。</p>
+
+<p>&emsp;本文在server中设置了超时,超时后server端主动关闭连接</p>
+
+<pre><code>conn.SetDeadline(time.Now().Add(time.Duration(timeout) * time.Second))
+</code></pre>
+
+<h2 id="client">client</h2>
+
+<p>&emsp;<code>generator(conn *net.TCPConn)</code>模拟发送心跳包,期间停了10秒然后继续发送.</p>
+
+<p>代码示例:</p>
+
+<pre><code class="language-c++">/**
+* @Author:  Sergey Jay
+* @Email :  zshangan@iCloud.com
+* @Create:  17/09/2017 14:52
+* Copyright (c) 2017 Sergey Jay All rights reserved.
+* Description:
+*/
+package main
+
+import (
+	&quot;net&quot;
+	&quot;os&quot;
+	&quot;strconv&quot;
+	&quot;time&quot;
+	&quot;github.com/astaxie/beego&quot;
+)
+
+func main() {
+	/*
+	   1-&gt;resolve address
+	   2-&gt;connect
+	*/
+	server := &quot;127.0.0.1:8090&quot;
+	tcpAddr, err := net.ResolveTCPAddr(&quot;tcp&quot;, server)
+	if err != nil {
+		beego.Warning(&quot;Fatal error : &quot;, err.Error())
+		os.Exit(1)
+	}
+	conn, err := net.DialTCP(&quot;tcp&quot;, nil, tcpAddr)
+	if err != nil {
+		beego.Warning(&quot;Fatal error : &quot;, err.Error())
+		os.Exit(1)
+	}
+	generator(conn)
+	beego.Trace(&quot;send over&quot;)
+}
+
+func generator(conn *net.TCPConn) {
+	for i := 0; i &lt; 10; i++ {
+		words := strconv.Itoa(i) + &quot;  times &quot; + &quot; --&gt; heart beating from client &quot;
+		num, err := conn.Write([]byte(words))
+		if err != nil {
+			beego.Warning(&quot;Fatal error : &quot;, err.Error())
+			os.Exit(1)
+		}
+		beego.Trace(&quot;Server have receive :&quot;, num, &quot; bytes&quot;)
+		time.Sleep(1 * time.Second)
+	}
+
+	for i := 0; i &lt; 2; i++ {
+		beego.Info(&quot;client stop 5s&quot;)
+		time.Sleep(5 * time.Second)
+	}
+
+	for i := 0; i &lt; 10; i++ {
+		words := strconv.Itoa(i) + &quot;times &quot; + &quot;==&gt; heart beat from client&quot;
+		num, err := conn.Write([]byte(words))
+		if err != nil {
+			beego.Warning(&quot;Fatal error : &quot;, err.Error())
+			os.Exit(1)
+		}
+		beego.Trace(&quot;Server have receive :&quot;, num, &quot; bytes&quot;)
+		time.Sleep(1 * time.Second)
+	}
+}
+
+</code></pre>
+
+<h2 id="server">Server</h2>
+
+<p>示例代码:</p>
+
+<pre><code>/**
+* @Author:  Sergey Jay
+* @Email :  zshangan@iCloud.com
+* @Create:  17/09/2017 14:57
+* Copyright (c) 2017 Sergey Jay All rights reserved.
+* Description:
+*/
+package main
+
+import (
+	&quot;net&quot;
+	&quot;os&quot;
+	&quot;time&quot;
+	&quot;github.com/astaxie/beego&quot;
+)
+
+func main() {
+	server := &quot;:8090&quot;
+	netListen, err := net.Listen(&quot;tcp&quot;, server)
+	if err != nil {
+		beego.Warning(&quot;Fatal error : &quot;, err)
+		os.Exit(1)
+	}
+	beego.Info(&quot;waiting for client&quot;)
+	for {
+		conn, err := netListen.Accept()
+		if err != nil {
+			beego.Warning(&quot;Fatal error : &quot;, err)
+			return
+		}
+		conn.SetReadDeadline(time.Now().Add(time.Duration(8) * time.Second))
+		beego.Trace(conn.RemoteAddr().String(), &quot;--&gt;&gt;connect success&quot;)
+		go HandleConnection(conn)
+	}
+
+}
+
+func HandleConnection(conn net.Conn) {
+	buffer := make([]byte, 1024)
+	for {
+		n, err := conn.Read(buffer)
+		if err != nil {
+			beego.Warning(&quot;Fatal error : &quot;, err)
+			return
+		}
+		data := buffer[:n]
+		message := make(chan byte)
+		go GetMessage(data, message)
+		go HeartBeat(conn, message, 4)
+		beego.Trace(conn.RemoteAddr().String(), string(buffer[:n]))
+	}
+	defer conn.Close()
+}
+
+func GetMessage(bytes []byte, message chan byte) {
+	for _, v := range bytes {
+		message &lt;- v
+	}
+	close(message)
+}
+
+func HeartBeat(conn net.Conn, message chan byte, timeout int) {
+	select {
+	case &lt;-message:
+		//beego.Trace(conn.RemoteAddr().String(), string(fk), &quot;: &quot;, &quot;Heart beating &quot;)
+		conn.SetDeadline(time.Now().Add(time.Duration(timeout) * time.Second))
+	case &lt;-time.After(time.Second * 5):
+		beego.Warning(conn.RemoteAddr().String(), &quot;time out&quot;)
+		conn.Close()
+	}
+}
+
+</code></pre>
+
+<h2 id="模拟效果">模拟效果</h2>
+
+<p>&emsp;client发送心跳包,发送期间有10s停顿,而server端则设置了超时时间为4s,client后面发送的数据server不在接收&hellip;.此处server并没有给client提示..</p>
+
+<h4 id="server端">server端</h4>
+
+<p><img src="http://img.blog.csdn.net/20170927085436256" alt="server" /></p>
+
+<h4 id="client端">client端</h4>
+
+<p><img src="http://img.blog.csdn.net/20170927085512357" alt="client" /></p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://sergeyjay.github.io/2017/09/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/" data-id="7d06b773ef69e8244850b6d12b893960" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://sergeyjay.github.io/2017/09/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://sergeyjay.github.io/2017/09/27/golang%E6%8E%A5%E5%8F%A3%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0%E6%B5%85%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">golang接口内部实现浅析</div>
+    </a>
+    
+
+    
+    <a href="https://sergeyjay.github.io/2017/09/27/golang%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">golang匿名函数(闭包)</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/ai">
+                    ai
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">22</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/tools">
+                    tools
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/database">
+                    database
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">20</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/markdown">
+                    markdown
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/mxnet">
+                    mxnet
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/pythorh">
+                    pythorh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/rpc">
+                    rpc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Built by <a href="http://github.com/SergeyJay">Sergey Jay</a>,Copyright © Sergey Jay.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://sergeyjay.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://sergeyjay.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

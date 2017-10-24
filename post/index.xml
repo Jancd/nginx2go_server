@@ -1,58 +1,267 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Sergey Jay</title>
-    <link>https://SergeyJay.github.io/post/</link>
-    <description>Recent content in Posts on Sergey Jay</description>
+    <title>Posts on SergeyJay&#39;s blog</title>
+    <link>https://sergeyjay.github.io/post/</link>
+    <description>Recent content in Posts on SergeyJay&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Built by [Sergey Jay](http://github.com/SergeyJay).</copyright>
-    <lastBuildDate>Sat, 20 May 2017 12:00:23 +0200</lastBuildDate>
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
+    <lastBuildDate>Wed, 27 Sep 2017 12:00:23 +0200</lastBuildDate>
     
-	<atom:link href="https://SergeyJay.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sergeyjay.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Using the gallery shortcode</title>
-      <link>https://SergeyJay.github.io/2017/05/20/using-the-gallery-shortcode/</link>
-      <pubDate>Sat, 20 May 2017 12:00:23 +0200</pubDate>
+      <title>TensorFlow for Go</title>
+      <link>https://sergeyjay.github.io/2017/09/27/tensorflow-for-go/</link>
+      <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://SergeyJay.github.io/2017/05/20/using-the-gallery-shortcode/</guid>
-      <description>&lt;p&gt;This way you can easily include a gallery into your page. Copy the code below into your content file and enter the relative paths to your images.&lt;/p&gt;
+      <guid>https://sergeyjay.github.io/2017/09/27/tensorflow-for-go/</guid>
+      <description>&lt;p&gt;&amp;emsp;go语言有着很好的潜力,最近TensorFlow提供了go语言的API.这些API特别适合加载Python中创建的模型，并在Go应用程序中执行它们。不过这些API还没有很稳定,目前也只是支持Linux,Mac OSX平台..&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Formulas with MathJax</title>
-      <link>https://SergeyJay.github.io/2017/05/20/formulas-with-mathjax/</link>
-      <pubDate>Sat, 20 May 2017 11:58:06 +0200</pubDate>
+      <title>Socket Server 自定义协议</title>
+      <link>https://sergeyjay.github.io/2017/08/03/socket-server-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Thu, 03 Aug 2017 12:00:23 +0800</pubDate>
       
-      <guid>https://SergeyJay.github.io/2017/05/20/formulas-with-mathjax/</guid>
-      <description>&lt;p&gt;Mathematical equations in form of LaTeX or MathML code can be rendered with the support of &lt;a href=&#34;https://www.mathjax.org&#34;&gt;MathJax&lt;/a&gt;. MathML works out of the box. If you&amp;rsquo;re using LaTeX you need to wrap your equation with &lt;code&gt;$$&lt;/code&gt; as shown in the following example:&lt;/p&gt;
+      <guid>https://sergeyjay.github.io/2017/08/03/socket-server-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%8F%E8%AE%AE/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang Socket Server 自定义协议的简单实现.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Markdown Cheat Sheet</title>
-      <link>https://SergeyJay.github.io/2017/02/20/markdown-cheat-sheet/</link>
-      <pubDate>Mon, 20 Feb 2017 12:10:51 +0200</pubDate>
+      <title>go语言的goroutine调度机制[转载]</title>
+      <link>https://sergeyjay.github.io/2017/06/23/go%E8%AF%AD%E8%A8%80%E7%9A%84goroutine%E8%B0%83%E5%BA%A6%E6%9C%BA%E5%88%B6%E8%BD%AC%E8%BD%BD/</link>
+      <pubDate>Fri, 23 Jun 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://SergeyJay.github.io/2017/02/20/markdown-cheat-sheet/</guid>
-      <description>&lt;p&gt;This note demonstrates some of what &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt; is capable of doing.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Note: Feel free to play with this page. Unlike regular notes, this doesn&amp;rsquo;t automatically save itself.&lt;/em&gt;&lt;/p&gt;
+      <guid>https://sergeyjay.github.io/2017/06/23/go%E8%AF%AD%E8%A8%80%E7%9A%84goroutine%E8%B0%83%E5%BA%A6%E6%9C%BA%E5%88%B6%E8%BD%AC%E8%BD%BD/</guid>
+      <description>&lt;p&gt;&amp;emsp;一直对goroutine的调度机制很好奇，最近在看雨痕的golang源码分析(基于go1.4),对goroutine调度慢慢有了一点点了解.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>How to add pages to the menu</title>
-      <link>https://SergeyJay.github.io/2015/10/02/how-to-add-pages-to-the-menu/</link>
+      <title>golang匿名函数(闭包)</title>
+      <link>https://sergeyjay.github.io/2017/04/29/golang%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/</link>
+      <pubDate>Sat, 29 Apr 2017 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/04/29/golang%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/</guid>
+      <description>&lt;p&gt;&amp;emsp;GO语言的匿名函数（&lt;strong&gt;anonymous function&lt;/strong&gt;),
+其实就是闭包.是指不需要定义函数名的一种函数实现方式..&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang实现心跳响应</title>
+      <link>https://sergeyjay.github.io/2017/04/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/</link>
+      <pubDate>Thu, 27 Apr 2017 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/04/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/</guid>
+      <description>&lt;p&gt;&amp;emsp;本文实现模拟实现一个简单的心跳响应.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySql ERROR 2002</title>
+      <link>https://sergeyjay.github.io/2017/03/27/mysql-error-2002/</link>
+      <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/27/mysql-error-2002/</guid>
+      <description>&lt;p&gt;&amp;emsp;MySql-&amp;gt; ERROR 2002 (HY000): Can&amp;rsquo;t connect to local MySQL server through socket &amp;lsquo;/tmp/mysql.sock&amp;rsquo; (2)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang接口内部实现浅析</title>
+      <link>https://sergeyjay.github.io/2017/03/22/golang%E6%8E%A5%E5%8F%A3%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0%E6%B5%85%E6%9E%90/</link>
+      <pubDate>Wed, 22 Mar 2017 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/22/golang%E6%8E%A5%E5%8F%A3%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0%E6%B5%85%E6%9E%90/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang的接口是golang的精粹之一,本文尝试着分析一下interface内部的一些细节.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang内存对齐</title>
+      <link>https://sergeyjay.github.io/2017/03/20/golang%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</link>
+      <pubDate>Mon, 20 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/20/golang%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang内存对齐存在，编译器使用了内存对齐,清楚其内存对齐规则,对程序更优设计有帮助.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python计算RGB图片H通道</title>
+      <link>https://sergeyjay.github.io/2017/02/20/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</link>
+      <pubDate>Mon, 20 Feb 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/02/20/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</guid>
+      <description>&lt;p&gt;&amp;emsp;python进行一些简单的图像处理.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python存储进程结果 Queue</title>
+      <link>https://sergeyjay.github.io/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</link>
+      <pubDate>Mon, 30 Jan 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</guid>
+      <description>&lt;p&gt;&amp;emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在&lt;code&gt;Queue&lt;/code&gt;中，线程执行完后，从&lt;code&gt;Queue&lt;/code&gt;中获取存储的结果.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang闭包使用注意</title>
+      <link>https://sergeyjay.github.io/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</link>
+      <pubDate>Sun, 22 Jan 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</guid>
+      <description>&lt;p&gt;&amp;emsp;go只提供了一种循环方式，即&lt;code&gt;for&lt;/code&gt;循环，在使用时可以像c那样使用，也可以通过&lt;code&gt;for range&lt;/code&gt;方式遍历容器类型如数组、切片和映射。但是在使用&lt;code&gt;for range&lt;/code&gt;时，如果使用不当，就会出现一些问题，导致程序运行行为不如预期。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之连接池</title>
+      <link>https://sergeyjay.github.io/2016/08/18/golang%E4%B9%8B%E8%BF%9E%E6%8E%A5%E6%B1%A0/</link>
+      <pubDate>Thu, 18 Aug 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/08/18/golang%E4%B9%8B%E8%BF%9E%E6%8E%A5%E6%B1%A0/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang通过使用通道，在多个goroutine发送和接受共享的数据，达到数据同步的目的。我们在数据库操作的时候，比较常见的就是数据连接池，也可以基于我们实现的资源池来实现。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之channel</title>
+      <link>https://sergeyjay.github.io/2016/07/28/golang%E4%B9%8Bchannel/</link>
+      <pubDate>Thu, 28 Jul 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/07/28/golang%E4%B9%8Bchannel/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang通过使用通道，在多个goroutine发送和接受共享的数据，达到数据同步的目的。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之Map</title>
+      <link>https://sergeyjay.github.io/2016/07/26/golang%E4%B9%8Bmap/</link>
+      <pubDate>Tue, 26 Jul 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/07/26/golang%E4%B9%8Bmap/</guid>
+      <description>&lt;p&gt;&amp;emsp;goroutine真的是非常强大,她是一个伟大的设计.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之Reader和Writer</title>
+      <link>https://sergeyjay.github.io/2016/07/17/golang%E4%B9%8Breader%E5%92%8Cwriter/</link>
+      <pubDate>Sun, 17 Jul 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/07/17/golang%E4%B9%8Breader%E5%92%8Cwriter/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang Writer 和 Reader接口的设计遵循了Unix的输入和输出，一个程序的输出可以是另外一个程序的输入。他们的功能单一并且纯粹，这样就可以非常容易的编写程序代码，又可以通过组合的概念，让我们的程序做更多的事情。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang接口浅析</title>
+      <link>https://sergeyjay.github.io/2016/07/06/golang%E6%8E%A5%E5%8F%A3%E6%B5%85%E6%9E%90/</link>
+      <pubDate>Wed, 06 Jul 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/07/06/golang%E6%8E%A5%E5%8F%A3%E6%B5%85%E6%9E%90/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang的接口是golang的精粹之一,本文说说接口的基础使用.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之嵌入</title>
+      <link>https://sergeyjay.github.io/2016/07/02/golang%E4%B9%8B%E5%B5%8C%E5%85%A5/</link>
+      <pubDate>Sat, 02 Jul 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/07/02/golang%E4%B9%8B%E5%B5%8C%E5%85%A5/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang是一种面向对象语言么?是,又不是.面向对象语言像java代码复用的方式是继承,但是golang没有继承,她代码复用的方式是组合.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之函数方法</title>
+      <link>https://sergeyjay.github.io/2016/06/25/golang%E4%B9%8B%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sat, 25 Jun 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/06/25/golang%E4%B9%8B%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang中的函数和方法是不一样,方法有接受者,而函数不属于任何类型或者结构体.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之类型</title>
+      <link>https://sergeyjay.github.io/2016/06/25/golang%E4%B9%8B%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Sat, 25 Jun 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/06/25/golang%E4%B9%8B%E7%B1%BB%E5%9E%8B/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang是一种静态类型的编程语言，所以在编译器进行编译的时候，就要知道每个值的类型，这样编译器就知道要为这个值分配多少内存，并且知道这段分配的内存表示什么。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之Map</title>
+      <link>https://sergeyjay.github.io/2016/06/24/golang%E4%B9%8Bmap/</link>
+      <pubDate>Fri, 24 Jun 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/06/24/golang%E4%B9%8Bmap/</guid>
+      <description>&lt;p&gt;&amp;emsp;Map是一种数据结构，是一个集合，用于存储一系列无序的键值对。它基于键存储的，键就像一个索引一样，这也是Map强大的地方，可以快速快速检索数据，键指向与该键关联的值。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之slice</title>
+      <link>https://sergeyjay.github.io/2016/06/20/golang%E4%B9%8Bslice/</link>
+      <pubDate>Mon, 20 Jun 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/06/20/golang%E4%B9%8Bslice/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang切片与数组那样,初次接触我首先想到的是Objective-C的数组与动态数组.切片也是一种数据结构，它和数组非常相似，因为他是围绕动态数组的概念设计的.
+&amp;emsp;切片灵活解决函数间传递数组的问题，比如复制问题，比如大小僵化问题.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang之数组</title>
+      <link>https://sergeyjay.github.io/2016/06/18/golang%E4%B9%8B%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sat, 18 Jun 2016 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2016/06/18/golang%E4%B9%8B%E6%95%B0%E7%BB%84/</guid>
+      <description>&lt;p&gt;&amp;emsp;golang切片、Map映射等数据结构是以数组为基础的.初次接触数组,马上想到的是Objective-C的数组,两者相比较挺有意思的.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linked-post</title>
+      <link>https://sergeyjay.github.io/2015/10/02/linked-post/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
-      <guid>https://SergeyJay.github.io/2015/10/02/how-to-add-pages-to-the-menu/</guid>
+      <guid>https://sergeyjay.github.io/2015/10/02/linked-post/</guid>
       <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
 menu = &amp;quot;&amp;quot;  </description>
     </item>

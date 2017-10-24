@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on SergeyJay&#39;s blog</title>
+    <link>https://sergeyjay.github.io/tags/python/</link>
+    <description>Recent content in Python on SergeyJay&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
+    <lastBuildDate>Mon, 20 Feb 2017 12:00:23 +0200</lastBuildDate>
+    
+	<atom:link href="https://sergeyjay.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python计算RGB图片H通道</title>
+      <link>https://sergeyjay.github.io/2017/02/20/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</link>
+      <pubDate>Mon, 20 Feb 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/02/20/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</guid>
+      <description>&lt;p&gt;&amp;emsp;python进行一些简单的图像处理.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python存储进程结果 Queue</title>
+      <link>https://sergeyjay.github.io/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</link>
+      <pubDate>Mon, 30 Jan 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</guid>
+      <description>&lt;p&gt;&amp;emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在&lt;code&gt;Queue&lt;/code&gt;中，线程执行完后，从&lt;code&gt;Queue&lt;/code&gt;中获取存储的结果.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linked-post</title>
+      <link>https://sergeyjay.github.io/2015/10/02/linked-post/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2015/10/02/linked-post/</guid>
+      <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
+menu = &amp;quot;&amp;quot;  </description>
+    </item>
+    
+  </channel>
+</rss>

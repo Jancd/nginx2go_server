@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Markdown on Sergey Jay</title>
-    <link>https://SergeyJay.github.io/tags/markdown/</link>
-    <description>Recent content in Markdown on Sergey Jay</description>
+    <title>Markdown on SergeyJay&#39;s blog</title>
+    <link>https://sergeyjay.github.io/tags/markdown/</link>
+    <description>Recent content in Markdown on SergeyJay&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Built by [Sergey Jay](http://github.com/SergeyJay).</copyright>
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
     <lastBuildDate>Mon, 20 Feb 2017 12:10:51 +0200</lastBuildDate>
     
-	<atom:link href="https://SergeyJay.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sergeyjay.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Markdown Cheat Sheet</title>
-      <link>https://SergeyJay.github.io/2017/02/20/markdown-cheat-sheet/</link>
+      <link>https://sergeyjay.github.io/2017/02/20/markdown-cheat-sheet/</link>
       <pubDate>Mon, 20 Feb 2017 12:10:51 +0200</pubDate>
       
-      <guid>https://SergeyJay.github.io/2017/02/20/markdown-cheat-sheet/</guid>
+      <guid>https://sergeyjay.github.io/2017/02/20/markdown-cheat-sheet/</guid>
       <description>&lt;p&gt;This note demonstrates some of what &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt; is capable of doing.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Note: Feel free to play with this page. Unlike regular notes, this doesn&amp;rsquo;t automatically save itself.&lt;/em&gt;&lt;/p&gt;

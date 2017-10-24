@@ -1407,7 +1407,8 @@ ol.toc {
 }
 .archive-article .archive-article-content,
 .archive-article .archive-article-thumbnail {
-  display: table-cell;
+  /* display: table-cell; */
+  display: none;
   vertical-align: top;
 }
 @media screen and (max-width: 559px) {
@@ -1437,12 +1438,13 @@ ol.toc {
 .archive-article .archive-article-thumbnail .thumbnail span {
   width: 100%;
   height: 100%;
-  display: block;
+  /* display: block; */
+  display:block;
 }
 .archive-article .archive-article-thumbnail .thumbnail .thumbnail-image {
   position: absolute;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
+  -moz-background-size: cover; 
   background-size: cover;
   background-position: center;
 }
@@ -1880,6 +1882,9 @@ ol.toc {
 #recent-post li .item-thumbnail .thumbnail .thumbnail-image {
   position: absolute;
   -webkit-background-size: cover;
+
+
+  
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
