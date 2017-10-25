@@ -38,8 +38,53 @@
   </url>
   
   <url>
+    <loc>https://sergeyjay.github.io/2017/04/25/python-pandas%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2017-04-25T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/04/20/python-numpy%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2017-04-20T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/04/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</loc>
+    <lastmod>2017-04-20T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/04/14/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</loc>
+    <lastmod>2017-04-14T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/04/02/what-neural-etwork-is/</loc>
+    <lastmod>2017-04-02T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/03/29/python-tkinter%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2017-03-29T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/03/29/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</loc>
+    <lastmod>2017-03-29T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/03/29/python%E8%BF%9B%E7%A8%8B%E9%94%81/</loc>
+    <lastmod>2017-03-29T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sergeyjay.github.io/2017/03/27/mysql-error-2002/</loc>
     <lastmod>2017-03-27T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/03/22/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2017-03-22T12:00:23+02:00</lastmod>
   </url>
   
   <url>
@@ -53,8 +98,18 @@
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/02/20/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</loc>
-    <lastmod>2017-02-20T12:00:23+02:00</lastmod>
+    <loc>https://sergeyjay.github.io/2017/03/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</loc>
+    <lastmod>2017-03-18T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/02/21/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</loc>
+    <lastmod>2017-02-21T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</loc>
+    <lastmod>2017-02-04T12:00:23+08:00</lastmod>
   </url>
   
   <url>
@@ -68,7 +123,7 @@
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bchannel/</loc>
+    <loc>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bstruct-tag/</loc>
     <lastmod>2016-09-04T12:00:23+08:00</lastmod>
   </url>
   
@@ -173,6 +228,12 @@
   </url>
   
   <url>
+    <loc>https://sergeyjay.github.io/tags/ios/</loc>
+    <lastmod>2017-02-04T12:00:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://sergeyjay.github.io/tags/linux/</loc>
     <lastmod>2017-08-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
@@ -181,6 +242,12 @@
   <url>
     <loc>https://sergeyjay.github.io/tags/mxnet/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sergeyjay.github.io/tags/neural-network/</loc>
+    <lastmod>2017-04-02T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -198,7 +265,7 @@
   
   <url>
     <loc>https://sergeyjay.github.io/tags/python/</loc>
-    <lastmod>2017-02-20T12:00:23+02:00</lastmod>
+    <lastmod>2017-04-25T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   

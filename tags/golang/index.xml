@@ -102,11 +102,11 @@
     </item>
     
     <item>
-      <title>golang之channel</title>
-      <link>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bchannel/</link>
+      <title>golang之struct tag</title>
+      <link>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bstruct-tag/</link>
       <pubDate>Sun, 04 Sep 2016 12:00:23 +0800</pubDate>
       
-      <guid>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bchannel/</guid>
+      <guid>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bstruct-tag/</guid>
       <description>&lt;p&gt;&amp;emsp;golang通过反射获取Struct的Tag,可以实现JSON字符串和Struct类型相互转换.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
