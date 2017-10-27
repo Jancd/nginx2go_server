@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming on SergeyJay&#39;s blog</title>
+    <title>Programming on Sergey&#39;s blog</title>
     <link>https://sergeyjay.github.io/categories/programming/</link>
-    <description>Recent content in Programming on SergeyJay&#39;s blog</description>
+    <description>Recent content in Programming on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
     <lastBuildDate>Thu, 03 Aug 2017 12:00:23 +0800</lastBuildDate>
     
 	<atom:link href="https://sergeyjay.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />

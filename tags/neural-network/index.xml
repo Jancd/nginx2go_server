@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Neural Network on SergeyJay&#39;s blog</title>
+    <title>Neural Network on Sergey&#39;s blog</title>
     <link>https://sergeyjay.github.io/tags/neural-network/</link>
-    <description>Recent content in Neural Network on SergeyJay&#39;s blog</description>
+    <description>Recent content in Neural Network on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
     <lastBuildDate>Sun, 02 Apr 2017 12:00:23 +0200</lastBuildDate>
     
 	<atom:link href="https://sergeyjay.github.io/tags/neural-network/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,18 @@
       <pubDate>Sun, 02 Apr 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/2017/04/02/what-neural-etwork-is/</guid>
-      <description>&lt;p&gt;&amp;emsp;What neural etwork is?&lt;/p&gt;
+      <description>&lt;p&gt;&amp;emsp;神经网络是什么东西呢?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mxnet手写体识别</title>
+      <link>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</link>
+      <pubDate>Wed, 15 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</guid>
+      <description>&lt;p&gt;&amp;emsp;在本教程中，我们将逐步介绍如何使用MNIST数据集构建手写的数字分类器.对于一个刚刚接触深度学习的朋友来说，这个练习可以说是“Hello World”.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

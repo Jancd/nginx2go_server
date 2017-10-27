@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on SergeyJay&#39;s blog</title>
+    <title>Tags on Sergey&#39;s blog</title>
     <link>https://sergeyjay.github.io/tags/</link>
-    <description>Recent content in Tags on SergeyJay&#39;s blog</description>
+    <description>Recent content in Tags on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
     <lastBuildDate>Fri, 04 Aug 2017 12:00:23 +0800</lastBuildDate>
     
 	<atom:link href="https://sergeyjay.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -60,7 +60,7 @@
     <item>
       <title>Mxnet</title>
       <link>https://sergeyjay.github.io/tags/mxnet/</link>
-      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/tags/mxnet/</guid>
       <description></description>

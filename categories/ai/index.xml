@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ai on SergeyJay&#39;s blog</title>
+    <title>Ai on Sergey&#39;s blog</title>
     <link>https://sergeyjay.github.io/categories/ai/</link>
-    <description>Recent content in Ai on SergeyJay&#39;s blog</description>
+    <description>Recent content in Ai on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Jay. </copyright>
+    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
     <lastBuildDate>Wed, 27 Sep 2017 12:00:23 +0200</lastBuildDate>
     
 	<atom:link href="https://sergeyjay.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" />
@@ -29,7 +29,51 @@
       <pubDate>Sun, 02 Apr 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/2017/04/02/what-neural-etwork-is/</guid>
-      <description>&lt;p&gt;&amp;emsp;What neural etwork is?&lt;/p&gt;
+      <description>&lt;p&gt;&amp;emsp;神经网络是什么东西呢?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mxnet使用预训练模型预测</title>
+      <link>https://sergeyjay.github.io/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
+      <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
+      <description>&lt;p&gt;&amp;emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mxnet手写体识别</title>
+      <link>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</link>
+      <pubDate>Wed, 15 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</guid>
+      <description>&lt;p&gt;&amp;emsp;在本教程中，我们将逐步介绍如何使用MNIST数据集构建手写的数字分类器.对于一个刚刚接触深度学习的朋友来说，这个练习可以说是“Hello World”.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mxnet线性回归</title>
+      <link>https://sergeyjay.github.io/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</link>
+      <pubDate>Sun, 12 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</guid>
+      <description>&lt;p&gt;&amp;emsp;在本文，我们将介绍如何通过使用 &lt;code&gt;mxnet&lt;/code&gt; 的 &lt;code&gt;api&lt;/code&gt; 实现线性回归。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mxnet安装</title>
+      <link>https://sergeyjay.github.io/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 11 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;&amp;emsp;mxnet学习笔记,安装.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
