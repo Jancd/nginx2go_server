@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>python存储进程结果 Queue &middot; Sergey&#39;s blog</title>
+    <title>golang之goroutine &middot; Sergey&#39;s blog</title>
     <meta name="generator" content="Hugo 0.29" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,7 +10,7 @@
       <meta name="description" content="">
     
     
-    <link rel="canonical" href="http://sergey.coding.me/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/"/>
+    <link rel="canonical" href="http://sergey.coding.me/2016/07/26/golang%E4%B9%8Bgoroutine/"/>
     <link rel="icon" href="http://sergey.coding.me/favicon.ico">
     <link rel="apple-touch-icon" href="http://sergey.coding.me/apple-touch-icon.png"/>
     <link rel="stylesheet" href="http://sergey.coding.me/css/style.css">
@@ -20,17 +20,17 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="python存储进程结果 Queue" />
-<meta property="og:description" content="&emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在Queue中，线程执行完后，从Queue中获取存储的结果.
+    <meta property="og:title" content="golang之goroutine" />
+<meta property="og:description" content="&emsp;goroutine真的是非常强大,她是一个伟大的设计.
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://sergey.coding.me/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/" />
+<meta property="og:url" content="http://sergey.coding.me/2016/07/26/golang%E4%B9%8Bgoroutine/" />
 
 
 
-<meta property="article:published_time" content="2017-01-30T12:00:23&#43;02:00"/>
-<meta property="article:modified_time" content="2017-01-30T12:00:23&#43;02:00"/>
+<meta property="article:published_time" content="2016-07-26T12:00:23&#43;08:00"/>
+<meta property="article:modified_time" content="2016-07-26T12:00:23&#43;08:00"/>
 
 
 
@@ -44,21 +44,21 @@
 
     
     
-<meta itemprop="name" content="python存储进程结果 Queue">
-<meta itemprop="description" content="&emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在Queue中，线程执行完后，从Queue中获取存储的结果.
+<meta itemprop="name" content="golang之goroutine">
+<meta itemprop="description" content="&emsp;goroutine真的是非常强大,她是一个伟大的设计.
 
 ">
 
 
-<meta itemprop="dateModified" content="2017-01-30T12:00:23&#43;02:00" />
-<meta itemprop="wordCount" content="151">
+<meta itemprop="dateModified" content="2016-07-26T12:00:23&#43;08:00" />
+<meta itemprop="wordCount" content="124">
 
 
 
-<meta itemprop="keywords" content="python," />
+<meta itemprop="keywords" content="golang," />
 
-    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="python存储进程结果 Queue"/>
-<meta name="twitter:description" content="&emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在Queue中，线程执行完后，从Queue中获取存储的结果.
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="golang之goroutine"/>
+<meta name="twitter:description" content="&emsp;goroutine真的是非常强大,她是一个伟大的设计.
 
 "/>
 <meta name="twitter:site" content="@SergeyJay"/>
@@ -276,9 +276,9 @@
         
 
         <header class="article-header">
-    <a href="http://sergey.coding.me/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/">
+    <a href="http://sergey.coding.me/2016/07/26/golang%E4%B9%8Bgoroutine/">
     <h1 class="article-title" itemprop="name">
-        python存储进程结果 Queue
+        golang之goroutine
     </h1>
     </a>
     <div class="article-meta">
@@ -286,9 +286,9 @@
         
         <div class="article-date">
             <i class="fa fa-calendar"></i>
-            <time datetime="2017-01-30 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-01-30</time>
+            <time datetime="2016-07-26 12:00:23 &#43;0800 CST" itemprop="datePublished">2016-07-26</time>
             &middot;
-            151
+            124
             words
             &middot;
             1
@@ -316,7 +316,7 @@
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://sergey.coding.me/tags/python">python</a>
+                <a class="article-category-link" href="http://sergey.coding.me/tags/golang">golang</a>
                 
                 
             </div>
@@ -326,104 +326,139 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>&emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在<code>Queue</code>中，线程执行完后，从<code>Queue</code>中获取存储的结果.</p>
+            <p>&emsp;goroutine真的是非常强大,她是一个伟大的设计.</p>
 
 <p></p>
 
 <p><em>Note:This blog without all the resources that are outside the original,reproduced please indicate the source.</em></p>
 
-<h2 id="导入线程-队列的标准模块">导入线程,队列的标准模块</h2>
+<p>&emsp; <em>文章内容多源自 [Go in action]</em></p>
 
-<pre><code class="language-python">import threading
-import time
-from queue import Queue
+<p>&emsp;一个进程在启动的时候，会创建一个主线程，这个主线程结束的时候，程序进程也就终止了，所以一个进程至少有一个线程，这也是我们在main函数里，使用goroutine的时候，要让主线程等待的原因，因为主线程结束了，程序就终止了，那么就有可能会看不到goroutine的输出。</p>
+
+<p>&emsp;go语言中并发指的是让某个函数独立于其他函数运行的能力，一个goroutine就是一个独立的工作单元，Go的runtime（运行时）会在逻辑处理器上调度这些goroutine来运行，一个逻辑处理器绑定一个操作系统线程，所以说goroutine不是线程，它是一个协程，也是这个原因，它是由Go语言运行时本身的算法实现的。</p>
+
+<ul>
+<li>几个概念：</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="left">概念</th>
+<th align="left">| 说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">进程</td>
+<td align="left">| 一个程序对应一个独立程序空间</td>
+</tr>
+
+<tr>
+<td align="left">线程</td>
+<td align="left">| 一个执行空间，一个进程可以有多个线程</td>
+</tr>
+
+<tr>
+<td align="left">逻辑处理器</td>
+<td align="left">| 执行创建的goroutine，绑定一个线程</td>
+</tr>
+
+<tr>
+<td align="left">调度器</td>
+<td align="left">| Go运行时中的，分配goroutine给不同的逻辑处理器</td>
+</tr>
+
+<tr>
+<td align="left">全局运行队列</td>
+<td align="left">| 所有刚创建的goroutine都会放到这里</td>
+</tr>
+
+<tr>
+<td align="left">本地运行队列</td>
+<td align="left">| 逻辑处理器的goroutine队列</td>
+</tr>
+</tbody>
+</table>
+
+<p>&emsp;当我们创建一个goroutine的后，会先存放在全局运行队列中，等待Go运行时的调度器进行调度，把他们分配给其中的一个逻辑处理器，并放到这个逻辑处理器对应的本地运行队列中，最终等着被逻辑处理器执行即可。</p>
+
+<p>&emsp;这一套管理、调度、执行goroutine的方式称之为Go的并发。并发可以同时做很多事情，比如有个goroutine执行了一半，就被暂停执行其他goroutine去了，这是Go控制管理的。所以并发的概念和并行不一样，并行指的是在不同的物理处理器上同时执行不同的代码片段，并行可以同时做很多事情，而并发是同时管理很多事情，因为操作系统和硬件的总资源比较少，所以并发的效果要比并行好的多，使用较少的资源做更多的事情，也是Go语言提倡的。</p>
+
+<p>&emsp;Go的并发原理我们刚刚讲了，那么Go的并行是怎样的呢？其实答案非常简单，多创建一个逻辑处理器就好了，这样调度器就可以同时分配全局运行队列中的goroutine到不同的逻辑处理器上并行执行。</p>
+
+<pre><code>func main() {
+	var wg sync.WaitGroup
+	wg.Add(2)
+	go func(){
+		defer wg.Done()
+		for i:=1;i&lt;100;i++ {
+			fmt.Println(&quot;A:&quot;,i)
+		}
+	}()
+	go func(){
+		defer wg.Done()
+		for i:=1;i&lt;100;i++ {
+			fmt.Println(&quot;B:&quot;,i)
+		}
+	}()
+	wg.Wait()
+}
 </code></pre>
 
-<h2 id="定义一个被多线程调用的函数">定义一个被多线程调用的函数</h2>
+<p>&emsp;这是一个简单的并发程序。创建一个goroutine是通过go 关键字的，其后跟一个函数或者方法即可。</p>
 
-<p>函数的参数是一个列表l和一个队列<code>q</code>，函数的功能是，对列表的每个元素进行平方计算，将结果保存在队列中</p>
+<p>&emsp;这是一个简单的并发程序。创建一个goroutine是通过go 关键字的，其后跟一个函数或者方法即可。
+这里的sync.WaitGroup其实是一个计数的信号量，使用它的目的是要main函数等待两个goroutine执行完成后再结束，不然这两个goroutine还在运行的时候，程序就结束了，看不到想要的结果。</p>
 
-<pre><code class="language-python">def job(l,q):
-    for i in range (len(l)):
-        l[i] = l[i]**2
-    q.put(l)   #多线程调用的函数不能用return返回值
+<p>&emsp;这是一个简单的并发程序。创建一个goroutine是通过go 关键字的，其后跟一个函数或者方法即可。</p>
+
+<p>&emsp;sync.WaitGroup的使用也非常简单，先是使用Add 方法设设置计算器为2，每一个goroutine的函数执行完之后，就调用Done方法减1。Wait方法的意思是如果计数器大于0，就会阻塞，所以main 函数会一直等待2个goroutine完成后，再结束。</p>
+
+<p>&emsp;我们运行这个程序，会发现A和B前缀会交叉出现，并且每次运行的结果可能不一样，这就是Go调度器调度的结果。</p>
+
+<p>&emsp;默认情况下，Go默认是给每个可用的物理处理器都分配一个逻辑处理器，因为我的电脑是4核的，所以上面的例子默认创建了4个逻辑处理器，所以这个例子中同时也有并行的调度，如果我们强制只使用一个逻辑处理器，我们再看看结果。</p>
+
+<pre><code>func main() {
+	runtime.GOMAXPROCS(1)
+	var wg sync.WaitGroup
+	wg.Add(2)
+	go func(){
+		defer wg.Done()
+		for i:=1;i&lt;100;i++ {
+			fmt.Println(&quot;A:&quot;,i)
+		}
+	}()
+	go func(){
+		defer wg.Done()
+		for i:=1;i&lt;100;i++ {
+			fmt.Println(&quot;B:&quot;,i)
+		}
+	}()
+	wg.Wait()
+}
 </code></pre>
 
-<h2 id="定义一个多线程函数">定义一个多线程函数</h2>
+<p>&emsp;设置逻辑处理器个数也非常简单，在程序开头使用runtime.GOMAXPROCS(1)即可，这里设置的数量是1。我们这时候再运行，会发现先打印A，再打印B。</p>
 
-<p>在多线程函数中定义一个<code>Queue</code>，用来保存返回值，代替<code>return</code>，定义一个多线程列表，初始化一个多维数据列表，用来处理：</p>
+<p>&emsp;这里我们不要误认为是顺序执行，这里之所以顺序输出的原因，是因为我们的goroutine执行时间太短暂了，还没来得及切换到第2个goroutine，第1个goroutine就完成了。这里我们可以把每个goroutine的执行时间拉长一些，就可以看到并发的效果了，这里不再示例了，大家自己试试。</p>
 
-<pre><code class="language-python">def multithreading():
-    q =Queue()    #q中存放返回值，代替return的返回值
-    threads = []
-    data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
+<p>&emsp;对于逻辑处理器的个数，不是越多越好，要根据电脑的实际物理核数，如果不是多核的，设置再多的逻辑处理器个数也没用，如果需要设置的话，一般我们采用如下代码设置。</p>
+
+<pre><code>runtime.GOMAXPROCS(runtime.NumCPU())
 </code></pre>
 
-<p>在多线程函数中定义四个线程，启动线程，将每个线程添加到多线程的列表中</p>
-
-<pre><code class="language-python">for i in range(4):   #定义四个线程
-    t = threading.Thread(target=job,args=(data[i],q)) #Thread首字母要大写，被调用的job函数没有括号，只是一个索引，参数在后面
-    t.start()#开始线程
-    threads.append(t) #把每个线程append到线程列表中
-</code></pre>
-
-<p>分别<code>join</code>四个线程到主线程</p>
-
-<pre><code class="language-python">for thread in threads:
-    thread.join()
-</code></pre>
-
-<p>定义一个空的列表<code>results</code>，将四个线运行后保存在队列中的结果返回给空列表<code>results</code></p>
-
-<pre><code class="language-python">results = []
-for _ in range(4):
-    results.append(q.get())  #q.get()按顺序从q中拿出一个值
-print(results)
-</code></pre>
-
-<h2 id="完整的代码">完整的代码</h2>
-
-<pre><code class="language-python">import threading
-import time
-
-from queue import Queue
-
-def job(l,q):
-    for i in range (len(l)):
-        l[i] = l[i]**2
-    q.put(l)
-
-def multithreading():
-    q =Queue()
-    threads = []
-    data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
-    for i in range(4):
-        t = threading.Thread(target=job,args=(data[i],q))
-        t.start()
-        threads.append(t)
-    for thread in threads:
-        thread.join()
-    results = []
-    for _ in range(4):
-        results.append(q.get())
-    print(results)
-
-if __name___=='__main__':
-    multithreading()
-</code></pre>
-
-<p>最后运行结果为:</p>
-
-<pre><code class="language-python">[[1, 4, 9], [9, 16, 25], [16, 16, 16], [25, 25, 25]]
-</code></pre>
+<p>&emsp;所以对于并发来说，就是Go语言本身自己实现的调度，对于并行来说，是和运行的电脑的物理处理器的核数有关的，多核就可以并行并发，单核只能并发了。</p>
         </div>
         <footer class="article-footer">
-    <a data-url="http://sergey.coding.me/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/" data-id="cd45ea6122d478f5d5789bd155667d49" class="article-share-link">
+    <a data-url="http://sergey.coding.me/2016/07/26/golang%E4%B9%8Bgoroutine/" data-id="9d7f9296c538b3ad2f398b0df2680cee" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://sergey.coding.me/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/#disqus_thread" class="article-comment-link">
+    <a href="http://sergey.coding.me/2016/07/26/golang%E4%B9%8Bgoroutine/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -499,20 +534,20 @@ if __name___=='__main__':
     
 <nav id="article-nav">
     
-    <a href="http://sergey.coding.me/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="http://sergey.coding.me/2016/07/17/golang%E4%B9%8Breader%E5%92%8Cwriter/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
-      <div class="article-nav-title">golang闭包使用注意</div>
+      <div class="article-nav-title">golang之Reader和Writer</div>
     </a>
     
 
     
-    <a href="http://sergey.coding.me/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="http://sergey.coding.me/2016/07/28/golang%E4%B9%8Bchannel/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
-      <div class="article-nav-title">GCD产生deadlock</div>
+      <div class="article-nav-title">golang之channel</div>
     </a>
     
 </nav>

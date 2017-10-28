@@ -589,8 +589,9 @@ code {
 }
 #main-nav-mobile .menu:before,
 #main-nav-mobile .menu:after {
-  content: "";
-  display: table;
+  /* content: ""; */
+  /* display: table; */
+  display:none;
 }
 #main-nav-mobile .menu:after {
   clear: both;
@@ -606,7 +607,8 @@ code {
 }
 @media screen and (max-width: 559px) {
   #main-nav-mobile .menu .search-form-input {
-    display: block;
+    /* display: block; */
+    display: none;
   }
 }
 #main-nav-mobile .menu .search-form-input::-webkit-search-results-decoration,

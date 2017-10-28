@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About Me on Sergey&#39;s blog</title>
-    <link>https://sergeyjay.github.io/about/</link>
+    <link>http://sergey.coding.me/about/</link>
     <description>Recent content in About Me on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
     <lastBuildDate>Mon, 23 Oct 2017 21:49:20 +0200</lastBuildDate>
     
-	<atom:link href="https://sergeyjay.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sergey.coding.me/about/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
