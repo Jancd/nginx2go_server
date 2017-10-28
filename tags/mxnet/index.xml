@@ -2,33 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mxnet on Sergey&#39;s blog</title>
-    <link>https://sergeyjay.github.io/tags/mxnet/</link>
+    <link>http://sergey.coding.me/tags/mxnet/</link>
     <description>Recent content in Mxnet on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
     <lastBuildDate>Fri, 24 Mar 2017 12:00:23 +0200</lastBuildDate>
     
-	<atom:link href="https://sergeyjay.github.io/tags/mxnet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sergey.coding.me/tags/mxnet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mxnet使用预训练模型预测</title>
-      <link>https://sergeyjay.github.io/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
+      <link>http://sergey.coding.me/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
       <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
+      <guid>http://sergey.coding.me/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
       <description>&lt;p&gt;&amp;emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>mxnet大规模图像分类</title>
+      <link>http://sergey.coding.me/2017/03/24/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</link>
+      <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/03/24/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</guid>
+      <description>&lt;p&gt;&amp;emsp;写在前面:本教程对计算机硬件要求较高,教程中使用了AWS提供的服务.&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;训练一个具有大量图像的神经网络会带来一些挑战。即使使用最新的GPU，也不可能在合理的时间内使用单个GPU来训练大型网络。在一台机器中使用多个gpu可以稍微减轻这个问题。但是，可以连接到一台机器上的gpu的数量是有限的(通常为8或16)。本教程解释了如何使用多个包含多个gpu的多台机器来训练大的网络，使用tb级的数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>mxnet手写体识别</title>
-      <link>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</link>
+      <link>http://sergey.coding.me/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</link>
       <pubDate>Wed, 15 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</guid>
+      <guid>http://sergey.coding.me/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</guid>
       <description>&lt;p&gt;&amp;emsp;在本教程中，我们将逐步介绍如何使用MNIST数据集构建手写的数字分类器.对于一个刚刚接触深度学习的朋友来说，这个练习可以说是“Hello World”.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -36,10 +49,10 @@
     
     <item>
       <title>mxnet线性回归</title>
-      <link>https://sergeyjay.github.io/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</link>
+      <link>http://sergey.coding.me/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</link>
       <pubDate>Sun, 12 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</guid>
+      <guid>http://sergey.coding.me/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</guid>
       <description>&lt;p&gt;&amp;emsp;在本文，我们将介绍如何通过使用 &lt;code&gt;mxnet&lt;/code&gt; 的 &lt;code&gt;api&lt;/code&gt; 实现线性回归。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -47,10 +60,10 @@
     
     <item>
       <title>mxnet安装</title>
-      <link>https://sergeyjay.github.io/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</link>
+      <link>http://sergey.coding.me/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sat, 11 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</guid>
+      <guid>http://sergey.coding.me/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</guid>
       <description>&lt;p&gt;&amp;emsp;mxnet学习笔记,安装.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -58,10 +71,10 @@
     
     <item>
       <title>Linked-post</title>
-      <link>https://sergeyjay.github.io/2015/10/02/linked-post/</link>
+      <link>http://sergey.coding.me/2015/10/02/linked-post/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2015/10/02/linked-post/</guid>
+      <guid>http://sergey.coding.me/2015/10/02/linked-post/</guid>
       <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
 menu = &amp;quot;&amp;quot;  </description>
     </item>

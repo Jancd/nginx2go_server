@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ios on Sergey&#39;s blog</title>
-    <link>https://sergeyjay.github.io/tags/ios/</link>
+    <link>http://sergey.coding.me/tags/ios/</link>
     <description>Recent content in Ios on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
     <lastBuildDate>Sat, 04 Feb 2017 12:00:23 +0800</lastBuildDate>
     
-	<atom:link href="https://sergeyjay.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sergey.coding.me/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GCD产生deadlock</title>
-      <link>https://sergeyjay.github.io/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</link>
+      <link>http://sergey.coding.me/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</link>
       <pubDate>Sat, 04 Feb 2017 12:00:23 +0800</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</guid>
+      <guid>http://sergey.coding.me/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</guid>
       <description>&lt;p&gt;&amp;emsp;iOS开发中关于GCD中同步函数+主队列产生死锁的一点理解.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
