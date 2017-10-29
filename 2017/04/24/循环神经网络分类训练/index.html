@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>循环神经网络分类训练 &middot; Sergey&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.29" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sergey Chueng">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="http://sergey.coding.me/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/"/>
+    <link rel="icon" href="http://sergey.coding.me/favicon.ico">
+    <link rel="apple-touch-icon" href="http://sergey.coding.me/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="http://sergey.coding.me/css/style.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/css/monokai.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="循环神经网络分类训练" />
+<meta property="og:description" content="&emsp;本文使用 RNN 来进行分类的训练 (Classification). 会继续使用到手写数字 MNIST 数据集. 让 RNN 从每张图片的第一行像素读到最后一行, 然后再进行分类判断.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sergey.coding.me/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/" />
+
+
+
+<meta property="article:published_time" content="2017-04-24T12:00:23&#43;02:00"/>
+<meta property="article:modified_time" content="2017-04-24T12:00:23&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="循环神经网络分类训练">
+<meta itemprop="description" content="&emsp;本文使用 RNN 来进行分类的训练 (Classification). 会继续使用到手写数字 MNIST 数据集. 让 RNN 从每张图片的第一行像素读到最后一行, 然后再进行分类判断.
+">
+
+
+<meta itemprop="dateModified" content="2017-04-24T12:00:23&#43;02:00" />
+<meta itemprop="wordCount" content="466">
+
+
+
+<meta itemprop="keywords" content="tensorflow,neural-network," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="循环神经网络分类训练"/>
+<meta name="twitter:description" content="&emsp;本文使用 RNN 来进行分类的训练 (Classification). 会继续使用到手写数字 MNIST 数据集. 让 RNN 从每张图片的第一行像素读到最后一行, 然后再进行分类判断.
+"/>
+<meta name="twitter:site" content="@SergeyJay"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://sergey.coding.me" id="logo">
+          
+          <i class="logo" style="background-image: url('http://sergey.coding.me/css/images/brain.jpg')"></i>
+          
+          <span class="site-title">Sergey&#39;s blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/categories/">Categories</a>
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About Me</a>
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://sergey.coding.me/css/images/profile.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="http://sergey.coding.me" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/categories/">Categories</a></td>
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About Me</a></td>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="http://sergey.coding.me" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="http://sergey.coding.me/css/images/profile.jpg">
+      
+      <h2 id="name">Sergey Chueng</h2>
+      <h3 id="title"> Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Shanghai</span>
+      
+          <a id="follow" href="https://github.com/SergeyJay">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        54
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          11
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/SergeyJay" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/zshangan@iCloud.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/SergeyJay" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="http://sergey.coding.me/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="http://sergey.coding.me/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/">
+    <h1 class="article-title" itemprop="name">
+        循环神经网络分类训练
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-04-24 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-04-24</time>
+            &middot;
+            466
+            words
+            &middot;
+            3
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://sergey.coding.me/categories/ai">AI</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://sergey.coding.me/tags/tensorflow">tensorflow</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://sergey.coding.me/tags/neural-network">neural-network</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;本文使用 <code>RNN</code> 来进行分类的训练 (Classification). 会继续使用到手写数字 MNIST 数据集. 让 RNN 从每张图片的第一行像素读到最后一行, 然后再进行分类判断.
+</p>
+
+<h1 id="设置rnn参数">设置RNN参数</h1>
+
+<p>导入 MNIST 数据并确定 RNN 的各种参数(hyper-parameters):</p>
+
+<pre><code class="language-python">import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+tf.set_random_seed(1)   # set random seed
+
+# 导入数据
+mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
+
+# hyperparameters
+lr = 0.001                  # learning rate
+training_iters = 100000     # train step 上限
+batch_size = 128            
+n_inputs = 28               # MNIST data input (img shape: 28*28)
+n_steps = 28                # time steps
+n_hidden_units = 128        # neurons in hidden layer
+n_classes = 10              # MNIST classes (0-9 digits)
+</code></pre>
+
+<p>接着定义 <code>x</code>, <code>y</code> 的 <code>placeholder</code> 和 <code>weights</code>, <code>biases</code> 的初始状况.</p>
+
+<pre><code class="language-python"># x y placeholder
+x = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
+y = tf.placeholder(tf.float32, [None, n_classes])
+
+# 对 weights biases 初始值的定义
+weights = {
+    # shape (28, 128)
+    'in': tf.Variable(tf.random_normal([n_inputs, n_hidden_units])),
+    # shape (128, 10)
+    'out': tf.Variable(tf.random_normal([n_hidden_units, n_classes]))
+}
+biases = {
+    # shape (128, )
+    'in': tf.Variable(tf.constant(0.1, shape=[n_hidden_units, ])),
+    # shape (10, )
+    'out': tf.Variable(tf.constant(0.1, shape=[n_classes, ]))
+}
+</code></pre>
+
+<h1 id="定义rnn-主体结构">定义RNN主体结构</h1>
+
+<p>定义 RNN 主体结构, 这个 RNN 总共有 3 个组成部分 ( <code>input_layer</code>, <code>cell</code>, <code>output_layer</code>). 首先先定义 <code>input_layer</code>:</p>
+
+<pre><code class="language-python">def RNN(X, weights, biases):
+    # 原始的 X 是 3 维数据, 需要把它变成 2 维数据才能使用 weights 的矩阵乘法
+    # X ==&gt; (128 batches * 28 steps, 28 inputs)
+    X = tf.reshape(X, [-1, n_inputs])
+
+    # X_in = W*X + b
+    X_in = tf.matmul(X, weights['in']) + biases['in']
+    # X_in ==&gt; (128 batches, 28 steps, 128 hidden) 换回3维
+    X_in = tf.reshape(X_in, [-1, n_steps, n_hidden_units])
+</code></pre>
+
+<p>接着是 <code>cell</code> 中的计算, 有两种途径:</p>
+
+<ol>
+<li>使用 <code>tf.nn.rnn(cell, inputs)</code> (不推荐<a href="http://www.wildml.com/2016/08/rnns-in-tensorflow-a-practical-guide-and-undocumented-features/">原因</a>). 但是如果使用这种方法, 可以参考<a href="https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/recurrent_network.py">这个代码</a>;</li>
+<li>使用 <code>tf.nn.dynamic_rnn(cell, inputs)</code> (推荐). 这里将使用这种方式.</li>
+</ol>
+
+<p>因 Tensorflow 版本升级原因, <code>state_is_tuple=True</code> 将在之后的版本中变为默认. 对于 <code>lstm</code> 来说, <code>state</code>可被分为<code>(c_state, h_state)</code>.</p>
+
+<pre><code class="language-python">    # 使用 basic LSTM Cell.
+    lstm_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_units, forget_bias=1.0, state_is_tuple=True)
+    init_state = lstm_cell.zero_state(batch_size, dtype=tf.float32) # 初始化全零 state
+</code></pre>
+
+<p>如果使用<code>tf.nn.dynamic_rnn(cell, inputs)</code>, 需要确定 <code>inputs</code> 的格式. <code>tf.nn.dynamic_rnn</code> 中的 <code>time_major</code> 参数会针对不同 <code>inputs</code> 格式有不同的值.</p>
+
+<ol>
+<li>如果 <code>inputs</code> 为 (batches, steps, inputs) ==&gt; <code>time_major=False</code>;</li>
+<li>如果 <code>inputs</code> 为 (steps, batches, inputs) ==&gt; <code>time_major=True</code>;</li>
+</ol>
+
+<pre><code class="language-python">    outputs, final_state = tf.nn.dynamic_rnn(lstm_cell, X_in, initial_state=init_state, time_major=False)
+</code></pre>
+
+<p>最后是 <code>output_layer</code> 和 <code>return</code> 的值. 因为这个例子的特殊性, 有两种方法可以求得 <code>results</code>.</p>
+
+<p><strong>方式一:</strong>
+直接调用<code>final_state</code> 中的 <code>h_state</code> (<code>final_state[1]</code>) 来进行运算:</p>
+
+<pre><code class="language-python">    results = tf.matmul(final_state[1], weights['out']) + biases['out']
+</code></pre>
+
+<p><strong>方式二:</strong>
+调用最后一个 <code>outputs</code> (在这个例子中,和上面的<code>final_state[1]</code>是一样的):</p>
+
+<pre><code class="language-python">    # 把 outputs 变成 列表 [(batch, outputs)..] * steps
+    outputs = tf.unstack(tf.transpose(outputs, [1,0,2]))
+    results = tf.matmul(outputs[-1], weights['out']) + biases['out']    #选取最后一个 output
+</code></pre>
+
+<p>在 <code>def RNN()</code> 的最后输出 <code>result</code></p>
+
+<pre><code class="language-python">    return results
+</code></pre>
+
+<p>定义好了 RNN 主体结构后, 计算 <code>cost</code> 和 <code>train_op</code>:</p>
+
+<pre><code class="language-python">pred = RNN(x, weights, biases)
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(pred, y))
+train_op = tf.train.AdamOptimizer(lr).minimize(cost)
+</code></pre>
+
+<h1 id="训练rnn">训练RNN</h1>
+
+<p>训练时, 不断输出 <code>accuracy</code>, 观看结果:</p>
+
+<pre><code class="language-python">correct_pred = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+
+# init= tf.initialize_all_variables() # tf 马上就要废弃这种写法
+# 替换成下面的写法:
+init = tf.global_variables_initializer()
+
+with tf.Session() as sess:
+    sess.run(init)
+    step = 0
+    while step * batch_size &lt; training_iters:
+        batch_xs, batch_ys = mnist.train.next_batch(batch_size)
+        batch_xs = batch_xs.reshape([batch_size, n_steps, n_inputs])
+        sess.run([train_op], feed_dict={
+            x: batch_xs,
+            y: batch_ys,
+        })
+        if step % 20 == 0:
+            print(sess.run(accuracy, feed_dict={
+            x: batch_xs,
+            y: batch_ys,
+        }))
+        step += 1
+</code></pre>
+
+<p>最终 <code>accuracy</code> 的结果如下:</p>
+
+<pre><code>0.1875
+0.65625
+0.726562
+0.757812
+0.820312
+0.796875
+0.859375
+0.921875
+0.921875
+0.898438
+0.828125
+0.890625
+0.9375
+0.921875
+0.9375
+0.929688
+0.953125
+....
+</code></pre>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://sergey.coding.me/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/" data-id="4b1938f77359d5479e93546410b6e582" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://sergey.coding.me/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="http://sergey.coding.me/2017/04/22/tensorflow-saver/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">TensorFlow Saver</div>
+    </a>
+    
+
+    
+    <a href="http://sergey.coding.me/2017/04/25/python-pandas%E7%9B%B8%E5%85%B3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">python pandas相关</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/ai">
+                    ai
+                </a>
+                <span class="category-list-count">19</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">34</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/tools">
+                    tools
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/database">
+                    database
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">23</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/ios">
+                    ios
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/mxnet">
+                    mxnet
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/neural-network">
+                    neural-network
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">12</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/pythorh">
+                    pythorh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/rpc">
+                    rpc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Built by <a href="http://github.com/SergeyJay">Sergey Chueng</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="http://sergey.coding.me/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://sergey.coding.me/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

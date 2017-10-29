@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>TensorFlow自编码 &middot; Sergey&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.29" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sergey Chueng">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="http://sergey.coding.me/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/"/>
+    <link rel="icon" href="http://sergey.coding.me/favicon.ico">
+    <link rel="apple-touch-icon" href="http://sergey.coding.me/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="http://sergey.coding.me/css/style.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/css/monokai.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="TensorFlow自编码" />
+<meta property="og:description" content="&emsp;用神经网络如何进行非监督形式的学习(unsupervised learning),也就是自编码( autoencoder).自编码是一种神经网络的形式.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sergey.coding.me/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/" />
+
+
+
+<meta property="article:published_time" content="2017-04-30T12:00:23&#43;02:00"/>
+<meta property="article:modified_time" content="2017-04-30T12:00:23&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="TensorFlow自编码">
+<meta itemprop="description" content="&emsp;用神经网络如何进行非监督形式的学习(unsupervised learning),也就是自编码( autoencoder).自编码是一种神经网络的形式.
+
+">
+
+
+<meta itemprop="dateModified" content="2017-04-30T12:00:23&#43;02:00" />
+<meta itemprop="wordCount" content="653">
+
+
+
+<meta itemprop="keywords" content="tensorflow,neural-network," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="TensorFlow自编码"/>
+<meta name="twitter:description" content="&emsp;用神经网络如何进行非监督形式的学习(unsupervised learning),也就是自编码( autoencoder).自编码是一种神经网络的形式.
+
+"/>
+<meta name="twitter:site" content="@SergeyJay"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://sergey.coding.me" id="logo">
+          
+          <i class="logo" style="background-image: url('http://sergey.coding.me/css/images/brain.jpg')"></i>
+          
+          <span class="site-title">Sergey&#39;s blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/categories/">Categories</a>
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About Me</a>
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://sergey.coding.me/css/images/profile.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="http://sergey.coding.me" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/categories/">Categories</a></td>
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About Me</a></td>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="http://sergey.coding.me" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="http://sergey.coding.me/css/images/profile.jpg">
+      
+      <h2 id="name">Sergey Chueng</h2>
+      <h3 id="title"> Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Shanghai</span>
+      
+          <a id="follow" href="https://github.com/SergeyJay">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        54
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          11
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/SergeyJay" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/zshangan@iCloud.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/SergeyJay" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="http://sergey.coding.me/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="http://sergey.coding.me/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/">
+    <h1 class="article-title" itemprop="name">
+        TensorFlow自编码
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-04-30 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-04-30</time>
+            &middot;
+            653
+            words
+            &middot;
+            4
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://sergey.coding.me/categories/ai">AI</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://sergey.coding.me/tags/tensorflow">tensorflow</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://sergey.coding.me/tags/neural-network">neural-network</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;用神经网络如何进行非监督形式的学习(unsupervised learning),也就是自编码( autoencoder).自编码是一种神经网络的形式.</p>
+
+<p></p>
+
+<h1 id="基本概念">基本概念</h1>
+
+<ul>
+<li>&gt;压缩与解压</li>
+</ul>
+
+<p>假设有一个神经网络, 它在做的事情是 接收一张图片, 然后 给它打码, 最后 再从打码后的图片中还原.当压缩的时候, 原有的图片质量被缩减, 解压时用信息量小却包含了所有关键信息的文件恢复出原本的图片,这个过程可以理解为压缩与解压.</p>
+
+<p>这样做的原因是神经网络要接受大量的输入信息, 比如输入信息是高清图片时, 输入信息量可能达到上千万, 让神经网络直接从上千万个信息源中学习是一件很吃力的工作. 所以, 何不压缩一下, 提取出原图片中的最具代表性的信息, 缩减输入信息量, 再把缩减过后的信息放进神经网络学习. 这样学习起来就简单轻松了.</p>
+
+<p>所以, 自编码就能在这时发挥作用. 通过将原数据白色的X 压缩, 解压 成黑色的X, 然后通过对比黑白 X ,求出预测误差, 进行反向传递, 逐步提升自编码的准确性. 训练好的自编码中间这一部分就是能总结原数据的精髓. 可以看出, 从头到尾, 只用到了输入数据 X, 并没有用到 X 对应的数据标签, 所以也可以说自编码是一种非监督学习. 到了真正使用自编码的时候. 通常只会用到自编码前半部分.</p>
+
+<ul>
+<li>&gt;编码器Encoding</li>
+</ul>
+
+<p>Encoder 编码器可以理解为对输入数据的关键信息进行提取的一个过程. 编码器能得到原数据的精髓, 然后只需要再创建一个小的神经网络学习这个精髓的数据,不仅减少了神经网络的负担, 而且同样能达到很好的效果.</p>
+
+<ul>
+<li>&gt;解码器 Decoder</li>
+</ul>
+
+<p>用一个实际例子来说就是模仿并生成手写数字,像<code>MNIST</code>库里的数字那样.</p>
+
+<p><img src="https://raw.githubusercontent.com/dmlc/web-data/master/mxnet/example/mnist.png" alt="来自MNIST数据集的示例图像" /></p>
+
+<p>解码器在训练的时候是要将精髓信息解压成原始信息, 那么这就提供了一个解压器的作用, 甚至可以认为是一个生成器 (类似于GAN). 那做这件事的一种特殊自编码叫做 variational autoencoders.</p>
+
+<h1 id="autoencode">Autoencode</h1>
+
+<p><strong>Autoencoder</strong> 简单来说就是将有很多Feature的数据进行压缩，之后再进行解压的过程。</p>
+
+<p>本质上来说，它也是一个对数据的非监督学习， <strong>PCA</strong> (Principal component analysis)，
+与 Autoencoder 相类似，它的主要功能即对数据进行非监督学习，并将压缩之后得到的“特征值”，这一中间结果正类似于PCA的结果。
+之后再将压缩过的“特征值”进行解压，得到的最终结果与原始数据进行比较，对此进行非监督学习。</p>
+
+<!-- 
+- 第一，是通过Feature的压缩并解压，并将结果与原始数据进行对比，观察处理过后的数据是不是如预期跟原始数据很相像。（这里会用到MNIST数据）
+- 第二，我们只看 `encoder` 压缩的过程，使用它将一个数据集压缩到只有两个Feature时，将数据放入一个二维坐标系内，特征压缩的效果如下：
+
+ <img class="course-image" src="/static/results/tensorflow/5_11_2.png" alt="{{ page.title }}{% increment image-count %}">
+
+ 同样颜色的点，代表分到同一类的数据。（Lebel相同） -->
+
+<p>通过Feature的压缩并解压，并将结果与原始数据进行对比，观察处理过后的数据是不是如预期跟原始数据很相像。（这里会用到MNIST数据）</p>
+
+<pre><code class="language-python"># Parameter
+learning_rate = 0.01
+training_epochs = 5 # 五组训练
+batch_size = 256
+display_step = 1
+examples_to_show = 10
+</code></pre>
+
+<p>MNIST数据，每张图片大小是 28x28 pix，即 784 Features：</p>
+
+<pre><code class="language-python"># Network Parameters
+n_input = 784  # MNIST data input (img shape: 28*28)
+</code></pre>
+
+<ul>
+<li>在压缩环节：把这个Features不断压缩，经过第一个隐藏层压缩至256个 Features，再经过第二个隐藏层压缩至128个。</li>
+<li>在解压环节：将128个Features还原至256个，再经过一步还原至784个。</li>
+<li>在对比环节：比较原始数据与还原后的拥有 784 Features 的数据进行 cost 的对比，根据 cost 来提升我的 Autoencoder 的准确率，下图是两个隐藏层的 weights 和 biases 的定义：</li>
+</ul>
+
+<pre><code class="language-python"># hidden layer settings
+n_hidden_1 = 256 # 1st layer num features
+n_hidden_2 = 128 # 2nd layer num features
+weights = {
+	'encoder_h1':tf.Variable(tf.random_normal([n_input,n_hidden_1])),
+	'encoder_h2': tf.Variable(tf.random_normal([n_hidden_1,n_hidden_2])),
+	'decoder_h1': tf.Variable(tf.random_normal([n_hidden_2,n_hidden_1])),
+	'decoder_h2': tf.Variable(tf.random_normal([n_hidden_1, n_input])),
+	}
+biases = {
+	'encoder_b1': tf.Variable(tf.random_normal([n_hidden_1])),
+	'encoder_b2': tf.Variable(tf.random_normal([n_hidden_2])),
+	'decoder_b1': tf.Variable(tf.random_normal([n_hidden_1])),
+	'decoder_b2': tf.Variable(tf.random_normal([n_input])),
+	}
+</code></pre>
+
+<p>下面定义 <strong>Encoder</strong> 和 <strong>Decoder</strong> ，使用的 Activation function 是 <code>sigmoid</code>，
+压缩之后的值应该在 [0,1] 这个范围内。在 <code>decoder</code> 过程中，通常使用对应于 <code>encoder</code> 的 Activation function：</p>
+
+<pre><code class="language-python"># Building the encoder
+def encoder(x):
+    # Encoder Hidden layer with sigmoid activation #1
+    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights['encoder_h1']),
+                                   biases['encoder_b1']))
+    # Decoder Hidden layer with sigmoid activation #2
+    layer_2 = tf.nn.sigmoid(tf.add(tf.matmul(layer_1, weights['encoder_h2']),
+                                   biases['encoder_b2']))
+    return layer_2
+    
+# Building the decoder
+def decoder(x):
+    # Encoder Hidden layer with sigmoid activation #1
+    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights['decoder_h1']),
+                                   biases['decoder_b1']))
+    # Decoder Hidden layer with sigmoid activation #2
+    layer_2 = tf.nn.sigmoid(tf.add(tf.matmul(layer_1, weights['decoder_h2']),
+                                   biases['decoder_b2']))
+    return layer_2
+</code></pre>
+
+<p>实现 <strong>Encoder</strong> 和 <strong>Decoder</strong> 输出的结果：</p>
+
+<pre><code class="language-python"># Construct model
+encoder_op = encoder(X) 			# 128 Features
+decoder_op = decoder(encoder_op)	# 784 Features
+
+# Prediction
+y_pred = decoder_op	# After 
+# Targets (Labels) are the input data.
+y_true = X			# Before
+</code></pre>
+
+<p>再通过非监督学习进行对照，即对 “原始的有 784 Features 的数据集” 和 “通过 &lsquo;Prediction&rsquo;
+得出的有 784 Features 的数据集” 进行最小二乘法的计算，并且使 cost 最小化:</p>
+
+<pre><code class="language-python"># Define loss and optimizer, minimize the squared error
+cost = tf.reduce_mean(tf.pow(y_true - y_pred, 2))
+optimizer = tf.train.AdamOptimizer(learning_rate).minimize(cost)
+</code></pre>
+
+<p>最后，通过 <code>Matplotlib</code> 的 <code>pyplot</code> 模块将结果显示出来， 注意在输出时MNIST数据集经过压缩之后 x 的最大值是1，而非255：</p>
+
+<pre><code class="language-python"># Launch the graph
+with tf.Session() as sess:
+    # tf 马上就要废弃tf.initialize_all_variables()这种写法
+    # 替换成下面:
+    sess.run(tf.global_variables_initializer())
+    total_batch = int(mnist.train.num_examples/batch_size)
+    # Training cycle
+    for epoch in range(training_epochs):
+        # Loop over all batches
+        for i in range(total_batch):
+            batch_xs, batch_ys = mnist.train.next_batch(batch_size)  # max(x) = 1, min(x) = 0
+            # Run optimization op (backprop) and cost op (to get loss value)
+            _, c = sess.run([optimizer, cost], feed_dict={X: batch_xs})
+        # Display logs per epoch step
+        if epoch % display_step == 0:
+            print(&quot;Epoch:&quot;, '%04d' % (epoch+1),
+                  &quot;cost=&quot;, &quot;{:.9f}&quot;.format(c))
+
+    print(&quot;Optimization Finished!&quot;)
+
+    # # Applying encode and decode over test set
+    encode_decode = sess.run(
+        y_pred, feed_dict={X: mnist.test.images[:examples_to_show]})
+    # Compare original images with their reconstructions
+    f, a = plt.subplots(2, 10, figsize=(10, 2))
+    for i in range(examples_to_show):
+        a[0][i].imshow(np.reshape(mnist.test.images[i], (28, 28)))
+        a[1][i].imshow(np.reshape(encode_decode[i], (28, 28)))
+    plt.show()
+</code></pre>
+
+<p>通过5个 Epoch 的训练，（通常情况下，想要得到好的的效果，我们应进行10 ~ 20个 Epoch 的训练）我们的结果如下：</p>
+
+<p><img src="/static/img/TensorFlow/autocoder1.png" alt="" /></p>
+
+<p>上面一行是真实数据，下面一行是经过 <code>encoder</code> 和 <code>decoder</code> 之后的数据，如果继续进行训练，效果会更好。</p>
+
+<h1 id="encoder">Encoder</h1>
+
+<p>在类型二中，只显示 <code>encoder</code> 之后的数据， 并画在一个二维直角坐标系内。做法很简单，我们将原有 784 Features 的数据压缩成仅剩 2 Features 的数据：</p>
+
+<pre><code class="language-python"># Parameters
+learning_rate = 0.01    # 0.01 this learning rate will be better! Tested
+training_epochs = 10	# 10 Epoch 训练
+batch_size = 256
+display_step = 1
+</code></pre>
+
+<p>通过四层 Hidden Layers 实现将 784 Features 压缩至 2 Features：</p>
+
+<pre><code class="language-python"># hidden layer settings
+n_hidden_1 = 128
+n_hidden_2 = 64
+n_hidden_3 = 10
+n_hidden_4 = 2
+</code></pre>
+
+<p>Weights 和 biases 也要做相应的变化：</p>
+
+<pre><code class="language-python">weights = {
+    'encoder_h1': tf.Variable(tf.truncated_normal([n_input, n_hidden_1],)),
+    'encoder_h2': tf.Variable(tf.truncated_normal([n_hidden_1, n_hidden_2],)),
+    'encoder_h3': tf.Variable(tf.truncated_normal([n_hidden_2, n_hidden_3],)),
+    'encoder_h4': tf.Variable(tf.truncated_normal([n_hidden_3, n_hidden_4],)),
+
+    'decoder_h1': tf.Variable(tf.truncated_normal([n_hidden_4, n_hidden_3],)),
+    'decoder_h2': tf.Variable(tf.truncated_normal([n_hidden_3, n_hidden_2],)),
+    'decoder_h3': tf.Variable(tf.truncated_normal([n_hidden_2, n_hidden_1],)),
+    'decoder_h4': tf.Variable(tf.truncated_normal([n_hidden_1, n_input],)),
+	}
+biases = {
+    'encoder_b1': tf.Variable(tf.random_normal([n_hidden_1])),
+    'encoder_b2': tf.Variable(tf.random_normal([n_hidden_2])),
+    'encoder_b3': tf.Variable(tf.random_normal([n_hidden_3])),
+    'encoder_b4': tf.Variable(tf.random_normal([n_hidden_4])),
+
+    'decoder_b1': tf.Variable(tf.random_normal([n_hidden_3])),
+    'decoder_b2': tf.Variable(tf.random_normal([n_hidden_2])),
+    'decoder_b3': tf.Variable(tf.random_normal([n_hidden_1])),
+    'decoder_b4': tf.Variable(tf.random_normal([n_input])),
+	}
+</code></pre>
+
+<p>与类型一类似，创建四层神经网络。（注意：在第四层时，输出量不再是 [0,1] 范围内的数，而是将数据通过默认的 Linear activation function 调整为 (-∞,∞) ：</p>
+
+<pre><code class="language-python">def encoder(x):
+    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights['encoder_h1']),
+                                   biases['encoder_b1']))
+    layer_2 = tf.nn.sigmoid(tf.add(tf.matmul(layer_1, weights['encoder_h2']),
+                                   biases['encoder_b2']))
+    layer_3 = tf.nn.sigmoid(tf.add(tf.matmul(layer_2, weights['encoder_h3']),
+                                   biases['encoder_b3']))
+    layer_4 = tf.add(tf.matmul(layer_3, weights['encoder_h4']),
+                                    biases['encoder_b4'])
+    return layer_4
+
+
+def decoder(x):
+    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights['decoder_h1']),
+                                   biases['decoder_b1']))
+    layer_2 = tf.nn.sigmoid(tf.add(tf.matmul(layer_1, weights['decoder_h2']),
+                                   biases['decoder_b2']))
+    layer_3 = tf.nn.sigmoid(tf.add(tf.matmul(layer_2, weights['decoder_h3']),
+                                biases['decoder_b3']))
+    layer_4 = tf.nn.sigmoid(tf.add(tf.matmul(layer_3, weights['decoder_h4']),
+                                biases['decoder_b4']))
+    return layer_4
+</code></pre>
+
+<p>在输出图像时，只关心 <code>encoder</code> 压缩之后，即 <code>decoder</code> 解压之前的结果：</p>
+
+<p><img src="/static/img/TensorFlow/autocoder2.png" alt="" /></p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://sergey.coding.me/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/" data-id="232e856ad89c3a569341c6015e17738d" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://sergey.coding.me/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="http://sergey.coding.me/2017/04/29/golang%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">golang匿名函数(闭包)</div>
+    </a>
+    
+
+    
+    <a href="http://sergey.coding.me/2017/06/23/go%E8%AF%AD%E8%A8%80%E7%9A%84goroutine%E8%B0%83%E5%BA%A6%E6%9C%BA%E5%88%B6%E8%BD%AC%E8%BD%BD/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">go语言的goroutine调度机制[转载]</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/ai">
+                    ai
+                </a>
+                <span class="category-list-count">19</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">34</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/tools">
+                    tools
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/database">
+                    database
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">23</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/ios">
+                    ios
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/mxnet">
+                    mxnet
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/neural-network">
+                    neural-network
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">12</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/pythorh">
+                    pythorh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/rpc">
+                    rpc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Built by <a href="http://github.com/SergeyJay">Sergey Chueng</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="http://sergey.coding.me/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://sergey.coding.me/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

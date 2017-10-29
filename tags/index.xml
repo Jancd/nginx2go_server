@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
+    <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Fri, 04 Aug 2017 12:00:23 +0800</lastBuildDate>
     
 	<atom:link href="http://sergey.coding.me/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -60,7 +60,7 @@
     <item>
       <title>Mxnet</title>
       <link>http://sergey.coding.me/tags/mxnet/</link>
-      <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
+      <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
       
       <guid>http://sergey.coding.me/tags/mxnet/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>Neural Network</title>
       <link>http://sergey.coding.me/tags/neural-network/</link>
-      <pubDate>Sun, 02 Apr 2017 12:00:23 +0200</pubDate>
+      <pubDate>Sun, 30 Apr 2017 12:00:23 +0200</pubDate>
       
       <guid>http://sergey.coding.me/tags/neural-network/</guid>
       <description></description>

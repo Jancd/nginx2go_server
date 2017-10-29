@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
+    <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Wed, 27 Sep 2017 12:00:23 +0200</lastBuildDate>
     
 	<atom:link href="http://sergey.coding.me/post/index.xml" rel="self" type="application/rss+xml" />
@@ -57,6 +57,17 @@
     </item>
     
     <item>
+      <title>TensorFlow自编码</title>
+      <link>http://sergey.coding.me/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Sun, 30 Apr 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</guid>
+      <description>&lt;p&gt;&amp;emsp;用神经网络如何进行非监督形式的学习(unsupervised learning),也就是自编码( autoencoder).自编码是一种神经网络的形式.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>golang匿名函数(闭包)</title>
       <link>http://sergey.coding.me/2017/04/29/golang%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/</link>
       <pubDate>Sat, 29 Apr 2017 12:00:23 +0800</pubDate>
@@ -64,6 +75,17 @@
       <guid>http://sergey.coding.me/2017/04/29/golang%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/</guid>
       <description>&lt;p&gt;&amp;emsp;GO语言的匿名函数（&lt;strong&gt;anonymous function&lt;/strong&gt;),
 其实就是闭包.是指不需要定义函数名的一种函数实现方式..&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>循环神经网络回归训练</title>
+      <link>http://sergey.coding.me/2017/04/27/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83/</link>
+      <pubDate>Thu, 27 Apr 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/04/27/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83/</guid>
+      <description>&lt;p&gt;&amp;emsp;Recurrent neural networks(RNN)循环神经网络进行回归训练实践.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -91,6 +113,27 @@
     </item>
     
     <item>
+      <title>循环神经网络分类训练</title>
+      <link>http://sergey.coding.me/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</link>
+      <pubDate>Mon, 24 Apr 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</guid>
+      <description>&lt;p&gt;&amp;emsp;本文使用 &lt;code&gt;RNN&lt;/code&gt; 来进行分类的训练 (Classification). 会继续使用到手写数字 MNIST 数据集. 让 RNN 从每张图片的第一行像素读到最后一行, 然后再进行分类判断.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow Saver</title>
+      <link>http://sergey.coding.me/2017/04/22/tensorflow-saver/</link>
+      <pubDate>Sat, 22 Apr 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/04/22/tensorflow-saver/</guid>
+      <description>&lt;p&gt;&amp;emsp;Tensorflow 中的 saver 可以保存和加载搭建好的神经网络.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>python numpy相关</title>
       <link>http://sergey.coding.me/2017/04/20/python-numpy%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Thu, 20 Apr 2017 12:00:23 +0200</pubDate>
@@ -107,7 +150,29 @@
       <pubDate>Thu, 20 Apr 2017 12:00:23 +0200</pubDate>
       
       <guid>http://sergey.coding.me/2017/04/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</guid>
-      <description>&lt;p&gt;&amp;emsp;python进行一些简单的图像处理.&lt;/p&gt;
+      <description>&lt;p&gt;&amp;emsp;python多进程,多核运存在一定的差别,我们应该在知晓他们的效率对比,在合适的场景使用对应的技术.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>循环神经网络RNN以及LSTM技术</title>
+      <link>http://sergey.coding.me/2017/04/20/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn%E4%BB%A5%E5%8F%8Alstm%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Thu, 20 Apr 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/04/20/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn%E4%BB%A5%E5%8F%8Alstm%E6%8A%80%E6%9C%AF/</guid>
+      <description>&lt;p&gt;&amp;emsp;Recurrent neural networks(RNN)循环神经网络,在前馈神经网络中，单独的输入完全确定了剩下的层上的神经元的 激活值。可以想象，这是一幅静态的图景:网络中的所有事物都被固定了，处于一种“冰冻结 晶”的状态。但假如，我们允许网络中的元素能够以动态方式不断地比那话。例如，隐藏神经元 的行为不是完全由前一层的隐藏神经元，而是同样受制于更早的层上的神经元的激活值。这样 肯定会带来跟前馈神经网络不同的效果。也可能隐藏和输出层的神经元的激活值不会单单由当 前的网络输入决定，而且包含了前面的输入的影响。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>卷积神经网络</title>
+      <link>http://sergey.coding.me/2017/04/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Mon, 17 Apr 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/04/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <description>&lt;p&gt;&amp;emsp;Convolutional Neural Networks (CNN)卷积神经网络是近些年逐步兴起的一种人工神经网络结构, 因为利用卷积神经网络在图像和语音识别方面能够给出更优预测结果, 这一种技术也被广泛的传播可应用. 卷积神经网络最常被应用的方面是计算机的图像识别, 不过因为不断地创新, 它也被应用在视频分析, 自然语言处理, 药物发现, 等等.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -124,12 +189,12 @@
     </item>
     
     <item>
-      <title>What neural etwork is?</title>
-      <link>http://sergey.coding.me/2017/04/02/what-neural-etwork-is/</link>
-      <pubDate>Sun, 02 Apr 2017 12:00:23 +0200</pubDate>
+      <title>TensorFlow分类学习</title>
+      <link>http://sergey.coding.me/2017/04/04/tensorflow%E5%88%86%E7%B1%BB%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 04 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/04/02/what-neural-etwork-is/</guid>
-      <description>&lt;p&gt;&amp;emsp;神经网络是什么东西呢?&lt;/p&gt;
+      <guid>http://sergey.coding.me/2017/04/04/tensorflow%E5%88%86%E7%B1%BB%E5%AD%A6%E4%B9%A0/</guid>
+      <description>&lt;p&gt;&amp;emsp;机器学习中的监督学习(supervised learning)问题大部分可以分成 Regression (回归)和 Classification(分类) 这两种. Tensorflow 也可以做到这个. 回归是说我要预测的值是一个连续的值,比如房价,汽车的速度,飞机的高度等等.而分类是指我要把东西分成几类,比如猫狗猪牛等等.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -179,25 +244,25 @@
     </item>
     
     <item>
+      <title>mxnet大规模图像分类</title>
+      <link>http://sergey.coding.me/2017/03/27/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</link>
+      <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/03/27/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</guid>
+      <description>&lt;p&gt;&amp;emsp;写在前面:本教程对计算机硬件要求较高,教程中使用了AWS提供的服务.&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;训练一个具有大量图像的神经网络会带来一些挑战。即使使用最新的GPU，也不可能在合理的时间内使用单个GPU来训练大型网络。在一台机器中使用多个gpu可以稍微减轻这个问题。但是，可以连接到一台机器上的gpu的数量是有限的(通常为8或16)。本教程解释了如何使用多个包含多个gpu的多台机器来训练大的网络，使用tb级的数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>mxnet使用预训练模型预测</title>
       <link>http://sergey.coding.me/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
       <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
       
       <guid>http://sergey.coding.me/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
       <description>&lt;p&gt;&amp;emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>mxnet大规模图像分类</title>
-      <link>http://sergey.coding.me/2017/03/24/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</link>
-      <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
-      
-      <guid>http://sergey.coding.me/2017/03/24/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</guid>
-      <description>&lt;p&gt;&amp;emsp;写在前面:本教程对计算机硬件要求较高,教程中使用了AWS提供的服务.&lt;/p&gt;
-
-&lt;p&gt;&amp;emsp;训练一个具有大量图像的神经网络会带来一些挑战。即使使用最新的GPU，也不可能在合理的时间内使用单个GPU来训练大型网络。在一台机器中使用多个gpu可以稍微减轻这个问题。但是，可以连接到一台机器上的gpu的数量是有限的(通常为8或16)。本教程解释了如何使用多个包含多个gpu的多台机器来训练大的网络，使用tb级的数据。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -236,6 +301,17 @@
     </item>
     
     <item>
+      <title>TensorFlow可视化(2)</title>
+      <link>http://sergey.coding.me/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</link>
+      <pubDate>Sun, 19 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</guid>
+      <description>&lt;p&gt;&amp;emsp;Tensorflow 中的 tensorboard 不仅仅可以可视化神经网络结构,还可以可视化我们的 training 训练结果,根据每一次不同的训练结果来修改提升神经网络参数.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>python 线程锁</title>
       <link>http://sergey.coding.me/2017/03/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</link>
       <pubDate>Sat, 18 Mar 2017 12:00:23 +0200</pubDate>
@@ -258,6 +334,28 @@
     </item>
     
     <item>
+      <title>TensorFlow可视化(1)</title>
+      <link>http://sergey.coding.me/2017/03/14/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%961/</link>
+      <pubDate>Tue, 14 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/03/14/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%961/</guid>
+      <description>&lt;p&gt;&amp;emsp;Tensorflow 自带 &lt;code&gt;tensorboard&lt;/code&gt;,让建造出来的神经网络可视化,让我们更好的理解学习神经网络,有助于发现编程中的问题.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow构造神经网络</title>
+      <link>http://sergey.coding.me/2017/03/12/tensorflow%E6%9E%84%E9%80%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Sun, 12 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/03/12/tensorflow%E6%9E%84%E9%80%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <description>&lt;p&gt;&amp;emsp;TensorFlow简单的构建神经网络.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>mxnet线性回归</title>
       <link>http://sergey.coding.me/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</link>
       <pubDate>Sun, 12 Mar 2017 12:00:23 +0200</pubDate>
@@ -275,6 +373,28 @@
       
       <guid>http://sergey.coding.me/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</guid>
       <description>&lt;p&gt;&amp;emsp;mxnet学习笔记,安装.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What neural etwork is?</title>
+      <link>http://sergey.coding.me/2017/03/02/what-neural-etwork-is/</link>
+      <pubDate>Thu, 02 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/03/02/what-neural-etwork-is/</guid>
+      <description>&lt;p&gt;&amp;emsp;神经网络是什么东西呢?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow基础笔记</title>
+      <link>http://sergey.coding.me/2017/02/24/tensorflow%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 24 Feb 2017 12:00:23 +0200</pubDate>
+      
+      <guid>http://sergey.coding.me/2017/02/24/tensorflow%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;&amp;emsp;TensorFlow概要,神经网络与深度学习零散学习笔记.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

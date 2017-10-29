@@ -6,7 +6,7 @@
     <description>Recent content in Programming on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Built by [Sergey Jay](http://github.com/SergeyJay),Copyright © Sergey Chueng. </copyright>
+    <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Thu, 03 Aug 2017 12:00:23 +0800</lastBuildDate>
     
 	<atom:link href="http://sergey.coding.me/categories/programming/index.xml" rel="self" type="application/rss+xml" />
@@ -85,7 +85,7 @@
       <pubDate>Thu, 20 Apr 2017 12:00:23 +0200</pubDate>
       
       <guid>http://sergey.coding.me/2017/04/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</guid>
-      <description>&lt;p&gt;&amp;emsp;python进行一些简单的图像处理.&lt;/p&gt;
+      <description>&lt;p&gt;&amp;emsp;python多进程,多核运存在一定的差别,我们应该在知晓他们的效率对比,在合适的场景使用对应的技术.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
