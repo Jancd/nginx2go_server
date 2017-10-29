@@ -2,112 +2,112 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sergey&#39;s blog</title>
-    <link>http://sergey.coding.me/tags/</link>
+    <link>https://sergeyjay.github.io/tags/</link>
     <description>Recent content in Tags on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Fri, 04 Aug 2017 12:00:23 +0800</lastBuildDate>
     
-	<atom:link href="http://sergey.coding.me/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sergeyjay.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Database</title>
-      <link>http://sergey.coding.me/tags/database/</link>
+      <link>https://sergeyjay.github.io/tags/database/</link>
       <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
       
-      <guid>http://sergey.coding.me/tags/database/</guid>
+      <guid>https://sergeyjay.github.io/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>http://sergey.coding.me/tags/docker/</link>
+      <link>https://sergeyjay.github.io/tags/docker/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/tags/docker/</guid>
+      <guid>https://sergeyjay.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>http://sergey.coding.me/tags/golang/</link>
+      <link>https://sergeyjay.github.io/tags/golang/</link>
       <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/tags/golang/</guid>
+      <guid>https://sergeyjay.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ios</title>
-      <link>http://sergey.coding.me/tags/ios/</link>
+      <link>https://sergeyjay.github.io/tags/ios/</link>
       <pubDate>Sat, 04 Feb 2017 12:00:23 +0800</pubDate>
       
-      <guid>http://sergey.coding.me/tags/ios/</guid>
+      <guid>https://sergeyjay.github.io/tags/ios/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>http://sergey.coding.me/tags/linux/</link>
+      <link>https://sergeyjay.github.io/tags/linux/</link>
       <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
       
-      <guid>http://sergey.coding.me/tags/linux/</guid>
+      <guid>https://sergeyjay.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mxnet</title>
-      <link>http://sergey.coding.me/tags/mxnet/</link>
+      <link>https://sergeyjay.github.io/tags/mxnet/</link>
       <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/tags/mxnet/</guid>
+      <guid>https://sergeyjay.github.io/tags/mxnet/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Neural Network</title>
-      <link>http://sergey.coding.me/tags/neural-network/</link>
+      <link>https://sergeyjay.github.io/tags/neural-network/</link>
       <pubDate>Sun, 30 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/tags/neural-network/</guid>
+      <guid>https://sergeyjay.github.io/tags/neural-network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>http://sergey.coding.me/tags/python/</link>
+      <link>https://sergeyjay.github.io/tags/python/</link>
       <pubDate>Tue, 25 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/tags/python/</guid>
+      <guid>https://sergeyjay.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pythorh</title>
-      <link>http://sergey.coding.me/tags/pythorh/</link>
+      <link>https://sergeyjay.github.io/tags/pythorh/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/tags/pythorh/</guid>
+      <guid>https://sergeyjay.github.io/tags/pythorh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rpc</title>
-      <link>http://sergey.coding.me/tags/rpc/</link>
+      <link>https://sergeyjay.github.io/tags/rpc/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/tags/rpc/</guid>
+      <guid>https://sergeyjay.github.io/tags/rpc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tensorflow</title>
-      <link>http://sergey.coding.me/tags/tensorflow/</link>
+      <link>https://sergeyjay.github.io/tags/tensorflow/</link>
       <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/tags/tensorflow/</guid>
+      <guid>https://sergeyjay.github.io/tags/tensorflow/</guid>
       <description></description>
     </item>
     
