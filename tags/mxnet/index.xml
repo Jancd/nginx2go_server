@@ -7,17 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
-    <lastBuildDate>Mon, 27 Mar 2017 12:00:23 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 09 Apr 2017 12:00:23 +0200</lastBuildDate>
     
 	<atom:link href="https://sergeyjay.github.io/tags/mxnet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mxnet大规模图像分类</title>
-      <link>https://sergeyjay.github.io/2017/03/27/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</link>
-      <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
+      <link>https://sergeyjay.github.io/2017/04/09/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</link>
+      <pubDate>Sun, 09 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/27/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</guid>
+      <guid>https://sergeyjay.github.io/2017/04/09/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</guid>
       <description>&lt;p&gt;&amp;emsp;写在前面:本教程对计算机硬件要求较高,教程中使用了AWS提供的服务.&lt;/p&gt;
 
 &lt;p&gt;&amp;emsp;训练一个具有大量图像的神经网络会带来一些挑战。即使使用最新的GPU，也不可能在合理的时间内使用单个GPU来训练大型网络。在一台机器中使用多个gpu可以稍微减轻这个问题。但是，可以连接到一台机器上的gpu的数量是有限的(通常为8或16)。本教程解释了如何使用多个包含多个gpu的多台机器来训练大的网络，使用tb级的数据。&lt;/p&gt;
@@ -27,10 +27,10 @@
     
     <item>
       <title>mxnet使用预训练模型预测</title>
-      <link>https://sergeyjay.github.io/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
-      <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
+      <link>https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
+      <pubDate>Fri, 31 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
+      <guid>https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
       <description>&lt;p&gt;&amp;emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

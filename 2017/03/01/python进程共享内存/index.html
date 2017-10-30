@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>python进程共享内存 &middot; Sergey&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.29" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sergey Chueng">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/"/>
+    <link rel="icon" href="https://sergeyjay.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://sergeyjay.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/style.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="python进程共享内存" />
+<meta property="og:description" content="&emsp;python的多进程或者说不同CPU之间通信是通过共享内存来实现的.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/" />
+
+
+
+<meta property="article:published_time" content="2017-03-01T12:00:23&#43;02:00"/>
+<meta property="article:modified_time" content="2017-03-01T12:00:23&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="python进程共享内存">
+<meta itemprop="description" content="&emsp;python的多进程或者说不同CPU之间通信是通过共享内存来实现的.
+
+">
+
+
+<meta itemprop="dateModified" content="2017-03-01T12:00:23&#43;02:00" />
+<meta itemprop="wordCount" content="201">
+
+
+
+<meta itemprop="keywords" content="python," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="python进程共享内存"/>
+<meta name="twitter:description" content="&emsp;python的多进程或者说不同CPU之间通信是通过共享内存来实现的.
+
+"/>
+<meta name="twitter:site" content="@SergeyJay"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://sergeyjay.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://sergeyjay.github.io/css/images/brain.jpg')"></i>
+          
+          <span class="site-title">Sergey&#39;s blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a>
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About Me</a>
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a></td>
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About Me</a></td>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg">
+      
+      <h2 id="name">Sergey Chueng</h2>
+      <h3 id="title"> Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Shanghai</span>
+      
+          <a id="follow" href="https://github.com/SergeyJay">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        66
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          11
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/SergeyJay" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/zshangan@iCloud.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/SergeyJay" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="https://sergeyjay.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/">
+    <h1 class="article-title" itemprop="name">
+        python进程共享内存
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-03-01 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-03-01</time>
+            &middot;
+            201
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/categories/programming">programming</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/python">python</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;python的多进程或者说不同CPU之间通信是通过共享内存来实现的.</p>
+
+<p></p>
+
+<p><em>文章内容来自<a href="https://docs.python.org/3/library/array.html"><code>python.org</code></a></em></p>
+
+<!-- *Note:This blog without all the resources that are outside the original,reproduced please indicate the source.* -->
+
+<p>这节我们学习如何定义共享内存。只有用共享内存才能让CPU之间有交流。</p>
+
+<p>我们可以通过使用<code>Value</code>数据存储在一个共享的内存表中。</p>
+
+<pre><code class="language-python">import multiprocessing as mp
+
+value1 = mp.Value('i', 0) 
+value2 = mp.Value('d', 3.14)
+</code></pre>
+
+<p>其中<code>d</code>和<code>i</code>参数用来设置数据类型的，<code>d</code>表示一个双精浮点类型，<code>i</code>表示一个带符号的整型。更多的形式请查看本页最后的表.</p>
+
+<p>在Python的<code>mutiprocessing</code>中，有还有一个<code>Array</code>类，可以和共享内存交互，来实现在进程之间共享数据。</p>
+
+<pre><code class="language-python">array = mp.Array('i', [1, 2, 3, 4])
+</code></pre>
+
+<p>这里的<code>Array</code>和numpy中的不同，它只能是一维的，不能是多维的。同样和<code>Value</code> 一样，需要定义数据形式，否则会报错。
+我们会在后一节举例说明这两种的使用方法.</p>
+
+<p><strong>错误形式</strong></p>
+
+<pre><code class="language-python">array = mp.Array('i', [[1, 2], [3, 4]]) # 2维list
+
+&quot;&quot;&quot;
+TypeError: an integer is required
+&quot;&quot;&quot;
+</code></pre>
+
+<p>各参数代表的数据类型</p>
+
+<pre><code>| Type code | C Type             | Python Type       | Minimum size in bytes |
+| --------- | ------------------ | ----------------- | --------------------- |
+| `'b'`     | signed char        | int               | 1                     |
+| `'B'`     | unsigned char      | int               | 1                     |
+| `'u'`     | Py_UNICODE         | Unicode character | 2                     |
+| `'h'`     | signed short       | int               | 2                     |
+| `'H'`     | unsigned short     | int               | 2                     |
+| `'i'`     | signed int         | int               | 2                     |
+| `'I'`     | unsigned int       | int               | 2                     |
+| `'l'`     | signed long        | int               | 4                     |
+| `'L'`     | unsigned long      | int               | 4                     |
+| `'q'`     | signed long long   | int               | 8                     |
+| `'Q'`     | unsigned long long | int               | 8                     |
+| `'f'`     | float              | float             | 4                     |
+| `'d'`     | double             | float             | 8                     |
+</code></pre>
+
+<p>(来源：<a href="https://docs.python.org/3/library/array.html">https://docs.python.org/3/library/array.html</a>）</p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/" data-id="f0fb286cd07fa673c1963f5fe346e00d" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://sergeyjay.github.io/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">python进程池</div>
+    </a>
+    
+
+    
+    <a href="https://sergeyjay.github.io/2017/03/02/what-neural-etwork-is/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">What neural etwork is?</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/ai">
+                    ai
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">34</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/tools">
+                    tools
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/database">
+                    database
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">23</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/ios">
+                    ios
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/mxnet">
+                    mxnet
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/neural-network">
+                    neural-network
+                </a>
+                <span class="category-list-count">14</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">12</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/pytorch">
+                    pytorch
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/rpc">
+                    rpc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Built by <a href="http://github.com/SergeyJay">Sergey Chueng</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://sergeyjay.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://sergeyjay.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

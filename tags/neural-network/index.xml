@@ -7,10 +7,54 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
-    <lastBuildDate>Sun, 30 Apr 2017 12:00:23 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 06 Jun 2017 12:00:23 +0200</lastBuildDate>
     
 	<atom:link href="https://sergeyjay.github.io/tags/neural-network/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PyTorch RNN Regression</title>
+      <link>https://sergeyjay.github.io/2017/06/06/pytorch-rnn-regression/</link>
+      <pubDate>Tue, 06 Jun 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/06/06/pytorch-rnn-regression/</guid>
+      <description>&lt;p&gt;&amp;emsp;循环神经网络&lt;code&gt;RNN&lt;/code&gt;及时预测时间序列.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch RNN Classification</title>
+      <link>https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/</link>
+      <pubDate>Sun, 04 Jun 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/</guid>
+      <description>&lt;p&gt;&amp;emsp;循环神经网络RNN让神经网络有了记忆, 对于序列话的数据,循环神经网络能达到更好的效果.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch CNN</title>
+      <link>https://sergeyjay.github.io/2017/05/31/pytorch-cnn/</link>
+      <pubDate>Wed, 31 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/31/pytorch-cnn/</guid>
+      <description>&lt;p&gt;&amp;emsp;卷积神经网络目前被广泛地用在图片识别上, 已经有层出不穷的应用.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch基础笔记</title>
+      <link>https://sergeyjay.github.io/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 09 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;&amp;emsp;PyTorch基础笔记,变量与计算.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>TensorFlow自编码</title>

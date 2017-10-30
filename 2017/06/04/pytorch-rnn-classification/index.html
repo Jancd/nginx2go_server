@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>PyTorch RNN Classification &middot; Sergey&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.29" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sergey Chueng">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/"/>
+    <link rel="icon" href="https://sergeyjay.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://sergeyjay.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/style.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="PyTorch RNN Classification" />
+<meta property="og:description" content="&emsp;循环神经网络RNN让神经网络有了记忆, 对于序列话的数据,循环神经网络能达到更好的效果.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/" />
+
+
+
+<meta property="article:published_time" content="2017-06-04T12:00:23&#43;02:00"/>
+<meta property="article:modified_time" content="2017-06-04T12:00:23&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="PyTorch RNN Classification">
+<meta itemprop="description" content="&emsp;循环神经网络RNN让神经网络有了记忆, 对于序列话的数据,循环神经网络能达到更好的效果.
+
+">
+
+
+<meta itemprop="dateModified" content="2017-06-04T12:00:23&#43;02:00" />
+<meta itemprop="wordCount" content="514">
+
+
+
+<meta itemprop="keywords" content="PyTorch,Neural Network," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="PyTorch RNN Classification"/>
+<meta name="twitter:description" content="&emsp;循环神经网络RNN让神经网络有了记忆, 对于序列话的数据,循环神经网络能达到更好的效果.
+
+"/>
+<meta name="twitter:site" content="@SergeyJay"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://sergeyjay.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://sergeyjay.github.io/css/images/brain.jpg')"></i>
+          
+          <span class="site-title">Sergey&#39;s blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a>
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About Me</a>
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a></td>
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About Me</a></td>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg">
+      
+      <h2 id="name">Sergey Chueng</h2>
+      <h3 id="title"> Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Shanghai</span>
+      
+          <a id="follow" href="https://github.com/SergeyJay">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        66
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          11
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/SergeyJay" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/zshangan@iCloud.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/SergeyJay" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="https://sergeyjay.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/">
+    <h1 class="article-title" itemprop="name">
+        PyTorch RNN Classification
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-06-04 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-06-04</time>
+            &middot;
+            514
+            words
+            &middot;
+            3
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/categories/ai">AI</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/pytorch">PyTorch</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/neural-network">Neural Network</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;循环神经网络RNN让神经网络有了记忆, 对于序列话的数据,循环神经网络能达到更好的效果.</p>
+
+<p></p>
+
+<p>更多可以查看官网 :
+     * <a href="http://pytorch.org/">PyTorch 官网</a></p>
+
+<h1 id="mnist手写体">MNIST手写体</h1>
+
+<pre><code class="language-python">import torch
+from torch import nn
+from torch.autograd import Variable
+import torchvision.datasets as dsets
+import torchvision.transforms as transforms
+import matplotlib.pyplot as plt
+
+
+torch.manual_seed(1)    # reproducible
+
+# Hyper Parameters
+EPOCH = 1           # 训练整批数据多少次, 为了节约时间, 只训练一次
+BATCH_SIZE = 64
+TIME_STEP = 28      # rnn 时间步数 / 图片高度
+INPUT_SIZE = 28     # rnn 每步输入值 / 图片每行像素
+LR = 0.01           # learning rate
+DOWNLOAD_MNIST = True  # 如果你已经下载好了mnist数据就写上 Fasle
+
+
+# Mnist 手写数字
+train_data = torchvision.datasets.MNIST(
+    root='./mnist/',    # 保存或者提取位置
+    train=True,  # this is training data
+    transform=torchvision.transforms.ToTensor(),    # 转换 PIL.Image or numpy.ndarray 成
+                                                    # torch.FloatTensor (C x H x W), 训练的时候 normalize 成 [0.0, 1.0] 区间
+    download=DOWNLOAD_MNIST,          # 没下载就下载, 下载了就不用再下了
+)
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/dmlc/web-data/master/mxnet/example/mnist.png" alt="还是他QAQ,来自MNIST数据集的示例图像" /></p>
+
+<p>黑色的地方的值都是0, 白色的地方值大于0.</p>
+
+<p>同样, 除了训练数据, 还给一些测试数据, 测试看看它有没有训练好.</p>
+
+<pre><code class="language-python">test_data = torchvision.datasets.MNIST(root='./mnist/', train=False)
+
+# 批训练 50samples, 1 channel, 28x28 (50, 1, 28, 28)
+train_loader = Data.DataLoader(dataset=train_data, batch_size=BATCH_SIZE, shuffle=True)
+
+# 为了节约时间, 我们测试时只测试前2000个
+test_x = Variable(torch.unsqueeze(test_data.test_data, dim=1), volatile=True).type(torch.FloatTensor)[:2000]/255.   # shape from (2000, 28, 28) to (2000, 1, 28, 28), value in range(0,1)
+test_y = test_data.test_labels[:2000]
+</code></pre>
+
+<h1 id="rnn模型">RNN模型</h1>
+
+<p>和以前一样, 用一个 class 来建立 RNN 模型. 这个 RNN 整体流程是</p>
+
+<ol>
+<li><code>(input0, state0)</code> -&gt; <code>LSTM</code> -&gt; <code>(output0, state1)</code>;</li>
+<li><code>(input1, state1)</code> -&gt; <code>LSTM</code> -&gt; <code>(output1, state2)</code>;</li>
+<li>&hellip;</li>
+<li><code>(inputN, stateN)</code>-&gt; <code>LSTM</code> -&gt;  <code>(outputN, stateN+1)</code>;</li>
+<li><code>outputN</code> -&gt; <code>Linear</code> -&gt; <code>prediction</code>.
+通过<code>LSTM</code>分析每一时刻的值, 并且将这一时刻和前面时刻的理解合并在一起, 生成当前时刻对前面数据的理解或记忆. 传递这种理解给下一时刻分析.</li>
+</ol>
+
+<pre><code class="language-python">class RNN(nn.Module):
+    def __init__(self):
+        super(RNN, self).__init__()
+
+        self.rnn = nn.LSTM(     # LSTM 效果要比 nn.RNN() 好多了
+            input_size=28,      # 图片每行的数据像素点
+            hidden_size=64,     # rnn hidden unit
+            num_layers=1,       # 有几层 RNN layers
+            batch_first=True,   # input &amp; output 会是以 batch size 为第一维度的特征集 e.g. (batch, time_step, input_size)
+        )
+
+        self.out = nn.Linear(64, 10)    # 输出层
+
+    def forward(self, x):
+        # x shape (batch, time_step, input_size)
+        # r_out shape (batch, time_step, output_size)
+        # h_n shape (n_layers, batch, hidden_size)   LSTM 有两个 hidden states, h_n 是分线, h_c 是主线
+        # h_c shape (n_layers, batch, hidden_size)
+        r_out, (h_n, h_c) = self.rnn(x, None)   # None 表示 hidden state 会用全0的 state
+
+        # 选取最后一个时间点的 r_out 输出
+        # 这里 r_out[:, -1, :] 的值也是 h_n 的值
+        out = self.out(r_out[:, -1, :])
+        return out
+
+rnn = RNN()
+print(rnn)
+&quot;&quot;&quot;
+RNN (
+  (rnn): LSTM(28, 64, batch_first=True)
+  (out): Linear (64 -&gt; 10)
+)
+&quot;&quot;&quot;
+</code></pre>
+
+<h1 id="训练">训练</h1>
+
+<p>将图片数据看成一个时间上的连续数据, 每一行的像素点都是这个时刻的输入, 读完整张图片就是从上而下的读完了每行的像素点,
+然后拿出 RNN 在最后一步的分析值判断图片是哪一类.</p>
+
+<pre><code class="language-python">optimizer = torch.optim.Adam(rnn.parameters(), lr=LR)   # optimize all parameters
+loss_func = nn.CrossEntropyLoss()   # the target label is not one-hotted
+
+# training and testing
+for epoch in range(EPOCH):
+    for step, (x, y) in enumerate(train_loader):   # gives batch data
+        b_x = Variable(x.view(-1, 28, 28))   # reshape x to (batch, time_step, input_size)
+        b_y = Variable(y)   # batch y
+
+        output = rnn(b_x)               # rnn output
+        loss = loss_func(output, b_y)   # cross entropy loss
+        optimizer.zero_grad()           # clear gradients for this training step
+        loss.backward()                 # backpropagation, compute gradients
+        optimizer.step()                # apply gradients
+&quot;&quot;&quot;
+...
+Epoch:  0 | train loss: 0.0945 | test accuracy: 0.94
+Epoch:  0 | train loss: 0.0984 | test accuracy: 0.94
+Epoch:  0 | train loss: 0.0332 | test accuracy: 0.95
+Epoch:  0 | train loss: 0.1868 | test accuracy: 0.96
+&quot;&quot;&quot;
+</code></pre>
+
+<p>最后取10个数据, 看看预测的值到底对不对:</p>
+
+<pre><code class="language-python">test_output = rnn(test_x[:10].view(-1, 28, 28))
+pred_y = torch.max(test_output, 1)[1].data.numpy().squeeze()
+print(pred_y, 'prediction number')
+print(test_y[:10], 'real number')
+&quot;&quot;&quot;
+[7 2 1 0 4 1 4 9 5 9] prediction number
+[7 2 1 0 4 1 4 9 5 9] real number
+&quot;&quot;&quot;
+</code></pre>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/" data-id="3ed240af39eb9b7a9f4cec2c8e48e66d" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://sergeyjay.github.io/2017/05/31/pytorch-cnn/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">PyTorch CNN</div>
+    </a>
+    
+
+    
+    <a href="https://sergeyjay.github.io/2017/06/06/pytorch-rnn-regression/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">PyTorch RNN Regression</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/ai">
+                    ai
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">34</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/tools">
+                    tools
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/database">
+                    database
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">23</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/ios">
+                    ios
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/mxnet">
+                    mxnet
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/neural-network">
+                    neural-network
+                </a>
+                <span class="category-list-count">14</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">12</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/pytorch">
+                    pytorch
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/rpc">
+                    rpc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Built by <a href="http://github.com/SergeyJay">Sergey Chueng</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://sergeyjay.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://sergeyjay.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>mxnet使用预训练模型预测 &middot; Sergey&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.29" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sergey Chueng">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/"/>
+    <link rel="icon" href="https://sergeyjay.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://sergeyjay.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/style.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="mxnet使用预训练模型预测" />
+<meta property="og:description" content="&emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/" />
+
+
+
+<meta property="article:published_time" content="2017-03-31T12:00:23&#43;02:00"/>
+<meta property="article:modified_time" content="2017-03-31T12:00:23&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="mxnet使用预训练模型预测">
+<meta itemprop="description" content="&emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。
+
+">
+
+
+<meta itemprop="dateModified" content="2017-03-31T12:00:23&#43;02:00" />
+<meta itemprop="wordCount" content="243">
+
+
+
+<meta itemprop="keywords" content="mxnet," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="mxnet使用预训练模型预测"/>
+<meta name="twitter:description" content="&emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。
+
+"/>
+<meta name="twitter:site" content="@SergeyJay"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://sergeyjay.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://sergeyjay.github.io/css/images/brain.jpg')"></i>
+          
+          <span class="site-title">Sergey&#39;s blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a>
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About Me</a>
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a></td>
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About Me</a></td>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg">
+      
+      <h2 id="name">Sergey Chueng</h2>
+      <h3 id="title"> Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Shanghai</span>
+      
+          <a id="follow" href="https://github.com/SergeyJay">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        66
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          11
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/SergeyJay" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/zshangan@iCloud.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/SergeyJay" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="https://sergeyjay.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/">
+    <h1 class="article-title" itemprop="name">
+        mxnet使用预训练模型预测
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-03-31 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-03-31</time>
+            &middot;
+            243
+            words
+            &middot;
+            2
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/categories/ai">AI</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/mxnet">mxnet</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。</p>
+
+<p></p>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<p><em>Note:This blog without all the resources that are outside the original,reproduced please indicate the source.</em></p>
+
+<h1 id="release">Release</h1>
+
+<pre><code>- September 06,2017.MXNet 0.11.0
+</code></pre>
+
+<hr />
+
+<p>官网:<a href="https://mxnet.incubator.apache.org/">mxnet.incubator.apache.org</a>,文中如有任何错漏的地方请谅解并指出,不胜感激.</p>
+
+<h1 id="准备">准备</h1>
+
+<p>完成本教程您需要:
+    - 安装mxnet
+    - 安装<code>python</code> 以及 <code>Requests, Matplotlib, Jupyter Notebook</code>.</p>
+
+<pre><code>$ pip install requests matplotlib jupyter opencv-python
+</code></pre>
+
+<h1 id="加载">加载</h1>
+
+<p>&emsp;我们首先下载了一个经过训练的<code>ResNet</code> 152层，它是在完整的<code>ImageNet</code>数据集上训练的，有超过1000万张图片和1万个类。一个预训练的模型包含两个部分，一个包含模型定义的<code>json</code>文件和一个包含参数的二进制文件。此外，标签可能还有一个文本文件。</p>
+
+<pre><code class="language-python">import mxnet as mx
+path='http://data.mxnet.io/models/imagenet-11k/'
+[mx.test_utils.download(path+'resnet-152/resnet-152-symbol.json'),
+ mx.test_utils.download(path+'resnet-152/resnet-152-0000.params'),
+ mx.test_utils.download(path+'synset.txt')]
+</code></pre>
+
+<p>接着，加载下载的模型。注意:如果<code>GPU</code>可用，我们可以用<code>mx.gpu()</code>替换所有<code>mx. cpu()</code>来加速计算。</p>
+
+<pre><code class="language-python"> sym, arg_params, aux_params = mx.model.load_checkpoint('resnet-152', 0)
+mod = mx.mod.Module(symbol=sym, context=mx.cpu(), label_names=None)
+mod.bind(for_training=False, data_shapes=[('data', (1,3,224,224))], 
+         label_shapes=mod._label_shapes)
+mod.set_params(arg_params, aux_params, allow_missing=True)
+with open('synset.txt', 'r') as f:
+    labels = [l.rstrip() for l in f]
+</code></pre>
+
+<h1 id="预测">预测</h1>
+
+<p>我们首先定义辅助函数来下载图像和执行预测:</p>
+
+<pre><code class="language-python">%matplotlib inline
+import matplotlib.pyplot as plt
+import cv2
+import numpy as np
+# define a simple data batch
+from collections import namedtuple
+Batch = namedtuple('Batch', ['data'])
+
+def get_image(url, show=False):
+    # download and show the image
+    fname = mx.test_utils.download(url)
+    img = cv2.cvtColor(cv2.imread(fname), cv2.COLOR_BGR2RGB)
+    if img is None:
+         return None
+    if show:
+         plt.imshow(img)
+         plt.axis('off')
+    # convert into format (batch, RGB, width, height)
+    img = cv2.resize(img, (224, 224))
+    img = np.swapaxes(img, 0, 2)
+    img = np.swapaxes(img, 1, 2)
+    img = img[np.newaxis, :]
+    return img
+
+def predict(url):
+    img = get_image(url, show=True)
+    # compute the predict probabilities
+    mod.forward(Batch([mx.nd.array(img)]))
+    prob = mod.get_outputs()[0].asnumpy()
+    # print the top-5
+    prob = np.squeeze(prob)
+    a = np.argsort(prob)[::-1]
+    for i in a[0:5]:
+        print('probability=%f, class=%s' %(prob[i], labels[i]))
+
+        
+</code></pre>
+
+<p>现在，我们可以用任何可下载的链接进行预测:</p>
+
+<pre><code>predict('http://writm.com/wp-content/uploads/2016/08/Cat-hd-wallpapers.jpg')
+</code></pre>
+
+<pre><code>predict('http://thenotoriouspug.com/wp-content/uploads/2015/01/Pug-Cookie-1920x1080-1024x576.jpg')
+</code></pre>
+
+<h1 id="特征提取">特征提取</h1>
+
+<p>&emsp;通过特征提取，我们的意思是通过内部层的输出而不是最后的<code>softmax</code>层来呈现输入图像。这些输出可以被视为原始输入图像的特征，然后可以被其他应用程序(如对象检测)使用。</p>
+
+<p>我们可以使用<code>get_internals</code>方法从一个符号获取所有内部层。</p>
+
+<pre><code class="language-python"># list the last 10 layers
+all_layers = sym.get_internals()
+all_layers.list_outputs()[-10:]
+</code></pre>
+
+<p>&emsp;常用的特征提取层是在最后一个全连通层之前的一层。对于<code>ResNet</code>和<code>Inception</code>来说，它是一个扁平的层，它的名称是平坦的，它将四维卷积层的输出变成了二维的完全连接层。下面的源代码提取了一个新的符号，它输出扁平的层并创建一个模型。</p>
+
+<pre><code class="language-python">fe_sym = all_layers['flatten0_output']
+fe_mod = mx.mod.Module(symbol=fe_sym, context=mx.cpu(), label_names=None)
+fe_mod.bind(for_training=False, data_shapes=[('data', (1,3,224,224))])
+fe_mod.set_params(arg_params, aux_params)
+</code></pre>
+
+<p>我们现在可以调用<code>forward</code>来获得特性:</p>
+
+<pre><code class="language-python">img = get_image('http://writm.com/wp-content/uploads/2016/08/Cat-hd-wallpapers.jpg')
+fe_mod.forward(Batch([mx.nd.array(img)]))
+features = fe_mod.get_outputs()[0].asnumpy()
+print(features)
+assert features.shape == (1, 2048)
+</code></pre>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/" data-id="cc416387f949d836684bb2d9584e8f93" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://sergeyjay.github.io/2017/03/27/mysql-error-2002/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">MySql ERROR 2002</div>
+    </a>
+    
+
+    
+    <a href="https://sergeyjay.github.io/2017/04/04/tensorflow%E5%88%86%E7%B1%BB%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">TensorFlow分类学习</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/ai">
+                    ai
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">34</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/tools">
+                    tools
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/database">
+                    database
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">23</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/ios">
+                    ios
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/mxnet">
+                    mxnet
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/neural-network">
+                    neural-network
+                </a>
+                <span class="category-list-count">14</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">12</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/pytorch">
+                    pytorch
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/rpc">
+                    rpc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Built by <a href="http://github.com/SergeyJay">Sergey Chueng</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://sergeyjay.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://sergeyjay.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

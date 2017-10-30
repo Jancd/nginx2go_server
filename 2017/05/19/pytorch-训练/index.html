@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>PyTorch 训练 &middot; Sergey&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.29" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sergey Chueng">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://sergeyjay.github.io/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/"/>
+    <link rel="icon" href="https://sergeyjay.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://sergeyjay.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/style.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://sergeyjay.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="PyTorch 训练" />
+<meta property="og:description" content="&emsp;PyTorch 训练与加速神经网络训练.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sergeyjay.github.io/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/" />
+
+
+
+<meta property="article:published_time" content="2017-05-19T12:00:23&#43;02:00"/>
+<meta property="article:modified_time" content="2017-05-19T12:00:23&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="PyTorch 训练">
+<meta itemprop="description" content="&emsp;PyTorch 训练与加速神经网络训练.
+
+">
+
+
+<meta itemprop="dateModified" content="2017-05-19T12:00:23&#43;02:00" />
+<meta itemprop="wordCount" content="508">
+
+
+
+<meta itemprop="keywords" content="PyTorch," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="PyTorch 训练"/>
+<meta name="twitter:description" content="&emsp;PyTorch 训练与加速神经网络训练.
+
+"/>
+<meta name="twitter:site" content="@SergeyJay"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://sergeyjay.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://sergeyjay.github.io/css/images/brain.jpg')"></i>
+          
+          <span class="site-title">Sergey&#39;s blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a>
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About Me</a>
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://sergeyjay.github.io/categories/">Categories</a></td>
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About Me</a></td>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://sergeyjay.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://sergeyjay.github.io/css/images/profile.jpg">
+      
+      <h2 id="name">Sergey Chueng</h2>
+      <h3 id="title"> Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Shanghai</span>
+      
+          <a id="follow" href="https://github.com/SergeyJay">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        66
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          11
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/SergeyJay" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/zshangan@iCloud.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/SergeyJay" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="https://sergeyjay.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://sergeyjay.github.io/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/">
+    <h1 class="article-title" itemprop="name">
+        PyTorch 训练
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-05-19 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-05-19</time>
+            &middot;
+            508
+            words
+            &middot;
+            3
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/categories/ai">AI</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/pytorch">PyTorch</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;PyTorch 训练与加速神经网络训练.</p>
+
+<p></p>
+
+<p>更多可以查看官网 :
+     * <a href="http://pytorch.org/">PyTorch 官网</a></p>
+
+<h1 id="批训练">批训练</h1>
+
+<p>Torch 中提供了一种帮你整理你的数据结构的好东西, 叫做 <code>DataLoader</code>, 能用它来包装自己的数据,进行批训练.</p>
+
+<p><code>DataLoader</code> 是 torch 给你用来包装你的数据的工具. 所以要将自己的 (numpy array 或其他) 数据形式装换成 Tensor, 然后再放进这个包装器中.
+使用 <code>DataLoader</code> 有什么好处呢? 就是他们帮你有效地迭代数据, 举例:</p>
+
+<pre><code class="language-python">import torch
+import torch.utils.data as Data
+torch.manual_seed(1)    # reproducible
+
+BATCH_SIZE = 5      # 批训练的数据个数
+
+x = torch.linspace(1, 10, 10)       # x data (torch tensor)
+y = torch.linspace(10, 1, 10)       # y data (torch tensor)
+
+# 先转换成 torch 能识别的 Dataset
+torch_dataset = Data.TensorDataset(data_tensor=x, target_tensor=y)
+
+# 把 dataset 放入 DataLoader
+loader = Data.DataLoader(
+    dataset=torch_dataset,      # torch TensorDataset format
+    batch_size=BATCH_SIZE,      # mini batch size
+    shuffle=True,               # 要不要打乱数据 (打乱比较好)
+    num_workers=2,              # 多线程来读数据
+)
+
+for epoch in range(3):   # 训练所有!整套!数据 3 次
+    for step, (batch_x, batch_y) in enumerate(loader):  # 每一步 loader 释放一小批数据用来学习
+        # 假设这里就是你训练的地方...
+
+        # 打出来一些数据
+        print('Epoch: ', epoch, '| Step: ', step, '| batch x: ',
+              batch_x.numpy(), '| batch y: ', batch_y.numpy())
+
+&quot;&quot;&quot;
+Epoch:  0 | Step:  0 | batch x:  [ 6.  7.  2.  3.  1.] | batch y:  [  5.   4.   9.   8.  10.]
+Epoch:  0 | Step:  1 | batch x:  [  9.  10.   4.   8.   5.] | batch y:  [ 2.  1.  7.  3.  6.]
+Epoch:  1 | Step:  0 | batch x:  [  3.   4.   2.   9.  10.] | batch y:  [ 8.  7.  9.  2.  1.]
+Epoch:  1 | Step:  1 | batch x:  [ 1.  7.  8.  5.  6.] | batch y:  [ 10.   4.   3.   6.   5.]
+Epoch:  2 | Step:  0 | batch x:  [ 3.  9.  2.  6.  7.] | batch y:  [ 8.  2.  9.  5.  4.]
+Epoch:  2 | Step:  1 | batch x:  [ 10.   4.   8.   1.   5.] | batch y:  [  1.   7.   3.  10.   6.]
+&quot;&quot;&quot;
+</code></pre>
+
+<p>可以看出, 每步都导出了5个数据进行学习. 然后每个 epoch 的导出数据都是先打乱了以后再导出.</p>
+
+<p>真正方便的还不是这点. 如果改变一下 <code>BATCH_SIZE = 8</code>, 这样就知道, <code>step=0</code> 会导出8个数据, 但是, <code>step=1</code> 时数据库中的数据不够 8个, 这时怎么办呢:</p>
+
+<pre><code class="language-python">BATCH_SIZE = 8      # 批训练的数据个数
+
+...
+
+for ...:
+    for ...:
+        ...
+        print('Epoch: ', epoch, '| Step: ', step, '| batch x: ',
+              batch_x.numpy(), '| batch y: ', batch_y.numpy())
+&quot;&quot;&quot;
+Epoch:  0 | Step:  0 | batch x:  [  6.   7.   2.   3.   1.   9.  10.   4.] | batch y:  [  5.   4.   9.   8.  10.   2.   1.   7.]
+Epoch:  0 | Step:  1 | batch x:  [ 8.  5.] | batch y:  [ 3.  6.]
+Epoch:  1 | Step:  0 | batch x:  [  3.   4.   2.   9.  10.   1.   7.   8.] | batch y:  [  8.   7.   9.   2.   1.  10.   4.   3.]
+Epoch:  1 | Step:  1 | batch x:  [ 5.  6.] | batch y:  [ 6.  5.]
+Epoch:  2 | Step:  0 | batch x:  [  3.   9.   2.   6.   7.  10.   4.   8.] | batch y:  [ 8.  2.  9.  5.  4.  1.  7.  3.]
+Epoch:  2 | Step:  1 | batch x:  [ 1.  5.] | batch y:  [ 10.   6.]
+&quot;&quot;&quot;
+</code></pre>
+
+<p>这时, 在 <code>step=1</code> 就只给你返回这个 epoch 中剩下的数据就好了.</p>
+
+<h1 id="加速神经网络训练">加速神经网络训练</h1>
+
+<p>越复杂的神经网络 , 越多的数据 , 需要在训练神经网络的过程上花费的时间也就越多. 原因很简单, 就是因为计算量太大了.</p>
+
+<p>可是往往有时候为了解决复杂的问题, 复杂的结构和大数据又是不能避免的, 所以需要寻找一些方法, 让神经网络聪明起来, 快起来.</p>
+
+<h2 id="随机梯度下降">随机梯度下降</h2>
+
+<p>Stochastic Gradient Descent (SGD)随机梯度下降是最基础的方法.</p>
+
+<p>重复不断的把整套数据放入神经网络中训练, 这样消耗的计算资源会很大.如果把这些数据拆分成小批小批的, 然后再分批不断放入神经网络中计算, 这就是常说的 SGD 的运作方式. 每次使用批数据, 虽然不能反映整体数据的情况, 不过却很大程度上加速了神经网络的训练过程, 而且也不会丢失太多准确率.</p>
+
+<p>事实证明, SGD 并不是最快速的训练方法.</p>
+
+<p><img src="http://img.blog.csdn.net/20171030134227593" alt="几种训练方法比较" /></p>
+
+<h2 id="momentum-更新方法">Momentum 更新方法</h2>
+
+<hr />
+
+<h2 id="adagrad-更新方法">AdaGrad 更新方法</h2>
+
+<hr />
+
+<h2 id="rmsprop-更新方法">RMSProp 更新方法</h2>
+
+<hr />
+
+<h2 id="adam-更新方法">Adam 更新方法</h2>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://sergeyjay.github.io/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/" data-id="19a104fcfc516f6b14d25b588d9a28f8" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://sergeyjay.github.io/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://sergeyjay.github.io/2017/05/18/pytorch-nn%E4%BF%9D%E5%AD%98%E5%92%8C%E6%8F%90%E5%8F%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">PyTorch NN保存和提取</div>
+    </a>
+    
+
+    
+    <a href="https://sergeyjay.github.io/2017/05/26/pytorch-%E4%BC%98%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">PyTorch 优化</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/ai">
+                    ai
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">34</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/categories/tools">
+                    tools
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/database">
+                    database
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">23</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/ios">
+                    ios
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/mxnet">
+                    mxnet
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/neural-network">
+                    neural-network
+                </a>
+                <span class="category-list-count">14</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">12</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/pytorch">
+                    pytorch
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/rpc">
+                    rpc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://sergeyjay.github.io/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Built by <a href="http://github.com/SergeyJay">Sergey Chueng</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://sergeyjay.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://sergeyjay.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

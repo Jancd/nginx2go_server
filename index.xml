@@ -57,6 +57,138 @@
     </item>
     
     <item>
+      <title>PyTorch 理解动态</title>
+      <link>https://sergeyjay.github.io/2017/06/16/pytorch-%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81/</link>
+      <pubDate>Fri, 16 Jun 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/06/16/pytorch-%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81/</guid>
+      <description>&lt;p&gt;&amp;emsp;听说过 Torch 的人都听说了 torch 是动态的, 那他的动态到底是什么呢? 这里用一个 RNN 的例子来展示一下动态计算到底长什么样.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch Autocoder</title>
+      <link>https://sergeyjay.github.io/2017/06/10/pytorch-autocoder/</link>
+      <pubDate>Sat, 10 Jun 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/06/10/pytorch-autocoder/</guid>
+      <description>&lt;p&gt;&amp;emsp;神经网络也能进行非监督学习, 只需要训练数据, 不需要标签数据. 自编码就是这样一种形式. 自编码能自动分类数据, 而且也能嵌套在半监督学习的上面, 用少量的有标签样本和大量的无标签样本学习.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch RNN Regression</title>
+      <link>https://sergeyjay.github.io/2017/06/06/pytorch-rnn-regression/</link>
+      <pubDate>Tue, 06 Jun 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/06/06/pytorch-rnn-regression/</guid>
+      <description>&lt;p&gt;&amp;emsp;循环神经网络&lt;code&gt;RNN&lt;/code&gt;及时预测时间序列.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch RNN Classification</title>
+      <link>https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/</link>
+      <pubDate>Sun, 04 Jun 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/</guid>
+      <description>&lt;p&gt;&amp;emsp;循环神经网络RNN让神经网络有了记忆, 对于序列话的数据,循环神经网络能达到更好的效果.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch CNN</title>
+      <link>https://sergeyjay.github.io/2017/05/31/pytorch-cnn/</link>
+      <pubDate>Wed, 31 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/31/pytorch-cnn/</guid>
+      <description>&lt;p&gt;&amp;emsp;卷积神经网络目前被广泛地用在图片识别上, 已经有层出不穷的应用.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch 优化</title>
+      <link>https://sergeyjay.github.io/2017/05/26/pytorch-%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Fri, 26 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/26/pytorch-%E4%BC%98%E5%8C%96/</guid>
+      <description>&lt;p&gt;&amp;emsp;&lt;code&gt;torch.optim&lt;/code&gt; is a package implementing various optimization algorithms. Most commonly used methods are already supported, and the interface is general enough, so that more sophisticated ones can be also easily integrated in the future..&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch 训练</title>
+      <link>https://sergeyjay.github.io/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/</link>
+      <pubDate>Fri, 19 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/</guid>
+      <description>&lt;p&gt;&amp;emsp;PyTorch 训练与加速神经网络训练.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch NN保存和提取</title>
+      <link>https://sergeyjay.github.io/2017/05/18/pytorch-nn%E4%BF%9D%E5%AD%98%E5%92%8C%E6%8F%90%E5%8F%96/</link>
+      <pubDate>Thu, 18 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/18/pytorch-nn%E4%BF%9D%E5%AD%98%E5%92%8C%E6%8F%90%E5%8F%96/</guid>
+      <description>&lt;p&gt;&amp;emsp;PyTorch 通过简单的途径来使用神经网络进行事物的分类.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch Classification</title>
+      <link>https://sergeyjay.github.io/2017/05/15/pytorch-classification/</link>
+      <pubDate>Mon, 15 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/15/pytorch-classification/</guid>
+      <description>&lt;p&gt;&amp;emsp;PyTorch 通过简单的途径来使用神经网络进行事物的分类.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch Regression</title>
+      <link>https://sergeyjay.github.io/2017/05/13/pytorch-regression/</link>
+      <pubDate>Sat, 13 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/13/pytorch-regression/</guid>
+      <description>&lt;p&gt;&amp;emsp;PyTorch 关系拟合.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch激励函数</title>
+      <link>https://sergeyjay.github.io/2017/05/10/pytorch%E6%BF%80%E5%8A%B1%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Wed, 10 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/10/pytorch%E6%BF%80%E5%8A%B1%E5%87%BD%E6%95%B0/</guid>
+      <description>&lt;p&gt;&amp;emsp;PyTorch Activation Function.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyTorch基础笔记</title>
+      <link>https://sergeyjay.github.io/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 09 May 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;&amp;emsp;PyTorch基础笔记,变量与计算.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>TensorFlow自编码</title>
       <link>https://sergeyjay.github.io/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</link>
       <pubDate>Sun, 30 Apr 2017 12:00:23 +0200</pubDate>
@@ -102,17 +234,6 @@
     </item>
     
     <item>
-      <title>python pandas相关</title>
-      <link>https://sergeyjay.github.io/2017/04/25/python-pandas%E7%9B%B8%E5%85%B3/</link>
-      <pubDate>Tue, 25 Apr 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/04/25/python-pandas%E7%9B%B8%E5%85%B3/</guid>
-      <description>&lt;p&gt;&amp;emsp;&lt;code&gt;pandas&lt;/code&gt;基于&lt;code&gt;numpy&lt;/code&gt;, 是&lt;code&gt;numpy&lt;/code&gt;的升级版本.如果用&lt;code&gt;python&lt;/code&gt;的列表和字典来作比较, 那么可以说&lt;code&gt;Numpy&lt;/code&gt;是列表形式的，没有数值标签，而 &lt;code&gt;Pandas&lt;/code&gt; 就是字典形式.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>循环神经网络分类训练</title>
       <link>https://sergeyjay.github.io/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</link>
       <pubDate>Mon, 24 Apr 2017 12:00:23 +0200</pubDate>
@@ -129,28 +250,6 @@
       
       <guid>https://sergeyjay.github.io/2017/04/22/tensorflow-saver/</guid>
       <description>&lt;p&gt;&amp;emsp;Tensorflow 中的 saver 可以保存和加载搭建好的神经网络.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>python numpy相关</title>
-      <link>https://sergeyjay.github.io/2017/04/20/python-numpy%E7%9B%B8%E5%85%B3/</link>
-      <pubDate>Thu, 20 Apr 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/04/20/python-numpy%E7%9B%B8%E5%85%B3/</guid>
-      <description>&lt;p&gt;&amp;emsp;NumPy is the fundamental package for scientific computing with Python.numpy运行速度也很快,对科学就算,机器学习的应用有很大帮助.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>python多进程,多核运算的效率对比</title>
-      <link>https://sergeyjay.github.io/2017/04/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</link>
-      <pubDate>Thu, 20 Apr 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/04/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</guid>
-      <description>&lt;p&gt;&amp;emsp;python多进程,多核运存在一定的差别,我们应该在知晓他们的效率对比,在合适的场景使用对应的技术.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -178,12 +277,14 @@
     </item>
     
     <item>
-      <title>python进程共享内存</title>
-      <link>https://sergeyjay.github.io/2017/04/14/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</link>
-      <pubDate>Fri, 14 Apr 2017 12:00:23 +0200</pubDate>
+      <title>mxnet大规模图像分类</title>
+      <link>https://sergeyjay.github.io/2017/04/09/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</link>
+      <pubDate>Sun, 09 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/04/14/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</guid>
-      <description>&lt;p&gt;&amp;emsp;python的多进程或者说不同CPU之间通信是通过共享内存来实现的.&lt;/p&gt;
+      <guid>https://sergeyjay.github.io/2017/04/09/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</guid>
+      <description>&lt;p&gt;&amp;emsp;写在前面:本教程对计算机硬件要求较高,教程中使用了AWS提供的服务.&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;训练一个具有大量图像的神经网络会带来一些挑战。即使使用最新的GPU，也不可能在合理的时间内使用单个GPU来训练大型网络。在一台机器中使用多个gpu可以稍微减轻这个问题。但是，可以连接到一台机器上的gpu的数量是有限的(通常为8或16)。本教程解释了如何使用多个包含多个gpu的多台机器来训练大的网络，使用tb级的数据。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -200,34 +301,12 @@
     </item>
     
     <item>
-      <title>python Tkinter相关</title>
-      <link>https://sergeyjay.github.io/2017/03/29/python-tkinter%E7%9B%B8%E5%85%B3/</link>
-      <pubDate>Wed, 29 Mar 2017 12:00:23 +0200</pubDate>
+      <title>mxnet使用预训练模型预测</title>
+      <link>https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
+      <pubDate>Fri, 31 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/29/python-tkinter%E7%9B%B8%E5%85%B3/</guid>
-      <description>&lt;p&gt;&amp;emsp;Tkinter 是使用 python 进行窗口视窗设计的模块,具有简单的构造, 多平台, 多系统的兼容性, 能让它成为让你快速入门定制窗口文件的好助手.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>python进程池</title>
-      <link>https://sergeyjay.github.io/2017/03/29/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</link>
-      <pubDate>Wed, 29 Mar 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/03/29/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</guid>
-      <description>&lt;p&gt;&amp;emsp;python进程池就是我们将所要运行的东西，放到池子里，python会自行解决多进程的问题.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>python进程锁</title>
-      <link>https://sergeyjay.github.io/2017/03/29/python%E8%BF%9B%E7%A8%8B%E9%94%81/</link>
-      <pubDate>Wed, 29 Mar 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/03/29/python%E8%BF%9B%E7%A8%8B%E9%94%81/</guid>
-      <description>&lt;p&gt;&amp;emsp;python进程间通信共享资源等需要保证进程安全,我们需要了解python的进程锁.&lt;/p&gt;
+      <guid>https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
+      <description>&lt;p&gt;&amp;emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -244,36 +323,23 @@
     </item>
     
     <item>
-      <title>mxnet大规模图像分类</title>
-      <link>https://sergeyjay.github.io/2017/03/27/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</link>
-      <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
+      <title>python pandas相关</title>
+      <link>https://sergeyjay.github.io/2017/03/26/python-pandas%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Sun, 26 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/27/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</guid>
-      <description>&lt;p&gt;&amp;emsp;写在前面:本教程对计算机硬件要求较高,教程中使用了AWS提供的服务.&lt;/p&gt;
-
-&lt;p&gt;&amp;emsp;训练一个具有大量图像的神经网络会带来一些挑战。即使使用最新的GPU，也不可能在合理的时间内使用单个GPU来训练大型网络。在一台机器中使用多个gpu可以稍微减轻这个问题。但是，可以连接到一台机器上的gpu的数量是有限的(通常为8或16)。本教程解释了如何使用多个包含多个gpu的多台机器来训练大的网络，使用tb级的数据。&lt;/p&gt;
+      <guid>https://sergeyjay.github.io/2017/03/26/python-pandas%E7%9B%B8%E5%85%B3/</guid>
+      <description>&lt;p&gt;&amp;emsp;&lt;code&gt;pandas&lt;/code&gt;基于&lt;code&gt;numpy&lt;/code&gt;, 是&lt;code&gt;numpy&lt;/code&gt;的升级版本.如果用&lt;code&gt;python&lt;/code&gt;的列表和字典来作比较, 那么可以说&lt;code&gt;Numpy&lt;/code&gt;是列表形式的，没有数值标签，而 &lt;code&gt;Pandas&lt;/code&gt; 就是字典形式.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>mxnet使用预训练模型预测</title>
-      <link>https://sergeyjay.github.io/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
-      <pubDate>Fri, 24 Mar 2017 12:00:23 +0200</pubDate>
+      <title>python numpy相关</title>
+      <link>https://sergeyjay.github.io/2017/03/25/python-numpy%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Sat, 25 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/24/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
-      <description>&lt;p&gt;&amp;emsp;本教程解释了如何通过预先训练的模型来识别图像中的对象，以及如何执行特征提取。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>python threading的join基本使用</title>
-      <link>https://sergeyjay.github.io/2017/03/22/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Wed, 22 Mar 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/03/22/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
-      <description>&lt;p&gt;&amp;emsp;python threading 的&lt;code&gt;join&lt;/code&gt;功能, 基本应用.&lt;/p&gt;
+      <guid>https://sergeyjay.github.io/2017/03/25/python-numpy%E7%9B%B8%E5%85%B3/</guid>
+      <description>&lt;p&gt;&amp;emsp;NumPy is the fundamental package for scientific computing with Python.numpy运行速度也很快,对科学就算,机器学习的应用有很大帮助.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -301,23 +367,23 @@
     </item>
     
     <item>
+      <title>python多进程,多核运算的效率对比</title>
+      <link>https://sergeyjay.github.io/2017/03/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Mon, 20 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</guid>
+      <description>&lt;p&gt;&amp;emsp;python多进程,多核运存在一定的差别,我们应该在知晓他们的效率对比,在合适的场景使用对应的技术.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>TensorFlow可视化(2)</title>
       <link>https://sergeyjay.github.io/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</link>
       <pubDate>Sun, 19 Mar 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</guid>
       <description>&lt;p&gt;&amp;emsp;Tensorflow 中的 tensorboard 不仅仅可以可视化神经网络结构,还可以可视化我们的 training 训练结果,根据每一次不同的训练结果来修改提升神经网络参数.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>python 线程锁</title>
-      <link>https://sergeyjay.github.io/2017/03/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</link>
-      <pubDate>Sat, 18 Mar 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/03/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</guid>
-      <description>&lt;p&gt;&amp;emsp;python threading 有线程锁,与之相似的就是进程锁,可以进行类比.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -378,12 +444,56 @@
     </item>
     
     <item>
+      <title>python Tkinter相关</title>
+      <link>https://sergeyjay.github.io/2017/03/09/python-tkinter%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Thu, 09 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/09/python-tkinter%E7%9B%B8%E5%85%B3/</guid>
+      <description>&lt;p&gt;&amp;emsp;Tkinter 是使用 python 进行窗口视窗设计的模块,具有简单的构造, 多平台, 多系统的兼容性, 能让它成为让你快速入门定制窗口文件的好助手.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>What neural etwork is?</title>
       <link>https://sergeyjay.github.io/2017/03/02/what-neural-etwork-is/</link>
       <pubDate>Thu, 02 Mar 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/2017/03/02/what-neural-etwork-is/</guid>
       <description>&lt;p&gt;&amp;emsp;神经网络是什么东西呢?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python进程共享内存</title>
+      <link>https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</link>
+      <pubDate>Wed, 01 Mar 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</guid>
+      <description>&lt;p&gt;&amp;emsp;python的多进程或者说不同CPU之间通信是通过共享内存来实现的.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python进程池</title>
+      <link>https://sergeyjay.github.io/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</link>
+      <pubDate>Mon, 27 Feb 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</guid>
+      <description>&lt;p&gt;&amp;emsp;python进程池就是我们将所要运行的东西，放到池子里，python会自行解决多进程的问题.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python进程锁</title>
+      <link>https://sergeyjay.github.io/2017/02/26/python%E8%BF%9B%E7%A8%8B%E9%94%81/</link>
+      <pubDate>Sun, 26 Feb 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/02/26/python%E8%BF%9B%E7%A8%8B%E9%94%81/</guid>
+      <description>&lt;p&gt;&amp;emsp;python进程间通信共享资源等需要保证进程安全,我们需要了解python的进程锁.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -411,6 +521,28 @@
     </item>
     
     <item>
+      <title>python threading的join基本使用</title>
+      <link>https://sergeyjay.github.io/2017/02/20/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 20 Feb 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/02/20/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;p&gt;&amp;emsp;python threading 的&lt;code&gt;join&lt;/code&gt;功能, 基本应用.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 线程锁</title>
+      <link>https://sergeyjay.github.io/2017/02/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</link>
+      <pubDate>Sat, 18 Feb 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/02/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</guid>
+      <description>&lt;p&gt;&amp;emsp;python threading 有线程锁,与之相似的就是进程锁,可以进行类比.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>GCD产生deadlock</title>
       <link>https://sergeyjay.github.io/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</link>
       <pubDate>Sat, 04 Feb 2017 12:00:23 +0800</pubDate>
@@ -422,23 +554,23 @@
     </item>
     
     <item>
-      <title>python存储进程结果 Queue</title>
-      <link>https://sergeyjay.github.io/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</link>
-      <pubDate>Mon, 30 Jan 2017 12:00:23 +0200</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2017/01/30/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</guid>
-      <description>&lt;p&gt;&amp;emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在&lt;code&gt;Queue&lt;/code&gt;中，线程执行完后，从&lt;code&gt;Queue&lt;/code&gt;中获取存储的结果.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>golang闭包使用注意</title>
       <link>https://sergeyjay.github.io/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</link>
       <pubDate>Sun, 22 Jan 2017 12:00:23 +0200</pubDate>
       
       <guid>https://sergeyjay.github.io/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</guid>
       <description>&lt;p&gt;&amp;emsp;go只提供了一种循环方式，即&lt;code&gt;for&lt;/code&gt;循环，在使用时可以像c那样使用，也可以通过&lt;code&gt;for range&lt;/code&gt;方式遍历容器类型如数组、切片和映射。但是在使用&lt;code&gt;for range&lt;/code&gt;时，如果使用不当，就会出现一些问题，导致程序运行行为不如预期。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python存储进程结果 Queue</title>
+      <link>https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</link>
+      <pubDate>Tue, 17 Jan 2017 12:00:23 +0200</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</guid>
+      <description>&lt;p&gt;&amp;emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在&lt;code&gt;Queue&lt;/code&gt;中，线程执行完后，从&lt;code&gt;Queue&lt;/code&gt;中获取存储的结果.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
