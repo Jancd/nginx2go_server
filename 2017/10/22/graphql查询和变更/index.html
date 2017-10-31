@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>GraphQL查询和变更 &middot; Sergey&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.29" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sergey Chueng">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="http://sergey.coding.me/2017/10/22/graphql%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%8F%98%E6%9B%B4/"/>
+    <link rel="icon" href="http://sergey.coding.me/favicon.ico">
+    <link rel="apple-touch-icon" href="http://sergey.coding.me/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="http://sergey.coding.me/css/style.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/css/monokai.css">
+    <link rel="stylesheet" href="http://sergey.coding.me/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="GraphQL查询和变更" />
+<meta property="og:description" content="&emsp;GraphQL学习笔记(2),查询 GraphQL 服务器的详细信息.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sergey.coding.me/2017/10/22/graphql%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%8F%98%E6%9B%B4/" />
+
+
+
+<meta property="article:published_time" content="2017-10-22T12:00:23&#43;02:00"/>
+<meta property="article:modified_time" content="2017-10-22T12:00:23&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="GraphQL查询和变更">
+<meta itemprop="description" content="&emsp;GraphQL学习笔记(2),查询 GraphQL 服务器的详细信息.
+
+">
+
+
+<meta itemprop="dateModified" content="2017-10-22T12:00:23&#43;02:00" />
+<meta itemprop="wordCount" content="735">
+
+
+
+<meta itemprop="keywords" content="GraphQL," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="GraphQL查询和变更"/>
+<meta name="twitter:description" content="&emsp;GraphQL学习笔记(2),查询 GraphQL 服务器的详细信息.
+
+"/>
+<meta name="twitter:site" content="@SergeyJay"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://sergey.coding.me" id="logo">
+          
+          <i class="logo" style="background-image: url('http://sergey.coding.me/css/images/brain.jpg')"></i>
+          
+          <span class="site-title">Sergey&#39;s blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="http://sergey.coding.me/categories/">Categories</a>
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About Me</a>
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://sergey.coding.me/css/images/profile.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="http://sergey.coding.me" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="http://sergey.coding.me/categories/">Categories</a></td>
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About Me</a></td>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="http://sergey.coding.me" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="http://sergey.coding.me/css/images/profile.jpg">
+      
+      <h2 id="name">Sergey Chueng</h2>
+      <h3 id="title"> Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Shanghai</span>
+      
+          <a id="follow" href="https://github.com/SergeyJay">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        73
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          13
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/SergeyJay" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/zshangan@iCloud.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/SergeyJay" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="http://sergey.coding.me/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="http://sergey.coding.me/2017/10/22/graphql%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%8F%98%E6%9B%B4/">
+    <h1 class="article-title" itemprop="name">
+        GraphQL查询和变更
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-10-22 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-10-22</time>
+            &middot;
+            735
+            words
+            &middot;
+            4
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://sergey.coding.me/categories/tools">tools</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://sergey.coding.me/tags/graphql">GraphQL</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;<code>GraphQL</code>学习笔记(2),查询 GraphQL 服务器的详细信息.</p>
+
+<p></p>
+
+<p><em>Note:This blog without all the resources that are outside the original,reproduced please indicate the source.</em></p>
+
+<h1 id="字段-fields">字段（Fields）</h1>
+
+<p>简单而言，GraphQL 是关于请求对象上的特定字段。我们以一个非常简单的查询以及其结果为例：</p>
+
+<pre><code>{
+  hero {
+    name
+  }
+}
+------------
+结果:
+{
+  &quot;data&quot;: {
+    &quot;hero&quot;: {
+      &quot;name&quot;: &quot;R2-D2&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>你立即就能发现，查询和其结果拥有几乎一样的结构。这是 GraphQL 最重要的特性，因为这样一来，你就总是能得到你想要的数据，而服务器也准确地知道客户端请求的字段。</p>
+
+<p>name 字段返回 String 类型，在这个示例中是《星球大战》主角的名字是：&rdquo;R2-D2&rdquo;。</p>
+
+<p>对了，还有一点 —— 上述查询是可交互的。也就是你可以按你喜欢来改变查询，然后看看新的结果。尝试给查询中的 hero 对象添加一个appearsIn 字段，看看新的结果吧。</p>
+
+<p>在前一例子中，我们请求了我们主角的名字，返回了一个字符串类型（String），但是字段也能指代对象类型（Object）。这个时候，你可以对这个对象的字段进行次级选择（sub-selection）。GraphQL 查询能够遍历相关对象及其字段，使得客户端可以一次请求查询大量相关数据，而不像传统 REST 架构中那样需要多次往返查询。</p>
+
+<pre><code>{
+  hero {
+    name
+    # 查询可以有备注！
+    friends {
+      name
+    }
+  }
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;hero&quot;: {
+      &quot;name&quot;: &quot;R2-D2&quot;,
+      &quot;friends&quot;: [
+        {
+          &quot;name&quot;: &quot;Luke Skywalker&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Han Solo&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Leia Organa&quot;
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+
+<p>注意这个例子中，friends 返回了一个数组的项目，GraphQL 查询会同等看待单个项目或者一个列表的项目，然而我们可以通过 schema 所指示的内容来预测将会得到哪一种。</p>
+
+<h1 id="参数-arguments">参数（Arguments）</h1>
+
+<p>即使我们能做的仅仅是遍历对象及其字段，GraphQL 就已经是一个非常有用的数据查询语言了。但是当你加入给字段传递参数的能力时，事情会变得更加有趣。</p>
+
+<pre><code>{
+  human(id: &quot;1000&quot;) {
+    name
+    height
+  }
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;human&quot;: {
+      &quot;name&quot;: &quot;Luke Skywalker&quot;,
+      &quot;height&quot;: 1.72
+    }
+  }
+}
+</code></pre>
+
+<p>在类似 REST 的系统中，你只能传递一组简单参数 —— 请求中的 query 参数和 URL 段。但是在 GraphQL 中，每一个字段和嵌套对象都能有自己的一组参数，从而使得 GraphQL 可以完美替代多次 API 获取请求。甚至你也可以给 标量（scalar）字段传递参数，用于实现服务端的一次转换，而不用每个客户端分别转换。</p>
+
+<pre><code>{
+  human(id: &quot;1000&quot;) {
+    name
+    height(unit: FOOT)
+  }
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;human&quot;: {
+      &quot;name&quot;: &quot;Luke Skywalker&quot;,
+      &quot;height&quot;: 5.6430448
+    }
+  }
+}
+</code></pre>
+
+<p>参数可以是多种不同的类型。上面例子中，我们使用了一个枚举类型，其代表了一个有限选项集合（本例中为长度单位，即是 METER 或者 FOOT）。GraphQL 自带一套默认类型，但是 GraphQL 服务器可以声明一套自己的定制类型，只要能序列化成你的传输格式即可。</p>
+
+<h1 id="别名-aliases">别名（Aliases）</h1>
+
+<p>如果你眼睛够锐利，你可能已经发现，即便结果中的字段与查询中的字段能够匹配，但是因为他们并不包含参数，你就没法通过不同参数来查询相同字段。这便是为何你需要别名 —— 这可以让你重命名结果中的字段为任意你想到的名字。</p>
+
+<pre><code>{
+  empireHero: hero(episode: EMPIRE) {
+    name
+  }
+  jediHero: hero(episode: JEDI) {
+    name
+  }
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;empireHero&quot;: {
+      &quot;name&quot;: &quot;Luke Skywalker&quot;
+    },
+    &quot;jediHero&quot;: {
+      &quot;name&quot;: &quot;R2-D2&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>上例中，两个 hero 字段将会存在冲突，但是因为我们可以将其另取一个别名，我们也就可以在一次请求中得到两个结果。</p>
+
+<h1 id="片段-fragments">片段（Fragments）</h1>
+
+<p>假设我们的 app 有比较复杂的页面，将正反派主角及其友军分为两拨。你立马就能想到对应的查询会变得复杂，因为我们需要将一些字段重复至少两次 —— 两方各一次以作比较。</p>
+
+<p>这就是为何 GraphQL 包含了称作片段的可复用单元。片段使你能够组织一组字段，然后在需要它们的的地方引入。下面例子展示了如何使用片段解决上述场景：</p>
+
+<pre><code>{
+  leftComparison: hero(episode: EMPIRE) {
+    ...comparisonFields
+  }
+  rightComparison: hero(episode: JEDI) {
+    ...comparisonFields
+  }
+}
+​
+fragment comparisonFields on Character {
+  name
+  appearsIn
+  friends {
+    name
+  }
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;leftComparison&quot;: {
+      &quot;name&quot;: &quot;Luke Skywalker&quot;,
+      &quot;appearsIn&quot;: [
+        &quot;NEWHOPE&quot;,
+        &quot;EMPIRE&quot;,
+        &quot;JEDI&quot;
+      ],
+      &quot;friends&quot;: [
+        {
+          &quot;name&quot;: &quot;Han Solo&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Leia Organa&quot;
+        },
+        {
+          &quot;name&quot;: &quot;C-3PO&quot;
+        },
+        {
+          &quot;name&quot;: &quot;R2-D2&quot;
+        }
+      ]
+    },
+    &quot;rightComparison&quot;: {
+      &quot;name&quot;: &quot;R2-D2&quot;,
+      &quot;appearsIn&quot;: [
+        &quot;NEWHOPE&quot;,
+        &quot;EMPIRE&quot;,
+        &quot;JEDI&quot;
+      ],
+      &quot;friends&quot;: [
+        {
+          &quot;name&quot;: &quot;Luke Skywalker&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Han Solo&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Leia Organa&quot;
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+
+<p>你可以看到上面的查询如何漂亮地重复了字段。片段的概念经常用于将复杂的应用数据需求分割成小块，特别是你要将大量不同片段的 UI 组件组合成一个初始数据获取的时候。</p>
+
+<h1 id="变量-variables">变量（Variables）</h1>
+
+<p>目前为止，我们将参数写在了查询字符串内。但是在很多应用中，字段的参数可能是动态的：例如，可能是一个&rdquo;下拉菜单&rdquo;让你选择感兴趣的《星球大战》续集，或者是一个搜索区，或者是一组过滤器。</p>
+
+<p>将这些动态参数直接传进查询字符串并不是好主意，因为这样我们的客户端就得动态地在运行时操作这些查询字符串了，再把它序列化成 GraphQL 专用的格式。其实，GraphQL 拥有一级方法将动态值提取到查询之外，然后作为分离的字典传进去。这些动态值即称为变量。</p>
+
+<p>使用变量之前，我们得做三件事：</p>
+
+<ol>
+<li>使用 $variableName 替代查询中的静态值。</li>
+<li>声明 $variableName 为查询接受的变量之一。</li>
+<li>将 variableName: value 通过传输专用（通常是 JSON）的分离的变量字典中。
+全部做完之后就像这个样子：</li>
+</ol>
+
+<pre><code>query HeroNameAndFriends($episode: Episode) {
+  hero(episode: $episode) {
+    name
+    friends {
+      name
+    }
+  }
+}
+
+{
+  &quot;episode&quot;: &quot;JEDI&quot;
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;hero&quot;: {
+      &quot;name&quot;: &quot;R2-D2&quot;,
+      &quot;friends&quot;: [
+        {
+          &quot;name&quot;: &quot;Luke Skywalker&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Han Solo&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Leia Organa&quot;
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+
+<p>这样一来，我们的客户端代码就只需要传入不同的变量，而不用构建一个全新的查询了。这事实上也是一个良好实践，意味着查询的参数将是动态的 —— 我们决不能使用用户提供的值来字符串插值以构建查询。</p>
+
+<h1 id="变量定义-variable-definitions">变量定义（Variable definitions）</h1>
+
+<p>变量定义看上去像是上述查询中的 ($episode: Episode)。其工作方式跟类型语言中函数的参数定义一样。它以列出所有变量，变量前缀必须为 $，后跟其类型，本例中为 Episode。</p>
+
+<p>所有声明的变量都必须是标量、枚举型或者输入对象类型。所以如果想要传递一个复杂对象到一个字段上，你必须知道服务器上其匹配的类型。可以从Schema页面了解更多关于输入对象类型的信息。</p>
+
+<p>变量定义可以是可选的或者必要的。上例中，Episode 后并没有 !，因此其是可选的。但是如果你传递变量的字段要求非空参数，那变量一定是必要的。</p>
+
+<p>如果想要进一步了解变量定义的句法，可以学习 GraphQL 的 schema 语言。schema 语言在 Schema 中有细述。</p>
+
+<h1 id="默认变量-default-variables">默认变量（Default variables）</h1>
+
+<p>可以通过在查询中的类型定义后面附带默认值的方式，将默认值赋给变量。</p>
+
+<pre><code>query HeroNameAndFriends($episode: Episode = &quot;JEDI&quot;) {
+  hero(episode: $episode) {
+    name
+    friends {
+      name
+    }
+  }
+}
+</code></pre>
+
+<p>当所有变量都有默认值的时候，你可以不传变量直接调用查询。如果任何变量作为变量字典的部分传递了，它将覆盖其默认值。</p>
+
+<h1 id="操作名称-operation-name">操作名称（Operation name）</h1>
+
+<p>上面案例中我们看到的另一个东西就是我们的查询还有个操作名。这之前，我们都使用了简写句法，省略了 query 关键字和查询名称，但是生产中使用这些可以使我们代码减少歧义。</p>
+
+<p>就把它想成你喜欢的程序语言中的函数名。例如，在 JavaScript 中，我们只用匿名函数就可以工作，但是当我们给了函数名之后，就更加容易追踪、调试我们的代码，并在其被调用的时候做日志。同理，GraphQL 的查询和变更名称，以及片段名称，都可以成为服务端侧用来识别不同 GraphQL 请求的有效调试工具。</p>
+
+<h1 id="指令-directives">指令（Directives）</h1>
+
+<p>我们上面讨论的变量使得我们可以避免手动字符串插值构建动态查询。传递变量给参数解决了一大堆这样的问题，但是我们可能也需要一个方式使用变量动态地改变我们查询的结构。譬如我们假设有个 UI 组件，其有概括视图和详情视图，后者比前者拥有更多的字段。</p>
+
+<p>我们来构建一个这种组件的查询：</p>
+
+<pre><code>query Hero($episode: Episode, $withFriends: Boolean!) {
+  hero(episode: $episode) {
+    name
+    friends @include(if: $withFriends) {
+      name
+    }
+  }
+}
+
+{
+  &quot;episode&quot;: &quot;JEDI&quot;,
+  &quot;withFriends&quot;: false
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;hero&quot;: {
+      &quot;name&quot;: &quot;R2-D2&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>尝试修改上面的变量，传递 true 给 withFriends，看看结果的变化。</p>
+
+<p>我们用了 GraphQL 中一种称作指令的新特性。一个指令可以附着在字段或者片段包含的字段上，然后以任何服务端期待的方式来改变查询的执行。GraphQL 的核心规范包含两个指令，其必须被任何规范兼容的 GraphQL 服务器实现所支持：</p>
+
+<ul>
+<li>@include(if: Boolean) 仅在参数为 true 时，包含此字段。</li>
+<li>@skip(if: Boolean) 如果参数为 true，跳过此字段。
+指令在你不得不通过字符串操作来增减查询的字段时解救你。服务端实现也可以定义新的指令来添加新的特性。</li>
+</ul>
+
+<h1 id="变更-mutations">变更（Mutations）</h1>
+
+<p>GraphQL 的大部分讨论集中在数据获取，但是任何完整的数据平台也都需要一个改变服务端数据的方法。</p>
+
+<p>REST 中，任何请求都可能最后导致一些服务端副作用，但是约定上建议不要使用 GET 请求来修改数据。GraphQL 也是类似 —— 技术上而言，任何查询都可以被实现为导致数据写入。然而，建一个约定来规范任何导致写入的操作都应该显式通过变更（mutation）来发送。</p>
+
+<p>就如同查询一样，如果任何变更字段返回一个对象类型，你也能请求其嵌套字段。获取一个对象变更后的新状态也是十分有用的。我们来看看一个变更例子：</p>
+
+<pre><code>mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
+  createReview(episode: $ep, review: $review) {
+    stars
+    commentary
+  }
+}
+
+{
+  &quot;ep&quot;: &quot;JEDI&quot;,
+  &quot;review&quot;: {
+    &quot;stars&quot;: 5,
+    &quot;commentary&quot;: &quot;This is a great movie!&quot;
+  }
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;createReview&quot;: {
+      &quot;stars&quot;: 5,
+      &quot;commentary&quot;: &quot;This is a great movie!&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>注意 createReview 字段如何返回了新建的 review 的 stars 和 commentary 字段。这在变更已有数据时特别有用，例如，当一个字段自增的时候，我们可以在一个请求中变更并查询这个字段的新值。</p>
+
+<p>你也可能注意到，这个例子中，我们传递的 review 变量并非标量。它是一个输入对象类型，一种特殊的对象类型，可以作为参数传递。你可以在 Schema 页面上了解到更多关于输入类型的信息。</p>
+
+<h1 id="变更中的多个字段-multiple-fields-in-mutations">变更中的多个字段（Multiple fields in mutations）</h1>
+
+<p>一个变更也能包含多个字段，一如查询。查询和变更之间名称之外的一个重要区别是：</p>
+
+<p>查询字段时，是并行执行，而变更字段时，是线性执行，一个接着一个。</p>
+
+<p>这意味着如果我们一个请求中发送了两个 incrementCredits 变更，第一个保证在第二个之前执行，以确保我们不会出现竞态。</p>
+
+<h1 id="内联片段-inline-fragments">内联片段（Inline Fragments）</h1>
+
+<p>跟许多类型系统一样，GraphQL schema 也具备定义接口和联合类型的能力。在 schema 指南中可了解更多。</p>
+
+<p>如果你查询的字段返回的是接口或者联合类型，那么你可能需要使用内联片段来取出下层具体类型的数据：</p>
+
+<pre><code>query HeroForEpisode($ep: Episode!) {
+  hero(episode: $ep) {
+    name
+    ... on Droid {
+      primaryFunction
+    }
+    ... on Human {
+      height
+    }
+  }
+}
+
+{
+  &quot;ep&quot;: &quot;JEDI&quot;
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;hero&quot;: {
+      &quot;name&quot;: &quot;R2-D2&quot;,
+      &quot;primaryFunction&quot;: &quot;Astromech&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>这个查询中，hero 字段返回 Character 类型，取决于 episode 参数，其可能是 Human 或者 Droid 类型。在直接选择的情况下，你只能请求 Character 上存在的字段，譬如 name。</p>
+
+<p>如果要请求具体类型上的字段，你需要使用一个类型条件内联片段。因为第一个片段标注为 &hellip; on Droid，primaryFunction 仅在 hero 返回的 Character 为 Droid 类型时才会执行。同理适用于 Human 类型的 height 字段。</p>
+
+<p>具名片段也可以用于同样的情况，因为具名片段总是附带了一个类型。</p>
+
+<h1 id="元字段-meta-fields">元字段（Meta fields）</h1>
+
+<p>某些情况下，你并不知道你将从 GraphQL 服务获得什么类型，这时候你就需要一些方法在客户端来决定如何处理这些数据。GraphQL 允许你在查询的任何位置请求 __typename，一个元字段，以获得那个位置的对象类型名称。</p>
+
+<pre><code>{
+  search(text: &quot;an&quot;) {
+    __typename
+    ... on Human {
+      name
+    }
+    ... on Droid {
+      name
+    }
+    ... on Starship {
+      name
+    }
+  }
+}
+
+------------
+结果:
+
+{
+  &quot;data&quot;: {
+    &quot;search&quot;: [
+      {
+        &quot;__typename&quot;: &quot;Human&quot;,
+        &quot;name&quot;: &quot;Han Solo&quot;
+      },
+      {
+        &quot;__typename&quot;: &quot;Human&quot;,
+        &quot;name&quot;: &quot;Leia Organa&quot;
+      },
+      {
+        &quot;__typename&quot;: &quot;Starship&quot;,
+        &quot;name&quot;: &quot;TIE Advanced x1&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+
+<p>上面的查询中，search 返回了一个联合类型，其可能是三种选项之一。没有 __typename 字段的情况下，几乎不可能在客户端分辨开这三个不同的类型。</p>
+
+<p>GraphQL 服务提供了不少元字段，剩下的部分用于描述 内省 系统。</p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://sergey.coding.me/2017/10/22/graphql%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%8F%98%E6%9B%B4/" data-id="7bd31128b227afc72a30e63b925402c6" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://sergey.coding.me/2017/10/22/graphql%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%8F%98%E6%9B%B4/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="http://sergey.coding.me/2017/09/27/tensorflow-for-go/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">TensorFlow for Go</div>
+    </a>
+    
+
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/ai">
+                    ai
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">34</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/categories/tools">
+                    tools
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/database">
+                    database
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">23</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/graphql">
+                    graphql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/ios">
+                    ios
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/mxnet">
+                    mxnet
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/neural-network">
+                    neural-network
+                </a>
+                <span class="category-list-count">14</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/protobuf">
+                    protobuf
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">12</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/pytorch">
+                    pytorch
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/rpc">
+                    rpc
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://sergey.coding.me/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">13</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Built by <a href="http://github.com/SergeyJay">Sergey Chueng</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="http://sergey.coding.me/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://sergey.coding.me/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

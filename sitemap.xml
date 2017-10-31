@@ -3,445 +3,492 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://sergeyjay.github.io/about/</loc>
+    <loc>http://sergey.coding.me/about/</loc>
     <lastmod>2017-10-23T21:49:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/09/27/tensorflow-for-go/</loc>
+    <loc>http://sergey.coding.me/2017/10/22/graphql%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%8F%98%E6%9B%B4/</loc>
+    <lastmod>2017-10-22T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/2017/09/27/tensorflow-for-go/</loc>
     <lastmod>2017-09-27T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</loc>
+    <loc>http://sergey.coding.me/2017/09/22/graphql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
+    <lastmod>2017-09-22T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</loc>
     <lastmod>2017-08-04T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/08/03/socket-server-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%8F%E8%AE%AE/</loc>
+    <loc>http://sergey.coding.me/2017/08/03/socket-server-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2017-08-03T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/06/23/go%E8%AF%AD%E8%A8%80%E7%9A%84goroutine%E8%B0%83%E5%BA%A6%E6%9C%BA%E5%88%B6%E8%BD%AC%E8%BD%BD/</loc>
+    <loc>http://sergey.coding.me/2017/06/23/go%E8%AF%AD%E8%A8%80%E7%9A%84goroutine%E8%B0%83%E5%BA%A6%E6%9C%BA%E5%88%B6%E8%BD%AC%E8%BD%BD/</loc>
     <lastmod>2017-06-23T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/06/16/pytorch-%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81/</loc>
+    <loc>http://sergey.coding.me/2017/06/16/pytorch-%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81/</loc>
     <lastmod>2017-06-16T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/06/10/pytorch-autocoder/</loc>
+    <loc>http://sergey.coding.me/2017/06/10/pytorch-autocoder/</loc>
     <lastmod>2017-06-10T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/06/06/pytorch-rnn-regression/</loc>
+    <loc>http://sergey.coding.me/2017/06/06/pytorch-rnn-regression/</loc>
     <lastmod>2017-06-06T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/</loc>
+    <loc>http://sergey.coding.me/2017/06/04/pytorch-rnn-classification/</loc>
     <lastmod>2017-06-04T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/05/31/pytorch-cnn/</loc>
+    <loc>http://sergey.coding.me/2017/05/31/pytorch-cnn/</loc>
     <lastmod>2017-05-31T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/05/26/pytorch-%E4%BC%98%E5%8C%96/</loc>
+    <loc>http://sergey.coding.me/2017/05/26/pytorch-%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2017-05-26T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/</loc>
+    <loc>http://sergey.coding.me/2017/05/19/pytorch-%E8%AE%AD%E7%BB%83/</loc>
     <lastmod>2017-05-19T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/05/18/pytorch-nn%E4%BF%9D%E5%AD%98%E5%92%8C%E6%8F%90%E5%8F%96/</loc>
+    <loc>http://sergey.coding.me/2017/05/18/pytorch-nn%E4%BF%9D%E5%AD%98%E5%92%8C%E6%8F%90%E5%8F%96/</loc>
     <lastmod>2017-05-18T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/05/15/pytorch-classification/</loc>
+    <loc>http://sergey.coding.me/2017/05/15/pytorch-classification/</loc>
     <lastmod>2017-05-15T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/05/13/pytorch-regression/</loc>
+    <loc>http://sergey.coding.me/2017/05/13/pytorch-regression/</loc>
     <lastmod>2017-05-13T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/05/10/pytorch%E6%BF%80%E5%8A%B1%E5%87%BD%E6%95%B0/</loc>
+    <loc>http://sergey.coding.me/2017/05/10/pytorch%E6%BF%80%E5%8A%B1%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2017-05-10T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://sergey.coding.me/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-05-09T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</loc>
+    <loc>http://sergey.coding.me/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2017-04-30T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/29/golang%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/</loc>
+    <loc>http://sergey.coding.me/2017/04/29/golang%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/</loc>
     <lastmod>2017-04-29T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/27/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83/</loc>
+    <loc>http://sergey.coding.me/2017/04/27/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83/</loc>
     <lastmod>2017-04-27T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/</loc>
+    <loc>http://sergey.coding.me/2017/04/27/golang%E5%AE%9E%E7%8E%B0%E5%BF%83%E8%B7%B3%E5%93%8D%E5%BA%94/</loc>
     <lastmod>2017-04-27T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</loc>
+    <loc>http://sergey.coding.me/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</loc>
     <lastmod>2017-04-24T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/22/tensorflow-saver/</loc>
+    <loc>http://sergey.coding.me/2017/04/22/tensorflow-saver/</loc>
     <lastmod>2017-04-22T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/20/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn%E4%BB%A5%E5%8F%8Alstm%E6%8A%80%E6%9C%AF/</loc>
+    <loc>http://sergey.coding.me/2017/04/20/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn%E4%BB%A5%E5%8F%8Alstm%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2017-04-20T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <loc>http://sergey.coding.me/2017/04/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2017-04-17T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/09/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</loc>
+    <loc>http://sergey.coding.me/2017/04/09/mxnet%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/</loc>
     <lastmod>2017-04-09T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/04/04/tensorflow%E5%88%86%E7%B1%BB%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://sergey.coding.me/2017/04/04/tensorflow%E5%88%86%E7%B1%BB%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2017-04-04T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</loc>
+    <loc>http://sergey.coding.me/2017/03/31/mxnet%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</loc>
     <lastmod>2017-03-31T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/27/mysql-error-2002/</loc>
+    <loc>http://sergey.coding.me/2017/03/27/mysql-error-2002/</loc>
     <lastmod>2017-03-27T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/26/python-pandas%E7%9B%B8%E5%85%B3/</loc>
+    <loc>http://sergey.coding.me/2017/03/26/python-pandas%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2017-03-26T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/25/python-numpy%E7%9B%B8%E5%85%B3/</loc>
+    <loc>http://sergey.coding.me/2017/03/25/python-numpy%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2017-03-25T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/22/golang%E6%8E%A5%E5%8F%A3%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0%E6%B5%85%E6%9E%90/</loc>
+    <loc>http://sergey.coding.me/2017/03/22/golang%E6%8E%A5%E5%8F%A3%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0%E6%B5%85%E6%9E%90/</loc>
     <lastmod>2017-03-22T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/20/golang%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</loc>
+    <loc>http://sergey.coding.me/2017/03/20/golang%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</loc>
     <lastmod>2017-03-20T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</loc>
+    <loc>http://sergey.coding.me/2017/03/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</loc>
     <lastmod>2017-03-20T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</loc>
+    <loc>http://sergey.coding.me/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</loc>
     <lastmod>2017-03-19T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</loc>
+    <loc>http://sergey.coding.me/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</loc>
     <lastmod>2017-03-15T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/14/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%961/</loc>
+    <loc>http://sergey.coding.me/2017/03/14/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%961/</loc>
     <lastmod>2017-03-14T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/12/tensorflow%E6%9E%84%E9%80%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <loc>http://sergey.coding.me/2017/03/12/tensorflow%E6%9E%84%E9%80%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2017-03-12T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</loc>
+    <loc>http://sergey.coding.me/2017/03/12/mxnet%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</loc>
     <lastmod>2017-03-12T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</loc>
+    <loc>http://sergey.coding.me/2017/03/11/mxnet%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2017-03-11T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/09/python-tkinter%E7%9B%B8%E5%85%B3/</loc>
+    <loc>http://sergey.coding.me/2017/03/09/python-tkinter%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2017-03-09T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/02/what-neural-etwork-is/</loc>
+    <loc>http://sergey.coding.me/2017/03/02/what-neural-etwork-is/</loc>
     <lastmod>2017-03-02T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</loc>
+    <loc>http://sergey.coding.me/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</loc>
     <lastmod>2017-03-01T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</loc>
+    <loc>http://sergey.coding.me/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</loc>
     <lastmod>2017-02-27T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/02/26/python%E8%BF%9B%E7%A8%8B%E9%94%81/</loc>
+    <loc>http://sergey.coding.me/2017/02/26/python%E8%BF%9B%E7%A8%8B%E9%94%81/</loc>
     <lastmod>2017-02-26T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/02/24/tensorflow%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://sergey.coding.me/2017/02/24/tensorflow%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-02-24T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/02/21/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</loc>
+    <loc>http://sergey.coding.me/2017/02/21/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</loc>
     <lastmod>2017-02-21T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/02/20/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://sergey.coding.me/2017/02/20/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2017-02-20T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/02/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</loc>
+    <loc>http://sergey.coding.me/2017/02/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</loc>
     <lastmod>2017-02-18T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</loc>
+    <loc>http://sergey.coding.me/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</loc>
     <lastmod>2017-02-04T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</loc>
+    <loc>http://sergey.coding.me/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</loc>
     <lastmod>2017-01-22T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</loc>
+    <loc>http://sergey.coding.me/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</loc>
     <lastmod>2017-01-17T12:00:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/09/04/golang%E4%B9%8Bstruct-tag/</loc>
+    <loc>http://sergey.coding.me/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
+    <lastmod>2016-12-13T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/2016/10/22/protobuf-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-10-22T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/2016/09/11/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</loc>
+    <lastmod>2016-09-11T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/2016/09/11/grpc%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81/</loc>
+    <lastmod>2016-09-11T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/2016/09/04/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
+    <lastmod>2016-09-04T12:00:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/2016/09/04/golang%E4%B9%8Bstruct-tag/</loc>
     <lastmod>2016-09-04T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/08/30/golang%E4%B9%8Breflect/</loc>
+    <loc>http://sergey.coding.me/2016/08/30/golang%E4%B9%8Breflect/</loc>
     <lastmod>2016-08-30T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/08/28/golang%E4%B9%8Bcontext/</loc>
+    <loc>http://sergey.coding.me/2016/08/28/golang%E4%B9%8Bcontext/</loc>
     <lastmod>2016-08-28T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/08/18/golang%E4%B9%8B%E8%BF%9E%E6%8E%A5%E6%B1%A0/</loc>
+    <loc>http://sergey.coding.me/2016/08/18/golang%E4%B9%8B%E8%BF%9E%E6%8E%A5%E6%B1%A0/</loc>
     <lastmod>2016-08-18T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/07/28/golang%E4%B9%8Bchannel/</loc>
+    <loc>http://sergey.coding.me/2016/07/28/golang%E4%B9%8Bchannel/</loc>
     <lastmod>2016-07-28T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/07/26/golang%E4%B9%8Bgoroutine/</loc>
+    <loc>http://sergey.coding.me/2016/07/26/golang%E4%B9%8Bgoroutine/</loc>
     <lastmod>2016-07-26T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/07/17/golang%E4%B9%8Breader%E5%92%8Cwriter/</loc>
+    <loc>http://sergey.coding.me/2016/07/17/golang%E4%B9%8Breader%E5%92%8Cwriter/</loc>
     <lastmod>2016-07-17T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/07/06/golang%E6%8E%A5%E5%8F%A3%E6%B5%85%E6%9E%90/</loc>
+    <loc>http://sergey.coding.me/2016/07/06/golang%E6%8E%A5%E5%8F%A3%E6%B5%85%E6%9E%90/</loc>
     <lastmod>2016-07-06T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/07/02/golang%E4%B9%8B%E5%B5%8C%E5%85%A5/</loc>
+    <loc>http://sergey.coding.me/2016/07/02/golang%E4%B9%8B%E5%B5%8C%E5%85%A5/</loc>
     <lastmod>2016-07-02T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/06/25/golang%E4%B9%8B%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95/</loc>
+    <loc>http://sergey.coding.me/2016/06/25/golang%E4%B9%8B%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2016-06-25T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/06/25/golang%E4%B9%8B%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>http://sergey.coding.me/2016/06/25/golang%E4%B9%8B%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2016-06-25T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/06/24/golang%E4%B9%8Bmap/</loc>
+    <loc>http://sergey.coding.me/2016/06/24/golang%E4%B9%8Bmap/</loc>
     <lastmod>2016-06-24T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/06/20/golang%E4%B9%8Bslice/</loc>
+    <loc>http://sergey.coding.me/2016/06/20/golang%E4%B9%8Bslice/</loc>
     <lastmod>2016-06-20T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2016/06/18/golang%E4%B9%8B%E6%95%B0%E7%BB%84/</loc>
+    <loc>http://sergey.coding.me/2016/06/18/golang%E4%B9%8B%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2016-06-18T12:00:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/2015/10/02/linked-post/</loc>
+    <loc>http://sergey.coding.me/2015/10/02/linked-post/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/categories/ai/</loc>
+    <loc>http://sergey.coding.me/categories/ai/</loc>
     <lastmod>2017-09-27T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/categories/</loc>
+    <loc>http://sergey.coding.me/categories/</loc>
     <lastmod>2017-09-27T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/database/</loc>
+    <loc>http://sergey.coding.me/tags/database/</loc>
     <lastmod>2017-08-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/docker/</loc>
+    <loc>http://sergey.coding.me/tags/docker/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/golang/</loc>
+    <loc>http://sergey.coding.me/tags/golang/</loc>
     <lastmod>2017-09-27T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/ios/</loc>
+    <loc>http://sergey.coding.me/tags/graphql/</loc>
+    <lastmod>2017-10-22T12:00:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/tags/ios/</loc>
     <lastmod>2017-02-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/linux/</loc>
+    <loc>http://sergey.coding.me/tags/linux/</loc>
     <lastmod>2017-08-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/mxnet/</loc>
+    <loc>http://sergey.coding.me/tags/mxnet/</loc>
     <lastmod>2017-04-09T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/neural-network/</loc>
+    <loc>http://sergey.coding.me/tags/neural-network/</loc>
     <lastmod>2017-06-06T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/post/</loc>
-    <lastmod>2017-09-27T12:00:23+02:00</lastmod>
+    <loc>http://sergey.coding.me/post/</loc>
+    <lastmod>2017-10-22T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/categories/programming/</loc>
+    <loc>http://sergey.coding.me/categories/programming/</loc>
     <lastmod>2017-08-03T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/python/</loc>
+    <loc>http://sergey.coding.me/tags/protobuf/</loc>
+    <lastmod>2016-10-22T12:00:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sergey.coding.me/tags/python/</loc>
     <lastmod>2017-03-26T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/pytorch/</loc>
+    <loc>http://sergey.coding.me/tags/pytorch/</loc>
     <lastmod>2017-06-16T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/rpc/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+    <loc>http://sergey.coding.me/tags/rpc/</loc>
+    <lastmod>2016-12-13T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/</loc>
-    <lastmod>2017-09-27T12:00:23+02:00</lastmod>
+    <loc>http://sergey.coding.me/</loc>
+    <lastmod>2017-10-22T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/</loc>
+    <loc>http://sergey.coding.me/tags/</loc>
     <lastmod>2017-08-04T12:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/tags/tensorflow/</loc>
+    <loc>http://sergey.coding.me/tags/tensorflow/</loc>
     <lastmod>2017-09-27T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergeyjay.github.io/categories/tools/</loc>
-    <lastmod>2017-08-04T12:00:23+08:00</lastmod>
+    <loc>http://sergey.coding.me/categories/tools/</loc>
+    <lastmod>2017-10-22T12:00:23+02:00</lastmod>
     <priority>0</priority>
   </url>
   
