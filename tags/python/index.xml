@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Sergey&#39;s blog</title>
-    <link>http://sergey.coding.me/tags/python/</link>
+    <link>https://sergeyjay.github.io/tags/python/</link>
     <description>Recent content in Python on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Sun, 26 Mar 2017 12:00:23 +0200</lastBuildDate>
     
-	<atom:link href="http://sergey.coding.me/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sergeyjay.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>python pandas相关</title>
-      <link>http://sergey.coding.me/2017/03/26/python-pandas%E7%9B%B8%E5%85%B3/</link>
+      <link>https://sergeyjay.github.io/2017/03/26/python-pandas%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Sun, 26 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/03/26/python-pandas%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://sergeyjay.github.io/2017/03/26/python-pandas%E7%9B%B8%E5%85%B3/</guid>
       <description>&lt;p&gt;&amp;emsp;&lt;code&gt;pandas&lt;/code&gt;基于&lt;code&gt;numpy&lt;/code&gt;, 是&lt;code&gt;numpy&lt;/code&gt;的升级版本.如果用&lt;code&gt;python&lt;/code&gt;的列表和字典来作比较, 那么可以说&lt;code&gt;Numpy&lt;/code&gt;是列表形式的，没有数值标签，而 &lt;code&gt;Pandas&lt;/code&gt; 就是字典形式.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>python numpy相关</title>
-      <link>http://sergey.coding.me/2017/03/25/python-numpy%E7%9B%B8%E5%85%B3/</link>
+      <link>https://sergeyjay.github.io/2017/03/25/python-numpy%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Sat, 25 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/03/25/python-numpy%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://sergeyjay.github.io/2017/03/25/python-numpy%E7%9B%B8%E5%85%B3/</guid>
       <description>&lt;p&gt;&amp;emsp;NumPy is the fundamental package for scientific computing with Python.numpy运行速度也很快,对科学就算,机器学习的应用有很大帮助.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -36,10 +36,10 @@
     
     <item>
       <title>python多进程,多核运算的效率对比</title>
-      <link>http://sergey.coding.me/2017/03/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</link>
+      <link>https://sergeyjay.github.io/2017/03/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</link>
       <pubDate>Mon, 20 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/03/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</guid>
+      <guid>https://sergeyjay.github.io/2017/03/20/python%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E6%A0%B8%E8%BF%90%E7%AE%97%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/</guid>
       <description>&lt;p&gt;&amp;emsp;python多进程,多核运存在一定的差别,我们应该在知晓他们的效率对比,在合适的场景使用对应的技术.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -47,10 +47,10 @@
     
     <item>
       <title>python Tkinter相关</title>
-      <link>http://sergey.coding.me/2017/03/09/python-tkinter%E7%9B%B8%E5%85%B3/</link>
+      <link>https://sergeyjay.github.io/2017/03/09/python-tkinter%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Thu, 09 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/03/09/python-tkinter%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://sergeyjay.github.io/2017/03/09/python-tkinter%E7%9B%B8%E5%85%B3/</guid>
       <description>&lt;p&gt;&amp;emsp;Tkinter 是使用 python 进行窗口视窗设计的模块,具有简单的构造, 多平台, 多系统的兼容性, 能让它成为让你快速入门定制窗口文件的好助手.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -58,10 +58,10 @@
     
     <item>
       <title>python进程共享内存</title>
-      <link>http://sergey.coding.me/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</link>
+      <link>https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</link>
       <pubDate>Wed, 01 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</guid>
+      <guid>https://sergeyjay.github.io/2017/03/01/python%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/</guid>
       <description>&lt;p&gt;&amp;emsp;python的多进程或者说不同CPU之间通信是通过共享内存来实现的.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -69,10 +69,10 @@
     
     <item>
       <title>python进程池</title>
-      <link>http://sergey.coding.me/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</link>
+      <link>https://sergeyjay.github.io/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</link>
       <pubDate>Mon, 27 Feb 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</guid>
+      <guid>https://sergeyjay.github.io/2017/02/27/python%E8%BF%9B%E7%A8%8B%E6%B1%A0/</guid>
       <description>&lt;p&gt;&amp;emsp;python进程池就是我们将所要运行的东西，放到池子里，python会自行解决多进程的问题.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -80,10 +80,10 @@
     
     <item>
       <title>python进程锁</title>
-      <link>http://sergey.coding.me/2017/02/26/python%E8%BF%9B%E7%A8%8B%E9%94%81/</link>
+      <link>https://sergeyjay.github.io/2017/02/26/python%E8%BF%9B%E7%A8%8B%E9%94%81/</link>
       <pubDate>Sun, 26 Feb 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/02/26/python%E8%BF%9B%E7%A8%8B%E9%94%81/</guid>
+      <guid>https://sergeyjay.github.io/2017/02/26/python%E8%BF%9B%E7%A8%8B%E9%94%81/</guid>
       <description>&lt;p&gt;&amp;emsp;python进程间通信共享资源等需要保证进程安全,我们需要了解python的进程锁.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -91,10 +91,10 @@
     
     <item>
       <title>python计算RGB图片H通道</title>
-      <link>http://sergey.coding.me/2017/02/21/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</link>
+      <link>https://sergeyjay.github.io/2017/02/21/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</link>
       <pubDate>Tue, 21 Feb 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/02/21/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</guid>
+      <guid>https://sergeyjay.github.io/2017/02/21/python%E8%AE%A1%E7%AE%97rgb%E5%9B%BE%E7%89%87h%E9%80%9A%E9%81%93/</guid>
       <description>&lt;p&gt;&amp;emsp;python进行一些简单的图像处理.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -102,10 +102,10 @@
     
     <item>
       <title>python threading的join基本使用</title>
-      <link>http://sergey.coding.me/2017/02/20/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <link>https://sergeyjay.github.io/2017/02/20/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Mon, 20 Feb 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/02/20/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://sergeyjay.github.io/2017/02/20/python-threading%E7%9A%84join%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;p&gt;&amp;emsp;python threading 的&lt;code&gt;join&lt;/code&gt;功能, 基本应用.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -113,10 +113,10 @@
     
     <item>
       <title>python 线程锁</title>
-      <link>http://sergey.coding.me/2017/02/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</link>
+      <link>https://sergeyjay.github.io/2017/02/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</link>
       <pubDate>Sat, 18 Feb 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/02/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</guid>
+      <guid>https://sergeyjay.github.io/2017/02/18/python-%E7%BA%BF%E7%A8%8B%E9%94%81/</guid>
       <description>&lt;p&gt;&amp;emsp;python threading 有线程锁,与之相似的就是进程锁,可以进行类比.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -124,10 +124,10 @@
     
     <item>
       <title>python存储进程结果 Queue</title>
-      <link>http://sergey.coding.me/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</link>
+      <link>https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</link>
       <pubDate>Tue, 17 Jan 2017 12:00:23 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</guid>
+      <guid>https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/</guid>
       <description>&lt;p&gt;&amp;emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在&lt;code&gt;Queue&lt;/code&gt;中，线程执行完后，从&lt;code&gt;Queue&lt;/code&gt;中获取存储的结果.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -135,10 +135,10 @@
     
     <item>
       <title>Linked-post</title>
-      <link>http://sergey.coding.me/2015/10/02/linked-post/</link>
+      <link>https://sergeyjay.github.io/2015/10/02/linked-post/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
-      <guid>http://sergey.coding.me/2015/10/02/linked-post/</guid>
+      <guid>https://sergeyjay.github.io/2015/10/02/linked-post/</guid>
       <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
 menu = &amp;quot;&amp;quot;  </description>
     </item>

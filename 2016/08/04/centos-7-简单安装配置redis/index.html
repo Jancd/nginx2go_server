@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>Ai &middot; Sergey&#39;s blog</title>
+    <title>centOS 7 简单安装配置Redis &middot; Sergey&#39;s blog</title>
     <meta name="generator" content="Hugo 0.29" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,10 +10,7 @@
       <meta name="description" content="">
     
     
-      <link href="https://sergeyjay.github.io/categories/ai/index.xml" rel="alternate" type="application/rss+xml" title="Sergey&#39;s blog" />
-      <link href="https://sergeyjay.github.io/categories/ai/index.xml" rel="feed" type="application/rss+xml" title="Sergey&#39;s blog" />
-    
-    <link rel="canonical" href="https://sergeyjay.github.io/categories/ai/"/>
+    <link rel="canonical" href="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/"/>
     <link rel="icon" href="https://sergeyjay.github.io/favicon.ico">
     <link rel="apple-touch-icon" href="https://sergeyjay.github.io/apple-touch-icon.png"/>
     <link rel="stylesheet" href="https://sergeyjay.github.io/css/style.css">
@@ -23,14 +20,18 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="Ai" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://sergeyjay.github.io/categories/ai/" />
+    <meta property="og:title" content="centOS 7 简单安装配置Redis" />
+<meta property="og:description" content="&emsp;centOS7上Redis的安装与简单配置.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/" />
 
 
 
-<meta property="og:updated_time" content="2015-10-02T21:49:20&#43;02:00"/>
+<meta property="article:published_time" content="2016-08-04T12:00:23&#43;08:00"/>
+<meta property="article:modified_time" content="2016-08-04T12:00:23&#43;08:00"/>
+
 
 
 
@@ -43,12 +44,23 @@
 
     
     
-<meta itemprop="name" content="Ai">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="centOS 7 简单安装配置Redis">
+<meta itemprop="description" content="&emsp;centOS7上Redis的安装与简单配置.
+
+">
 
 
-    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ai"/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="dateModified" content="2016-08-04T12:00:23&#43;08:00" />
+<meta itemprop="wordCount" content="50">
+
+
+
+<meta itemprop="keywords" content="database,Linux," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="centOS 7 简单安装配置Redis"/>
+<meta name="twitter:description" content="&emsp;centOS7上Redis的安装与简单配置.
+
+"/>
 <meta name="twitter:site" content="@SergeyJay"/>
 
     
@@ -259,52 +271,258 @@
 
     <section id="main">
     
-    
-    
-    
-    <section class="archives-wrap">
-        <div class="archive-category-wrap">
-            <span class="archive-category">Ai</span>
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/">
+    <h1 class="article-title" itemprop="name">
+        centOS 7 简单安装配置Redis
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2016-08-04 12:00:23 &#43;0800 CST" itemprop="datePublished">2016-08-04</time>
+            &middot;
+            50
+            words
+            &middot;
+            1
+            minute read
         </div>
-        <div class="archives">
+        
+        
             
             
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <div class="archive-article-thumbnail">
-            
-            <a href="https://sergeyjay.github.io/2015/10/02/linked-post/" class="thumbnail">
-                <span style="background-image:url(https://sergeyjay.github.io/banners/placeholder.png)" alt="Linked-post" class="thumbnail-image"></span>
-            </a>
-            
-        </div>
-        <header class="archive-article-header">
-            <h1 itemprop="name">
-            <a class="archive-article-title" href="https://sergeyjay.github.io/2015/10/02/linked-post/">Linked-post</a>
-            </h1>
-            <div class="archive-article-date">
-                <i class="fa fa-calendar"></i>
-                <time datetime="2015-10-02 21:49:20 &#43;0200 &#43;0200" itemprop="datePublished">2015-10-02</time>
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/categories/tools">tools</a>
+                
+                
             </div>
-        </header>
-    </div>
-</article>
- 
             
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/database">database</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>&emsp;centOS7上Redis的安装与简单配置.</p>
+
+<p></p>
+
+<p><em>Note:This blog without all the resources that are outside the original,reproduced please indicate the source.</em></p>
+
+<p>redis最新版本下载地址在：<a href="https://redis.io/download，至于稳定版本还是最新的可选择下载，推荐stable。">https://redis.io/download，至于稳定版本还是最新的可选择下载，推荐stable。</a></p>
+
+<p>下载好后:
+为redis创建一个文件夹：</p>
+
+<pre><code>mkdir ～/Redis/
+</code></pre>
+
+<p>进入下载目录将下载好的压缩包放到刚刚创建的文件夹里</p>
+
+<pre><code>sudo mv redis-4.0.1.tar.gz ~/Redis/
+</code></pre>
+
+<p><img src="http://img.blog.csdn.net/20170807013806528" alt="" /></p>
+
+<p>进入Redis目录<code>cd ~/Redis/</code>
+解压文件：</p>
+
+<pre><code>sudo tar -zxf redis-4.0.1.tar.gz 
+</code></pre>
+
+<p>进入刚刚解压缩的目录：<code>cd redis-4.0.1/</code></p>
+
+<p><strong>执行命令</strong>：<code>make</code>
+如无意外安装成功，进入src目录下，运行命令：</p>
+
+<pre><code>./redis-server
+</code></pre>
+
+<p>即可开启redis服务。</p>
+
+<p><img src="http://img.blog.csdn.net/20170807021012408" alt="" /></p>
+
+<hr />
+
+<p>为更好的学习使用，让Redis后台启动，还需修改以下配置文件：</p>
+
+<p>上面的操作中我们在src目录下，此时我们返回上级目录（即解压包），能看到有一个redis.conf的文件，对这个文件进行修改：</p>
+
+<pre><code>vim redis.conf
+</code></pre>
+
+<p>在文件中找到daemonize，把no改为yes。保存退出。</p>
+
+<p><img src="http://img.blog.csdn.net/20170807022809500" alt="" /></p>
+
+<p>再进入src文件夹，开启redis服务，并且加载刚刚我们修改了的配置文件，执行如下命令：</p>
+
+<pre><code>./redis-server ~/Redis/redis-4.0.1/redis.conf
+</code></pre>
+
+<p>此时完成后台启动，进入client即可开始使用：
+运行：<code>./redis-cli</code></p>
+
+<p><img src="http://img.blog.csdn.net/20170807023705494" alt="这里写图片描述" /></p>
+
+<p>建议：每个人的使用习惯都不一样，安装部署思路是这样的，安装位置读者可按自己喜好设置。</p>
         </div>
-    </section>
-    <nav id="page-nav">
+        <footer class="article-footer">
+    <a data-url="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/" data-id="a3fe7987d67796cce3a7d6638941e105" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
 
     
-        <a class="extend prev" rel="prev" href="https://sergeyjay.github.io/categories/ai/page/3/">
-            « Prev
-        </a>
+<nav id="article-nav">
     
+    <a href="https://sergeyjay.github.io/2016/07/28/golang%E4%B9%8Bchannel/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">golang之channel</div>
+    </a>
     
 
+    
+    <a href="https://sergeyjay.github.io/2016/08/18/golang%E4%B9%8B%E8%BF%9E%E6%8E%A5%E6%B1%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">golang之连接池</div>
+    </a>
+    
 </nav>
 
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
     
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "SergeyJay" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
 
     </section>
 
