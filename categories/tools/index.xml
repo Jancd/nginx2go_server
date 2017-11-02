@@ -35,6 +35,17 @@
     </item>
     
     <item>
+      <title>centOS 7 简单安装配置Redis</title>
+      <link>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
+      <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
+      <description>&lt;p&gt;&amp;emsp;centOS7上Redis的安装与简单配置.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>MySql ERROR 2002</title>
       <link>https://sergeyjay.github.io/2017/03/27/mysql-error-2002/</link>
       <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
@@ -96,17 +107,6 @@
       
       <guid>https://sergeyjay.github.io/2016/09/04/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
       <description>&lt;p&gt;&amp;emsp;gRPC学习笔记(1),记录gprc一些基本概念.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>centOS 7 简单安装配置Redis</title>
-      <link>https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
-      <pubDate>Thu, 04 Aug 2016 12:00:23 +0800</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
-      <description>&lt;p&gt;&amp;emsp;centOS7上Redis的安装与简单配置.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

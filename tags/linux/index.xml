@@ -7,17 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
-    <lastBuildDate>Thu, 04 Aug 2016 12:00:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Aug 2017 12:00:23 +0800</lastBuildDate>
     
 	<atom:link href="https://sergeyjay.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>centOS 7 简单安装配置Redis</title>
-      <link>https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
-      <pubDate>Thu, 04 Aug 2016 12:00:23 +0800</pubDate>
+      <link>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
+      <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
       
-      <guid>https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
+      <guid>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
       <description>&lt;p&gt;&amp;emsp;centOS7上Redis的安装与简单配置.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

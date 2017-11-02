@@ -46,6 +46,17 @@
     </item>
     
     <item>
+      <title>centOS 7 简单安装配置Redis</title>
+      <link>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
+      <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
+      <description>&lt;p&gt;&amp;emsp;centOS7上Redis的安装与简单配置.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Socket Server 自定义协议</title>
       <link>https://sergeyjay.github.io/2017/08/03/socket-server-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Thu, 03 Aug 2017 12:00:23 +0800</pubDate>
@@ -681,17 +692,6 @@
       
       <guid>https://sergeyjay.github.io/2016/08/18/golang%E4%B9%8B%E8%BF%9E%E6%8E%A5%E6%B1%A0/</guid>
       <description>&lt;p&gt;&amp;emsp;golang通过使用通道，在多个goroutine发送和接受共享的数据，达到数据同步的目的。我们在数据库操作的时候，比较常见的就是数据连接池，也可以基于我们实现的资源池来实现。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>centOS 7 简单安装配置Redis</title>
-      <link>https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
-      <pubDate>Thu, 04 Aug 2016 12:00:23 +0800</pubDate>
-      
-      <guid>https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
-      <description>&lt;p&gt;&amp;emsp;centOS7上Redis的安装与简单配置.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
