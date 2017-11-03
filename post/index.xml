@@ -24,6 +24,17 @@
     </item>
     
     <item>
+      <title>Docker学习记录</title>
+      <link>https://sergeyjay.github.io/2017/10/04/docker%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 04 Oct 2017 12:00:23 +0800</pubDate>
+      
+      <guid>https://sergeyjay.github.io/2017/10/04/docker%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;&amp;emsp;Docker在不断的更新,升级,对我们来说也是不断学习的过程.本文旨在做一些笔记记录一些知识与注意问题.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>TensorFlow for Go</title>
       <link>https://sergeyjay.github.io/2017/09/27/tensorflow-for-go/</link>
       <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
