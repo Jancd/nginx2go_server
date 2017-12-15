@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>centOS 7 简单安装配置Redis &middot; Sergey&#39;s blog</title>
-    <meta name="generator" content="Hugo 0.29" />
+    <title>python存储进程结果 Queue &middot; Sergey&#39;s blog</title>
+    <meta name="generator" content="Hugo 0.31.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Sergey Chueng">
@@ -10,7 +10,7 @@
       <meta name="description" content="">
     
     
-    <link rel="canonical" href="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/"/>
+    <link rel="canonical" href="https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/"/>
     <link rel="icon" href="https://sergeyjay.github.io/favicon.ico">
     <link rel="apple-touch-icon" href="https://sergeyjay.github.io/apple-touch-icon.png"/>
     <link rel="stylesheet" href="https://sergeyjay.github.io/css/style.css">
@@ -20,17 +20,18 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="centOS 7 简单安装配置Redis" />
-<meta property="og:description" content="&emsp;centOS7上Redis的安装与简单配置.
+    <meta property="og:title" content="python存储进程结果 Queue" />
+<meta property="og:description" content="&emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在Queue中，线程执行完后，从Queue中获取存储的结果.
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/" />
+<meta property="og:url" content="https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/" />
 
 
 
-<meta property="article:published_time" content="2016-08-04T12:00:23&#43;08:00"/>
-<meta property="article:modified_time" content="2016-08-04T12:00:23&#43;08:00"/>
+<meta property="article:published_time" content="2017-01-17T12:00:23&#43;02:00"/>
+
+<meta property="article:modified_time" content="2017-01-17T12:00:23&#43;02:00"/>
 
 
 
@@ -44,21 +45,22 @@
 
     
     
-<meta itemprop="name" content="centOS 7 简单安装配置Redis">
-<meta itemprop="description" content="&emsp;centOS7上Redis的安装与简单配置.
+<meta itemprop="name" content="python存储进程结果 Queue">
+<meta itemprop="description" content="&emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在Queue中，线程执行完后，从Queue中获取存储的结果.
 
 ">
 
 
-<meta itemprop="dateModified" content="2016-08-04T12:00:23&#43;08:00" />
-<meta itemprop="wordCount" content="50">
+<meta itemprop="datePublished" content="2017-01-17T12:00:23&#43;02:00" />
+<meta itemprop="dateModified" content="2017-01-17T12:00:23&#43;02:00" />
+<meta itemprop="wordCount" content="151">
 
 
 
-<meta itemprop="keywords" content="database,Linux," />
+<meta itemprop="keywords" content="python," />
 
-    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="centOS 7 简单安装配置Redis"/>
-<meta name="twitter:description" content="&emsp;centOS7上Redis的安装与简单配置.
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="python存储进程结果 Queue"/>
+<meta name="twitter:description" content="&emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在Queue中，线程执行完后，从Queue中获取存储的结果.
 
 "/>
 <meta name="twitter:site" content="@SergeyJay"/>
@@ -187,7 +189,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        73
+        75
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -276,9 +278,9 @@
         
 
         <header class="article-header">
-    <a href="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/">
+    <a href="https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/">
     <h1 class="article-title" itemprop="name">
-        centOS 7 简单安装配置Redis
+        python存储进程结果 Queue
     </h1>
     </a>
     <div class="article-meta">
@@ -286,9 +288,9 @@
         
         <div class="article-date">
             <i class="fa fa-calendar"></i>
-            <time datetime="2016-08-04 12:00:23 &#43;0800 CST" itemprop="datePublished">2016-08-04</time>
+            <time datetime="2017-01-17 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-01-17</time>
             &middot;
-            50
+            151
             words
             &middot;
             1
@@ -302,7 +304,7 @@
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="https://sergeyjay.github.io/categories/tools">tools</a>
+                <a class="article-category-link" href="https://sergeyjay.github.io/categories/programming">programming</a>
                 
                 
             </div>
@@ -316,11 +318,7 @@
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="https://sergeyjay.github.io/tags/database">database</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://sergeyjay.github.io/tags/linux">Linux</a>
+                <a class="article-category-link" href="https://sergeyjay.github.io/tags/python">python</a>
                 
                 
             </div>
@@ -330,77 +328,104 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>&emsp;centOS7上Redis的安装与简单配置.</p>
+            <p>&emsp;简单的使用Queue实现将数据列表中的数据传入，使用四个线程处理，将结果保存在<code>Queue</code>中，线程执行完后，从<code>Queue</code>中获取存储的结果.</p>
 
 <p></p>
 
 <p><em>Note:This blog without all the resources that are outside the original,reproduced please indicate the source.</em></p>
 
-<p>redis最新版本下载地址在：<a href="https://redis.io/download，至于稳定版本还是最新的可选择下载，推荐stable。">https://redis.io/download，至于稳定版本还是最新的可选择下载，推荐stable。</a></p>
+<h2 id="导入线程-队列的标准模块">导入线程,队列的标准模块</h2>
 
-<p>下载好后:
-为redis创建一个文件夹：</p>
-
-<pre><code>mkdir ～/Redis/
+<pre><code class="language-python">import threading
+import time
+from queue import Queue
 </code></pre>
 
-<p>进入下载目录将下载好的压缩包放到刚刚创建的文件夹里</p>
+<h2 id="定义一个被多线程调用的函数">定义一个被多线程调用的函数</h2>
 
-<pre><code>sudo mv redis-4.0.1.tar.gz ~/Redis/
+<p>函数的参数是一个列表l和一个队列<code>q</code>，函数的功能是，对列表的每个元素进行平方计算，将结果保存在队列中</p>
+
+<pre><code class="language-python">def job(l,q):
+    for i in range (len(l)):
+        l[i] = l[i]**2
+    q.put(l)   #多线程调用的函数不能用return返回值
 </code></pre>
 
-<p><img src="http://img.blog.csdn.net/20170807013806528" alt="" /></p>
+<h2 id="定义一个多线程函数">定义一个多线程函数</h2>
 
-<p>进入Redis目录<code>cd ~/Redis/</code>
-解压文件：</p>
+<p>在多线程函数中定义一个<code>Queue</code>，用来保存返回值，代替<code>return</code>，定义一个多线程列表，初始化一个多维数据列表，用来处理：</p>
 
-<pre><code>sudo tar -zxf redis-4.0.1.tar.gz 
+<pre><code class="language-python">def multithreading():
+    q =Queue()    #q中存放返回值，代替return的返回值
+    threads = []
+    data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
 </code></pre>
 
-<p>进入刚刚解压缩的目录：<code>cd redis-4.0.1/</code></p>
+<p>在多线程函数中定义四个线程，启动线程，将每个线程添加到多线程的列表中</p>
 
-<p><strong>执行命令</strong>：<code>make</code>
-如无意外安装成功，进入src目录下，运行命令：</p>
-
-<pre><code>./redis-server
+<pre><code class="language-python">for i in range(4):   #定义四个线程
+    t = threading.Thread(target=job,args=(data[i],q)) #Thread首字母要大写，被调用的job函数没有括号，只是一个索引，参数在后面
+    t.start()#开始线程
+    threads.append(t) #把每个线程append到线程列表中
 </code></pre>
 
-<p>即可开启redis服务。</p>
+<p>分别<code>join</code>四个线程到主线程</p>
 
-<p><img src="http://img.blog.csdn.net/20170807021012408" alt="" /></p>
-
-<hr />
-
-<p>为更好的学习使用，让Redis后台启动，还需修改以下配置文件：</p>
-
-<p>上面的操作中我们在src目录下，此时我们返回上级目录（即解压包），能看到有一个redis.conf的文件，对这个文件进行修改：</p>
-
-<pre><code>vim redis.conf
+<pre><code class="language-python">for thread in threads:
+    thread.join()
 </code></pre>
 
-<p>在文件中找到daemonize，把no改为yes。保存退出。</p>
+<p>定义一个空的列表<code>results</code>，将四个线运行后保存在队列中的结果返回给空列表<code>results</code></p>
 
-<p><img src="http://img.blog.csdn.net/20170807022809500" alt="" /></p>
-
-<p>再进入src文件夹，开启redis服务，并且加载刚刚我们修改了的配置文件，执行如下命令：</p>
-
-<pre><code>./redis-server ~/Redis/redis-4.0.1/redis.conf
+<pre><code class="language-python">results = []
+for _ in range(4):
+    results.append(q.get())  #q.get()按顺序从q中拿出一个值
+print(results)
 </code></pre>
 
-<p>此时完成后台启动，进入client即可开始使用：
-运行：<code>./redis-cli</code></p>
+<h2 id="完整的代码">完整的代码</h2>
 
-<p><img src="http://img.blog.csdn.net/20170807023705494" alt="这里写图片描述" /></p>
+<pre><code class="language-python">import threading
+import time
 
-<p>建议：每个人的使用习惯都不一样，安装部署思路是这样的，安装位置读者可按自己喜好设置。</p>
+from queue import Queue
+
+def job(l,q):
+    for i in range (len(l)):
+        l[i] = l[i]**2
+    q.put(l)
+
+def multithreading():
+    q =Queue()
+    threads = []
+    data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
+    for i in range(4):
+        t = threading.Thread(target=job,args=(data[i],q))
+        t.start()
+        threads.append(t)
+    for thread in threads:
+        thread.join()
+    results = []
+    for _ in range(4):
+        results.append(q.get())
+    print(results)
+
+if __name___=='__main__':
+    multithreading()
+</code></pre>
+
+<p>最后运行结果为:</p>
+
+<pre><code class="language-python">[[1, 4, 9], [9, 16, 25], [16, 16, 16], [25, 25, 25]]
+</code></pre>
         </div>
         <footer class="article-footer">
-    <a data-url="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/" data-id="a3fe7987d67796cce3a7d6638941e105" class="article-share-link">
+    <a data-url="https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/" data-id="cd45ea6122d478f5d5789bd155667d49" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="https://sergeyjay.github.io/2016/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/#disqus_thread" class="article-comment-link">
+    <a href="https://sergeyjay.github.io/2017/01/17/python%E5%AD%98%E5%82%A8%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9E%9C-queue/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -476,20 +501,20 @@
     
 <nav id="article-nav">
     
-    <a href="https://sergeyjay.github.io/2016/07/28/golang%E4%B9%8Bchannel/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://sergeyjay.github.io/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
-      <div class="article-nav-title">golang之channel</div>
+      <div class="article-nav-title">gRPC 在OC中的应用</div>
     </a>
     
 
     
-    <a href="https://sergeyjay.github.io/2016/08/18/golang%E4%B9%8B%E8%BF%9E%E6%8E%A5%E6%B1%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://sergeyjay.github.io/2017/01/22/golang%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
-      <div class="article-nav-title">golang之连接池</div>
+      <div class="article-nav-title">golang闭包使用注意</div>
     </a>
     
 </nav>
@@ -559,7 +584,7 @@
                 <a class="category-list-link" href="https://sergeyjay.github.io/categories/tools">
                     tools
                 </a>
-                <span class="category-list-count">10</span>
+                <span class="category-list-count">11</span>
             </li>
             
         </ul>
@@ -592,7 +617,7 @@
                 <a class="category-list-link" href="https://sergeyjay.github.io/tags/docker">
                     docker
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
