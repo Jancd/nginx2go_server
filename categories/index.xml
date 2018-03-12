@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Sergey&#39;s blog</title>
-    <link>https://sergeyjay.github.io/categories/</link>
+    <link>www.sergey.ink/categories/</link>
     <description>Recent content in Categories on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Wed, 27 Sep 2017 12:00:23 +0200</lastBuildDate>
     
-	<atom:link href="https://sergeyjay.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="www.sergey.ink/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ai</title>
-      <link>https://sergeyjay.github.io/categories/ai/</link>
+      <link>www.sergey.ink/categories/ai/</link>
       <pubDate>Wed, 27 Sep 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/categories/ai/</guid>
+      <guid>www.sergey.ink/categories/ai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>https://sergeyjay.github.io/categories/programming/</link>
+      <link>www.sergey.ink/categories/programming/</link>
       <pubDate>Thu, 03 Aug 2017 12:00:23 +0800</pubDate>
       
-      <guid>https://sergeyjay.github.io/categories/programming/</guid>
+      <guid>www.sergey.ink/categories/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>https://sergeyjay.github.io/categories/tools/</link>
+      <link>www.sergey.ink/categories/tools/</link>
       <pubDate>Sun, 22 Oct 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/categories/tools/</guid>
+      <guid>www.sergey.ink/categories/tools/</guid>
       <description></description>
     </item>
     

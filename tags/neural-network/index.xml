@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Neural Network on Sergey&#39;s blog</title>
-    <link>https://sergeyjay.github.io/tags/neural-network/</link>
+    <link>www.sergey.ink/tags/neural-network/</link>
     <description>Recent content in Neural Network on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Tue, 06 Jun 2017 12:00:23 +0200</lastBuildDate>
     
-	<atom:link href="https://sergeyjay.github.io/tags/neural-network/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="www.sergey.ink/tags/neural-network/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PyTorch RNN Regression</title>
-      <link>https://sergeyjay.github.io/2017/06/06/pytorch-rnn-regression/</link>
+      <link>www.sergey.ink/2017/06/06/pytorch-rnn-regression/</link>
       <pubDate>Tue, 06 Jun 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/06/06/pytorch-rnn-regression/</guid>
+      <guid>www.sergey.ink/2017/06/06/pytorch-rnn-regression/</guid>
       <description>&lt;p&gt;&amp;emsp;循环神经网络&lt;code&gt;RNN&lt;/code&gt;及时预测时间序列.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>PyTorch RNN Classification</title>
-      <link>https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/</link>
+      <link>www.sergey.ink/2017/06/04/pytorch-rnn-classification/</link>
       <pubDate>Sun, 04 Jun 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/06/04/pytorch-rnn-classification/</guid>
+      <guid>www.sergey.ink/2017/06/04/pytorch-rnn-classification/</guid>
       <description>&lt;p&gt;&amp;emsp;循环神经网络RNN让神经网络有了记忆, 对于序列话的数据,循环神经网络能达到更好的效果.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -36,10 +36,10 @@
     
     <item>
       <title>PyTorch CNN</title>
-      <link>https://sergeyjay.github.io/2017/05/31/pytorch-cnn/</link>
+      <link>www.sergey.ink/2017/05/31/pytorch-cnn/</link>
       <pubDate>Wed, 31 May 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/05/31/pytorch-cnn/</guid>
+      <guid>www.sergey.ink/2017/05/31/pytorch-cnn/</guid>
       <description>&lt;p&gt;&amp;emsp;卷积神经网络目前被广泛地用在图片识别上, 已经有层出不穷的应用.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -47,10 +47,10 @@
     
     <item>
       <title>PyTorch基础笔记</title>
-      <link>https://sergeyjay.github.io/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</link>
+      <link>www.sergey.ink/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 09 May 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</guid>
+      <guid>www.sergey.ink/2017/05/09/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;&amp;emsp;PyTorch基础笔记,变量与计算.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -58,10 +58,10 @@
     
     <item>
       <title>TensorFlow自编码</title>
-      <link>https://sergeyjay.github.io/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</link>
+      <link>www.sergey.ink/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</link>
       <pubDate>Sun, 30 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</guid>
+      <guid>www.sergey.ink/2017/04/30/tensorflow%E8%87%AA%E7%BC%96%E7%A0%81/</guid>
       <description>&lt;p&gt;&amp;emsp;用神经网络如何进行非监督形式的学习(unsupervised learning),也就是自编码( autoencoder).自编码是一种神经网络的形式.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -69,10 +69,10 @@
     
     <item>
       <title>循环神经网络回归训练</title>
-      <link>https://sergeyjay.github.io/2017/04/27/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83/</link>
+      <link>www.sergey.ink/2017/04/27/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83/</link>
       <pubDate>Thu, 27 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/04/27/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83/</guid>
+      <guid>www.sergey.ink/2017/04/27/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83/</guid>
       <description>&lt;p&gt;&amp;emsp;Recurrent neural networks(RNN)循环神经网络进行回归训练实践.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -80,20 +80,20 @@
     
     <item>
       <title>循环神经网络分类训练</title>
-      <link>https://sergeyjay.github.io/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</link>
+      <link>www.sergey.ink/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</link>
       <pubDate>Mon, 24 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</guid>
+      <guid>www.sergey.ink/2017/04/24/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E8%AE%AD%E7%BB%83/</guid>
       <description>&lt;p&gt;&amp;emsp;本文使用 &lt;code&gt;RNN&lt;/code&gt; 来进行分类的训练 (Classification). 会继续使用到手写数字 MNIST 数据集. 让 RNN 从每张图片的第一行像素读到最后一行, 然后再进行分类判断.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>循环神经网络RNN以及LSTM技术</title>
-      <link>https://sergeyjay.github.io/2017/04/20/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn%E4%BB%A5%E5%8F%8Alstm%E6%8A%80%E6%9C%AF/</link>
+      <link>www.sergey.ink/2017/04/20/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn%E4%BB%A5%E5%8F%8Alstm%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Thu, 20 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/04/20/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn%E4%BB%A5%E5%8F%8Alstm%E6%8A%80%E6%9C%AF/</guid>
+      <guid>www.sergey.ink/2017/04/20/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn%E4%BB%A5%E5%8F%8Alstm%E6%8A%80%E6%9C%AF/</guid>
       <description>&lt;p&gt;&amp;emsp;Recurrent neural networks(RNN)循环神经网络,在前馈神经网络中，单独的输入完全确定了剩下的层上的神经元的 激活值。可以想象，这是一幅静态的图景:网络中的所有事物都被固定了，处于一种“冰冻结 晶”的状态。但假如，我们允许网络中的元素能够以动态方式不断地比那话。例如，隐藏神经元 的行为不是完全由前一层的隐藏神经元，而是同样受制于更早的层上的神经元的激活值。这样 肯定会带来跟前馈神经网络不同的效果。也可能隐藏和输出层的神经元的激活值不会单单由当 前的网络输入决定，而且包含了前面的输入的影响。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -101,10 +101,10 @@
     
     <item>
       <title>卷积神经网络</title>
-      <link>https://sergeyjay.github.io/2017/04/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <link>www.sergey.ink/2017/04/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Mon, 17 Apr 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/04/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <guid>www.sergey.ink/2017/04/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
       <description>&lt;p&gt;&amp;emsp;Convolutional Neural Networks (CNN)卷积神经网络是近些年逐步兴起的一种人工神经网络结构, 因为利用卷积神经网络在图像和语音识别方面能够给出更优预测结果, 这一种技术也被广泛的传播可应用. 卷积神经网络最常被应用的方面是计算机的图像识别, 不过因为不断地创新, 它也被应用在视频分析, 自然语言处理, 药物发现, 等等.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -112,10 +112,10 @@
     
     <item>
       <title>TensorFlow可视化(2)</title>
-      <link>https://sergeyjay.github.io/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</link>
+      <link>www.sergey.ink/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</link>
       <pubDate>Sun, 19 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</guid>
+      <guid>www.sergey.ink/2017/03/19/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%962/</guid>
       <description>&lt;p&gt;&amp;emsp;Tensorflow 中的 tensorboard 不仅仅可以可视化神经网络结构,还可以可视化我们的 training 训练结果,根据每一次不同的训练结果来修改提升神经网络参数.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -123,10 +123,10 @@
     
     <item>
       <title>mxnet手写体识别</title>
-      <link>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</link>
+      <link>www.sergey.ink/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</link>
       <pubDate>Wed, 15 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</guid>
+      <guid>www.sergey.ink/2017/03/15/mxnet%E6%89%8B%E5%86%99%E4%BD%93%E8%AF%86%E5%88%AB/</guid>
       <description>&lt;p&gt;&amp;emsp;在本教程中，我们将逐步介绍如何使用MNIST数据集构建手写的数字分类器.对于一个刚刚接触深度学习的朋友来说，这个练习可以说是“Hello World”.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -134,10 +134,10 @@
     
     <item>
       <title>TensorFlow可视化(1)</title>
-      <link>https://sergeyjay.github.io/2017/03/14/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%961/</link>
+      <link>www.sergey.ink/2017/03/14/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%961/</link>
       <pubDate>Tue, 14 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/14/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%961/</guid>
+      <guid>www.sergey.ink/2017/03/14/tensorflow%E5%8F%AF%E8%A7%86%E5%8C%961/</guid>
       <description>&lt;p&gt;&amp;emsp;Tensorflow 自带 &lt;code&gt;tensorboard&lt;/code&gt;,让建造出来的神经网络可视化,让我们更好的理解学习神经网络,有助于发现编程中的问题.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -145,10 +145,10 @@
     
     <item>
       <title>TensorFlow构造神经网络</title>
-      <link>https://sergeyjay.github.io/2017/03/12/tensorflow%E6%9E%84%E9%80%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <link>www.sergey.ink/2017/03/12/tensorflow%E6%9E%84%E9%80%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Sun, 12 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/12/tensorflow%E6%9E%84%E9%80%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <guid>www.sergey.ink/2017/03/12/tensorflow%E6%9E%84%E9%80%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
       <description>&lt;p&gt;&amp;emsp;TensorFlow简单的构建神经网络.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -156,10 +156,10 @@
     
     <item>
       <title>What neural etwork is?</title>
-      <link>https://sergeyjay.github.io/2017/03/02/what-neural-etwork-is/</link>
+      <link>www.sergey.ink/2017/03/02/what-neural-etwork-is/</link>
       <pubDate>Thu, 02 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/02/what-neural-etwork-is/</guid>
+      <guid>www.sergey.ink/2017/03/02/what-neural-etwork-is/</guid>
       <description>&lt;p&gt;&amp;emsp;神经网络是什么东西呢?&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

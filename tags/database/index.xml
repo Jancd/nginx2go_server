@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Database on Sergey&#39;s blog</title>
-    <link>https://sergeyjay.github.io/tags/database/</link>
+    <link>www.sergey.ink/tags/database/</link>
     <description>Recent content in Database on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Fri, 04 Aug 2017 12:00:23 +0800</lastBuildDate>
     
-	<atom:link href="https://sergeyjay.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="www.sergey.ink/tags/database/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>centOS 7 简单安装配置Redis</title>
-      <link>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
+      <link>www.sergey.ink/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</link>
       <pubDate>Fri, 04 Aug 2017 12:00:23 +0800</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
+      <guid>www.sergey.ink/2017/08/04/centos-7-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis/</guid>
       <description>&lt;p&gt;&amp;emsp;centOS7上Redis的安装与简单配置.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>MySql ERROR 2002</title>
-      <link>https://sergeyjay.github.io/2017/03/27/mysql-error-2002/</link>
+      <link>www.sergey.ink/2017/03/27/mysql-error-2002/</link>
       <pubDate>Mon, 27 Mar 2017 12:00:23 +0200</pubDate>
       
-      <guid>https://sergeyjay.github.io/2017/03/27/mysql-error-2002/</guid>
+      <guid>www.sergey.ink/2017/03/27/mysql-error-2002/</guid>
       <description>&lt;p&gt;&amp;emsp;MySql-&amp;gt; ERROR 2002 (HY000): Can&amp;rsquo;t connect to local MySQL server through socket &amp;lsquo;/tmp/mysql.sock&amp;rsquo; (2)&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
