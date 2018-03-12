@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ios on Sergey&#39;s blog</title>
-    <link>www.sergey.ink/tags/ios/</link>
+    <link>https://SergeyChang.github.io/tags/ios/</link>
     <description>Recent content in Ios on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Sat, 04 Feb 2017 12:00:23 +0800</lastBuildDate>
     
-	<atom:link href="www.sergey.ink/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://SergeyChang.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GCD产生deadlock</title>
-      <link>www.sergey.ink/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</link>
+      <link>https://SergeyChang.github.io/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</link>
       <pubDate>Sat, 04 Feb 2017 12:00:23 +0800</pubDate>
       
-      <guid>www.sergey.ink/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</guid>
+      <guid>https://SergeyChang.github.io/2017/02/04/gcd%E4%BA%A7%E7%94%9Fdeadlock/</guid>
       <description>&lt;p&gt;&amp;emsp;iOS开发中关于GCD中同步函数+主队列产生死锁的一点理解.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>gRPC 在OC中的应用</title>
-      <link>www.sergey.ink/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <link>https://SergeyChang.github.io/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
       <pubDate>Tue, 13 Dec 2016 12:00:23 +0200</pubDate>
       
-      <guid>www.sergey.ink/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://SergeyChang.github.io/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
       <description>&lt;p&gt;&amp;emsp;gRPC Objective-C的应用,处理网络应用.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

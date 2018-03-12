@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rpc on Sergey&#39;s blog</title>
-    <link>www.sergey.ink/tags/rpc/</link>
+    <link>https://SergeyChang.github.io/tags/rpc/</link>
     <description>Recent content in Rpc on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Tue, 13 Dec 2016 12:00:23 +0200</lastBuildDate>
     
-	<atom:link href="www.sergey.ink/tags/rpc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://SergeyChang.github.io/tags/rpc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gRPC 在OC中的应用</title>
-      <link>www.sergey.ink/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <link>https://SergeyChang.github.io/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
       <pubDate>Tue, 13 Dec 2016 12:00:23 +0200</pubDate>
       
-      <guid>www.sergey.ink/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://SergeyChang.github.io/2016/12/13/grpc-%E5%9C%A8oc%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
       <description>&lt;p&gt;&amp;emsp;gRPC Objective-C的应用,处理网络应用.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>gRPC学习笔记(2)</title>
-      <link>www.sergey.ink/2016/09/11/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</link>
+      <link>https://SergeyChang.github.io/2016/09/11/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</link>
       <pubDate>Sun, 11 Sep 2016 12:00:23 +0200</pubDate>
       
-      <guid>www.sergey.ink/2016/09/11/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</guid>
+      <guid>https://SergeyChang.github.io/2016/09/11/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</guid>
       <description>&lt;p&gt;&amp;emsp;gRPC学习笔记(2),记录gprc一些基本概念.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -36,10 +36,10 @@
     
     <item>
       <title>gRPC安全认证</title>
-      <link>www.sergey.ink/2016/09/11/grpc%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81/</link>
+      <link>https://SergeyChang.github.io/2016/09/11/grpc%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81/</link>
       <pubDate>Sun, 11 Sep 2016 12:00:23 +0200</pubDate>
       
-      <guid>www.sergey.ink/2016/09/11/grpc%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81/</guid>
+      <guid>https://SergeyChang.github.io/2016/09/11/grpc%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81/</guid>
       <description>&lt;p&gt;&amp;emsp;gRPC学习笔记(3)安全认证相关及例子.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -47,10 +47,10 @@
     
     <item>
       <title>gRPC学习笔记(1)</title>
-      <link>www.sergey.ink/2016/09/04/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
+      <link>https://SergeyChang.github.io/2016/09/04/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
       <pubDate>Sun, 04 Sep 2016 12:00:23 +0200</pubDate>
       
-      <guid>www.sergey.ink/2016/09/04/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
+      <guid>https://SergeyChang.github.io/2016/09/04/grpc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
       <description>&lt;p&gt;&amp;emsp;gRPC学习笔记(1),记录gprc一些基本概念.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -58,10 +58,10 @@
     
     <item>
       <title>Linked-post</title>
-      <link>www.sergey.ink/2015/10/02/linked-post/</link>
+      <link>https://SergeyChang.github.io/2015/10/02/linked-post/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
-      <guid>www.sergey.ink/2015/10/02/linked-post/</guid>
+      <guid>https://SergeyChang.github.io/2015/10/02/linked-post/</guid>
       <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
 menu = &amp;quot;&amp;quot;  </description>
     </item>

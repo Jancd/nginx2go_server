@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Protobuf on Sergey&#39;s blog</title>
-    <link>www.sergey.ink/tags/protobuf/</link>
+    <link>https://SergeyChang.github.io/tags/protobuf/</link>
     <description>Recent content in Protobuf on Sergey&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Built by [Sergey Chueng](http://github.com/SergeyJay). </copyright>
     <lastBuildDate>Sat, 22 Oct 2016 12:00:23 +0200</lastBuildDate>
     
-	<atom:link href="www.sergey.ink/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://SergeyChang.github.io/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Protobuf 学习笔记</title>
-      <link>www.sergey.ink/2016/10/22/protobuf-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://SergeyChang.github.io/2016/10/22/protobuf-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 22 Oct 2016 12:00:23 +0200</pubDate>
       
-      <guid>www.sergey.ink/2016/10/22/protobuf-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://SergeyChang.github.io/2016/10/22/protobuf-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;&amp;emsp;Protobuf 定义消息类型.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
