@@ -1,0 +1,24 @@
+# Create by Sergey Cheung
+version: "3.3"
+services:
+    lb:
+        build: ./lb
+        ports:
+            - 80:80
+        links:
+            - web
+        networks: 
+            - back-tier
+        container_name: lb_nginx
+    
+    web:
+        image: go_server:latest
+        networks: 
+            - back-tier
+        ports: 
+            - 8080
+        container_name: web
+
+networks: 
+  back-tier:
+    driver: bridge
