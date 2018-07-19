@@ -23,7 +23,11 @@ $ make build
 Start you server:
 
 ```bash
-docker-compose up --build 
+$ docker-compose build --no-cache 
+$ docker-compose up 
 ```
 
 Finally check your http server or nginx in browser.
+
+### License
+MIT
